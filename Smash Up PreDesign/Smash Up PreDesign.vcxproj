@@ -79,6 +79,7 @@
     <ClCompile Include="Model\BaseTypes\Base.cpp" />
     <ClCompile Include="Model\BaseTypes\Card.cpp" />
     <ClCompile Include="Model\BaseTypes\PowerModifier.cpp" />
+    <ClCompile Include="Model\MinionCards\ShapeShifter\DoppelgangerMinion.cpp" />
     <ClCompile Include="Model\MinionCards\ShapeShifter\GelfMinion.cpp" />
     <ClCompile Include="Model\MinionCards\Ghost\GhostMinion.cpp" />
     <ClCompile Include="Model\MinionCards\Ghost\HauntingMinion.cpp" />
@@ -105,9 +106,11 @@
     <ClInclude Include="Model\BaseTypes\Board.h" />
     <ClInclude Include="Model\BaseTypes\Base.h" />
     <ClInclude Include="Model\BaseTypes\Card.h" />
+    <ClInclude Include="Model\BaseTypes\Event.h" />
+    <ClInclude Include="Model\BaseTypes\EventListener.h" />
+    <ClInclude Include="Model\MinionCards\ShapeShifter\DoppelgangerMinion.h" />
     <ClInclude Include="Model\MinionCards\ShapeShifter\GelfMinion.h" />
     <ClInclude Include="Model\BaseTypes\UpdateVisibilityFlags.h" />
-    <ClInclude Include="Model\BaseTypes\PowerModifier.h" />
     <ClInclude Include="Model\GameGlobals.h" />
     <ClInclude Include="Model\BaseTypes\Player.h" />
     <ClInclude Include="Model\BaseTypes\DeckConstructor.h" />

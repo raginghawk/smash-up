@@ -51,9 +51,6 @@
     <ClInclude Include="Model\MinionCards\Ghost\SpiritMinion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Model\BaseTypes\PowerModifier.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Model\ActionCards\Actions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -91,6 +88,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Model\MinionCards\ShapeShifter\GelfMinion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\MinionCards\ShapeShifter\DoppelgangerMinion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\BaseTypes\Event.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\BaseTypes\EventListener.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -165,6 +171,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Model\MinionCards\ShapeShifter\GelfMinion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\MinionCards\ShapeShifter\DoppelgangerMinion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
