@@ -88,5 +88,6 @@ std::vector<Card *> DeckConstructor::addShapeShifters(Player *owner)
 		shapeDeck.push_back(new GelfMinion(owner));
 	}
 
+	shapeDeck.push_back(new DoppelgangerMinion(owner));
 	return shapeDeck;
 }

@@ -9,7 +9,7 @@
 //ShapeShifter
 #include <MimicMinion.h>
 //#include <CopyCatMinion.h>
-//#include <DoppelGangerMinion.h>
+#include <DoppelgangerMinion.h>
 #include <GelfMinion.h>
 
 ////Dinos
