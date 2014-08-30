@@ -3,7 +3,7 @@
 
 DoppelgangerMinion::DoppelgangerMinion(Player *owner) : MinionCard(owner)
 {
-	_printedPower = 0;
+	_printedPower = 5;
 	_name = "Mimic";
 }
 

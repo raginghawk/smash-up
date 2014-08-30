@@ -3,7 +3,7 @@
 
 GelfMinion::GelfMinion(Player *owner) : MinionCard(owner)
 {
-	_printedPower = 0;
+	_printedPower = 4;
 	_name = "Mimic";
 	_talent = true;
 }
