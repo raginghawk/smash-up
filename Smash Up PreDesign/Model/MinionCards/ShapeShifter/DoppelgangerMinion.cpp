@@ -4,7 +4,7 @@
 DoppelgangerMinion::DoppelgangerMinion(Player *owner) : MinionCard(owner)
 {
 	_printedPower = 5;
-	_name = "Mimic";
+	_name = "DoppelGanger";
 }
 
 void DoppelgangerMinion::destroy(Player *owner)
