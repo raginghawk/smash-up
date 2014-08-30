@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1A241E00-C145-49C6-939B-2ED6E4A395EB}</ProjectGuid>
+    <RootNamespace>SmashUpPreDesign</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)Model;$(ProjectDir)Model\BaseTypes;$(ProjectDir)Model\MinionCards;$(ProjectDir)Model\MinionCards\Ghost;$(ProjectDir)Model\MinionCards\ShapeShifter;$(ProjectDir)Model\ActionCards;$(ProjectDir)Model\ActionCards\Ghost;$(ProjectDir)Model\ActionCards\ShapeShifter</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Model\ActionCards\ActionCard.cpp" />
+    <ClCompile Include="Model\ActionCards\Ghost\AcrossTheDivide.cpp" />
+    <ClCompile Include="Model\ActionCards\Ghost\DeadRiseAction.cpp" />
+    <ClCompile Include="Model\ActionCards\Ghost\DoorToBeyond.cpp" />
+    <ClCompile Include="Model\ActionCards\Ghost\GhostlyAction.cpp" />
+    <ClCompile Include="Model\ActionCards\Ghost\IncorporealAction.cpp" />
+    <ClCompile Include="Model\ActionCards\Ghost\MakeContact.cpp" />
+    <ClCompile Include="Model\ActionCards\Ghost\SeanceAction.cpp" />
+    <ClCompile Include="Model\ActionCards\Ghost\ShadyAction.cpp" />
+    <ClCompile Include="Model\BaseTypes\Board.cpp" />
+    <ClCompile Include="Model\BaseTypes\Base.cpp" />
+    <ClCompile Include="Model\BaseTypes\Card.cpp" />
+    <ClCompile Include="Model\BaseTypes\PowerModifier.cpp" />
+    <ClCompile Include="Model\MinionCards\ShapeShifter\GelfMinion.cpp" />
+    <ClCompile Include="Model\MinionCards\Ghost\GhostMinion.cpp" />
+    <ClCompile Include="Model\MinionCards\Ghost\HauntingMinion.cpp" />
+    <ClCompile Include="Model\MinionCards\Ghost\SpectreMinion.cpp" />
+    <ClCompile Include="Model\MinionCards\Ghost\SpiritMinion.cpp" />
+    <ClCompile Include="Model\MinionCards\MinionCard.cpp" />
+    <ClCompile Include="Model\GameGlobals.cpp" />
+    <ClCompile Include="Model\Entry.cpp" />
+    <ClCompile Include="Model\BaseTypes\Player.cpp" />
+    <ClCompile Include="Model\BaseTypes\DeckConstructor.cpp" />
+    <ClCompile Include="Model\MinionCards\ShapeShifter\MimicMinion.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Model\ActionCards\ActionCard.h" />
+    <ClInclude Include="Model\ActionCards\Actions.h" />
+    <ClInclude Include="Model\ActionCards\Ghost\AcrossTheDivide.h" />
+    <ClInclude Include="Model\ActionCards\Ghost\DeadRiseAction.h" />
+    <ClInclude Include="Model\ActionCards\Ghost\DoorToBeyond.h" />
+    <ClInclude Include="Model\ActionCards\Ghost\GhostlyAction.h" />
+    <ClInclude Include="Model\ActionCards\Ghost\IncorporealAction.h" />
+    <ClInclude Include="Model\ActionCards\Ghost\MakeContact.h" />
+    <ClInclude Include="Model\ActionCards\Ghost\SeanceAction.h" />
+    <ClInclude Include="Model\ActionCards\Ghost\ShadyAction.h" />
+    <ClInclude Include="Model\BaseTypes\Board.h" />
+    <ClInclude Include="Model\BaseTypes\Base.h" />
+    <ClInclude Include="Model\BaseTypes\Card.h" />
+    <ClInclude Include="Model\MinionCards\ShapeShifter\GelfMinion.h" />
+    <ClInclude Include="Model\BaseTypes\UpdateVisibilityFlags.h" />
+    <ClInclude Include="Model\BaseTypes\PowerModifier.h" />
+    <ClInclude Include="Model\GameGlobals.h" />
+    <ClInclude Include="Model\BaseTypes\Player.h" />
+    <ClInclude Include="Model\BaseTypes\DeckConstructor.h" />
+    <ClInclude Include="Model\MinionCards\Ghost\GhostMinion.h" />
+    <ClInclude Include="Model\MinionCards\Ghost\HauntingMinion.h" />
+    <ClInclude Include="Model\MinionCards\Ghost\SpectreMinion.h" />
+    <ClInclude Include="Model\MinionCards\Ghost\SpiritMinion.h" />
+    <ClInclude Include="Model\MinionCards\MinionCard.h" />
+    <ClInclude Include="Model\MinionCards\Minions.h" />
+    <ClInclude Include="Model\MinionCards\ShapeShifter\MimicMinion.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

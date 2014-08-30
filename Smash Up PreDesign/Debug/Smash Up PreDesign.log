@@ -1,0 +1,36 @@
+﻿Build started 8/30/2014 12:46:51 PM.
+     1>Project "e:\Users\Zachary\documents\visual studio 2013\Projects\Smash Up\Smash Up PreDesign\Smash Up PreDesign.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         E:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Model\BaseTypes\DeckConstructor.cpp
+         DeckConstructor.cpp
+       Link:
+         E:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"e:\users\zachary\documents\visual studio 2013\Projects\Smash Up\Debug\Smash Up PreDesign.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"e:\users\zachary\documents\visual studio 2013\Projects\Smash Up\Debug\Smash Up PreDesign.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"e:\users\zachary\documents\visual studio 2013\Projects\Smash Up\Debug\Smash Up PreDesign.lib" /MACHINE:X86 Debug\ActionCard.obj
+         Debug\AcrossTheDivide.obj
+         Debug\DeadRiseAction.obj
+         Debug\DoorToBeyond.obj
+         Debug\GhostlyAction.obj
+         Debug\IncorporealAction.obj
+         Debug\MakeContact.obj
+         Debug\SeanceAction.obj
+         Debug\ShadyAction.obj
+         Debug\Board.obj
+         Debug\Base.obj
+         Debug\Card.obj
+         Debug\PowerModifier.obj
+         Debug\GelfMinion.obj
+         Debug\GhostMinion.obj
+         Debug\HauntingMinion.obj
+         Debug\SpectreMinion.obj
+         Debug\SpiritMinion.obj
+         Debug\MinionCard.obj
+         Debug\GameGlobals.obj
+         Debug\Entry.obj
+         Debug\Player.obj
+         Debug\DeckConstructor.obj
+         Debug\MimicMinion.obj
+         Smash Up PreDesign.vcxproj -> e:\users\zachary\documents\visual studio 2013\Projects\Smash Up\Debug\Smash Up PreDesign.exe
+     1>Done Building Project "e:\Users\Zachary\documents\visual studio 2013\Projects\Smash Up\Smash Up PreDesign\Smash Up PreDesign.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.59
