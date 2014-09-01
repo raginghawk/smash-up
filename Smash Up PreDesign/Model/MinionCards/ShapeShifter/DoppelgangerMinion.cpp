@@ -7,13 +7,13 @@ DoppelgangerMinion::DoppelgangerMinion(Player *owner) : MinionCard(owner)
 	_name = "DoppelGanger";
 }
 
-void DoppelgangerMinion::destroy(Player *owner)
+void DoppelgangerMinion::destroy(MinionCard *card)
 {
-	MinionCard *selection = owner->minionInDeck(INT_MAX);
+	MinionCard *selection = card->currentOwner()->minionInDeck(INT_MAX);
 
 	if (!selection)
 		return;
 
 	selection->play(_base);
-	owner->shuffleDeck(false);
+	card->currentOwner()->shuffleDeck(false);
 }

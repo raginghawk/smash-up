@@ -10,7 +10,7 @@ public:
 #pragma region Members	
 	virtual bool isMinion();
 #pragma endregion
-	virtual void destory();
+	virtual void destroy();
 	virtual void play(Base *base);
 	virtual void play();
 	virtual void play(MinionCard *minion);

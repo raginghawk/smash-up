@@ -8,9 +8,9 @@ SpiritMinion::SpiritMinion(Player *owner) : MinionCard(owner)
 	_name = "Spirit";
 }
 
-void SpiritMinion::play(Base *base)
+void SpiritMinion::play(Base *base, MinionCard *card)
 {
-	MinionCard::play(base);
+	MinionCard::play(base, card);
 
 	std::vector<MinionCard *> minionsInPlay = vBoard->minionsInPlay();
 	if (minionsInPlay.size() == 0)
@@ -20,9 +20,9 @@ void SpiritMinion::play(Base *base)
 		//TODO selection minion
 		MinionCard *selection = NULL;
 
-		if (_currentOwner->discardCard(selection->currentPower(), true))
+		if (card->currentOwner()->discardCard(selection->currentPower(selection), true))
 		{
-			selection->destory();
+			selection->destroy();
 		}
 	}
 }

@@ -2,6 +2,7 @@
 #include <DeckConstructor.h>
 #include <MinionCard.h>
 #include <Base.h>
+#include <Event.h>
 #include <algorithm>
 
 Player::Player(deckType firstDeck, deckType secondDeck)
@@ -26,9 +27,17 @@ Player::Player(deckType firstDeck, deckType secondDeck)
 	delete(constructor);
 }
 
+Player::~Player()
+{
+	delete(_endOfTurn);
+	delete(_beginingOfTurn);
+}
+
 void Player::initClassVariables()
 {
 	_victoryPoints = 0;
+	_endOfTurn = new Event(END_OF_TURN);
+	_beginingOfTurn = new Event(BEGINING_OF_TURN);
 }
 
 bool Player::discardCard(int count, bool optional)
@@ -45,6 +54,16 @@ int Player::handSize()
 int Player::playerNumber()
 {
 	return _playerNumber;
+}
+
+Event *Player::endOfTurn()
+{
+	return _endOfTurn;
+}
+
+Event *Player::beginingOfTurn()
+{
+	return _beginingOfTurn;
 }
 
 void Player::addMinionToPlayableDiscards(MinionCard *minion)

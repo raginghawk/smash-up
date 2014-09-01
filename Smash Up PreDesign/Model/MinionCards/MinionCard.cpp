@@ -23,9 +23,9 @@ int MinionCard::printedPower()
 	return _printedPower;
 }
 
-int MinionCard::currentPower()
+int MinionCard::currentPower(MinionCard *card)
 {
-	return _printedPower; //TODO modifications here?
+	return card->printedPower(); //TODO modifications here?
 }
 
 bool MinionCard::isAffectable()
@@ -43,39 +43,51 @@ void MinionCard::removeAllActions()
 	std::vector<ActionCard *>::iterator itActions;
 	for (itActions = _actions.begin(); itActions != _actions.end(); itActions++)
 	{
-		(*itActions)->destory();
+		(*itActions)->destroy();
 	}
 }
 
 
-void MinionCard::destory()
+void MinionCard::destroy()
 {
-	_base->destroyMinion(this);
+	destroy(this);
+}
+
+void MinionCard::destroy(MinionCard *card)
+{
+	_base->destroyMinion(card);
+}
+
+
+void MinionCard::play(Base *base, MinionCard *card)
+{
+	base->playMinion(card);
 }
 
 void MinionCard::play(Base *base)
 {
-	base->playMinion(this);
-	_base = base;
+	play(base, this);
 }
 
 void MinionCard::play()
 {
-	//ASSERT
+	assert(true); /*Minion Card's are never instant*/
 }
 
 void MinionCard::play(MinionCard *minion)
 {
-	//ASSERT
+	assert(true); /* minion card's can't play on other minion cards*/
 }
-
 
 void MinionCard::move(Base *newBase, Base *oldBase)
 {
 	auto itMinions = std::find(_base->minionsOnBase().begin(), _base->minionsOnBase().end(), this);
 	if (itMinions == _base->minionsOnBase().end())
+	{
+		assert(true); /*Couldn't find minion*/
 		return;
-		// ASSERT
+	}
+
 	_base->minionsOnBase().erase(itMinions);
 	newBase->moveMinion(this);
 	_base = newBase;
@@ -86,7 +98,7 @@ void MinionCard::discard()
 	//TODO not sure
 }
 
-void MinionCard::useTalent(Player *owner)
+void MinionCard::useTalent(Player *owner, MinionCard *card)
 {
 	// any Minion with a talent should override this method
 	assert(false);

@@ -8,13 +8,13 @@ GelfMinion::GelfMinion(Player *owner) : MinionCard(owner)
 	_talent = true;
 }
 
-void GelfMinion::useTalent(Player *owner)
+void GelfMinion::useTalent(Player *owner, MinionCard *card)
 {
 	MinionCard *selection = owner->minionInDeck(4);
-	owner->shuffleMinionInDeck(this);
+	owner->shuffleMinionInDeck(card);
 
 	if (!selection)
 		return;
 
-	selection->play(_base);
+	selection->play(card->base());
 }

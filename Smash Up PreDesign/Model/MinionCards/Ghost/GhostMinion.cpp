@@ -7,8 +7,8 @@ GhostMinion::GhostMinion(Player *owner) : MinionCard(owner)
 	_name = "Ghost";
 }
 
-void GhostMinion::play(Base *base)
+void GhostMinion::play(Base *base, MinionCard *card)
 {
-	MinionCard::play(base);
-	_owner->discardCard(1, true);
+	MinionCard::play(base, card);
+	card->currentOwner()->discardCard(1, true);
 }

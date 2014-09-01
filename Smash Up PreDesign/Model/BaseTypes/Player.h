@@ -7,17 +7,21 @@ class Deck;
 class Card;
 class MinionCard;
 class Base;
+class Event;
 
 class Player
 {
 public:
 
 	Player(deckType firstDeck, deckType secondDeck);
+	~Player();
 #pragma region Members
 	int playerNumber();
 	MinionCard *minionInDiscard(int maxPower);
 	MinionCard *minionInDeck(int maxPower);
 	int handSize();
+	Event *beginingOfTurn();
+	Event *endOfTurn();
 
 #pragma endregion
 	bool discardCard(int count, bool optional);
@@ -37,6 +41,8 @@ private:
 	std::vector<Card *> _hand;
 	std::vector<Card *> _discards;
 	std::vector<MinionCard *> _playableDiscards;
+	Event *_endOfTurn;
+	Event *_beginingOfTurn;
 	int _actionsRemaining;
 	int _victoryPoints;
 	int _playerNumber;

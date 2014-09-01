@@ -1,5 +1,6 @@
 #include "Board.h"
 #include "Base.h"
+#include <MinionCard.h>
 #include <Player.h>
 
 Board::Board(std::vector<Player *> players)
@@ -38,6 +39,23 @@ std::vector<MinionCard *> Board::minionsInPlay()
 	}
 
 	return minionsInPlay;
+}
+
+std::vector<MinionCard *> Board::otherPlayersMinionsInPlay(Player *player)
+{
+	std::vector<MinionCard *> minionsInPlay = this->minionsInPlay();
+	std::vector<MinionCard *> otherPlayersMinions;
+	std::vector<MinionCard *>::iterator itMinions;
+
+	for (itMinions = minionsInPlay.begin(); itMinions != minionsInPlay.end(); itMinions)
+	{
+		if ((*itMinions)->currentOwner() != player)
+		{
+			otherPlayersMinions.push_back(*itMinions);
+		}
+	}
+
+	return otherPlayersMinions;
 }
 
 void Board::startGame()

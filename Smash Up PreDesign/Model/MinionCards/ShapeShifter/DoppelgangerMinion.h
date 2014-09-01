@@ -6,5 +6,5 @@ class DoppelgangerMinion : public MinionCard
 {
 public:
 	DoppelgangerMinion::DoppelgangerMinion(Player *owner);
-	virtual void destroy(Player *owner);
+	virtual void destroy(MinionCard *card);
 };

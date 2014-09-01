@@ -31,6 +31,7 @@ void Base::moveMinion(MinionCard *minion)
 void Base::playMinion(MinionCard *minion)
 {
 	_minionsOnBase.push_back(minion);
+	minion->setBase(this);
 }
 
 void Base::destroyMinion(MinionCard *minion)

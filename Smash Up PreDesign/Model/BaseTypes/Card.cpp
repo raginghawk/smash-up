@@ -32,6 +32,12 @@ Base * Card::base()
 	return _base;
 }
 
+void Card::setBase(Base *base)
+{
+	_base = base;
+}
+
+
 CardType Card::cardType()
 {
 	return _cardType;

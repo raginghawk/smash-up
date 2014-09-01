@@ -8,9 +8,12 @@ MimicMinion::MimicMinion(Player *owner) : MinionCard(owner)
 	_name = "Mimic";
 }
 
-int MimicMinion::currentPower()
+int MimicMinion::currentPower(MinionCard *card)
 {
-	int currentPower = MinionCard::currentPower();
+	int currentPower = MinionCard::currentPower(card);
+
+	if (card != this)
+		currentPower -= 2; /*Copycat modifier*/
 
 	std::vector<MinionCard *> minionsInPlay = vBoard->minionsInPlay();
 	std::vector<MinionCard *>::iterator itMinions;

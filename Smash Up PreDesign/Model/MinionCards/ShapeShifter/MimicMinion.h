@@ -6,5 +6,5 @@ class MimicMinion : public MinionCard
 {
 public:
 	MimicMinion::MimicMinion(Player *owner);
-	virtual int currentPower();
+	virtual int currentPower(MinionCard *card);
 };

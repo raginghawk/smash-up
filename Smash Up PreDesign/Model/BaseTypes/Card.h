@@ -25,6 +25,7 @@ public:
 	Player *currentOwner();
 	std::string name();
 	Base *base();
+	void setBase(Base *base);
 	CardType cardType();
 
 	void setCurrentOwner(Player *owner);
@@ -33,7 +34,7 @@ public:
 
 	void initOwner(Player *owner);
 
-	virtual void destory() = 0;
+	virtual void destroy() = 0;
 	virtual void play(Base *base) = 0;
 	virtual void play() = 0;
 	virtual void play(MinionCard *minion) = 0;

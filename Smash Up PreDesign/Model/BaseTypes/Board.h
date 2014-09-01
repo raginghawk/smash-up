@@ -17,6 +17,7 @@ public:
 
 	std::vector<MinionCard *> minionsOnBases(Base * base);
 	std::vector<MinionCard *> minionsInPlay();
+	std::vector<MinionCard *> otherPlayersMinionsInPlay(Player *player);
 	void startGame();
 
 private:

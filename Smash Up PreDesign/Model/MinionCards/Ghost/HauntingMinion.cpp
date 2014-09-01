@@ -7,17 +7,17 @@ HauntingMinion::HauntingMinion(Player *owner) : MinionCard(owner)
 	_name = "Haunting";
 }
 
-int HauntingMinion::currentPower()
+int HauntingMinion::currentPower(MinionCard *card)
 {
-	int currentPower = MinionCard::currentPower();
-	if (_currentOwner->handSize() < 3)
+	int currentPower = MinionCard::currentPower(card);
+	if (card->currentOwner()->handSize() < 3)
 	{
 		currentPower += 3;
 	}
 	return currentPower;
 }
 
-bool HauntingMinion::isAffectable()
+bool HauntingMinion::isAffectable() //TODO COPYCAT
 {
 	if (_currentOwner->handSize() < 3)
 	{

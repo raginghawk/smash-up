@@ -6,5 +6,5 @@ class SpiritMinion : public MinionCard
 {
 public:
 	SpiritMinion::SpiritMinion(Player *owner);
-	virtual void play(Base *base);
+	virtual void play(Base *base, MinionCard *card);
 };

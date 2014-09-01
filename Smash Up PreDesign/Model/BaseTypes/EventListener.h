@@ -1,15 +1,14 @@
 #pragma once
 #include <assert.h>
-class Event;
+
+enum EventType
+{
+	END_OF_TURN,
+	BEGINING_OF_TURN,
+};
 
 class EventListener
 {
 public:
-	EventListener();
-	void call(Event *event);
+	virtual void call(EventType eventType);
 };
-
-void EventListener::call(Event *event)
-{
-	assert(true); // should never call the root method
-}

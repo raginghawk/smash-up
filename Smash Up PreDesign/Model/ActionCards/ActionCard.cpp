@@ -13,7 +13,7 @@ bool ActionCard::isMinion()
 	return false;
 }
 
-void ActionCard::destory()
+void ActionCard::destroy()
 {
 
 }
