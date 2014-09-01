@@ -15,3 +15,6 @@
 #include <Transmogrify.h>
 #include <GeneticShiftAction.h>
 #include <SpliceAsNiceAction.h>
+#include <ReallyAction.h>
+#include <MitosisAction.h>
+#include <ShellGameAction.h>

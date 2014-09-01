@@ -19,7 +19,7 @@ class MinionCard : public Card
 #pragma endregion
 
 		virtual void removeAllActions();
-	
+		void modifyDestoryCount(int modification);
 		void modifyCurrentPower(int modification);
 		virtual void destroy();
 		virtual void destroy(MinionCard *card);
@@ -33,6 +33,7 @@ class MinionCard : public Card
 
 	private:
 		int _powerModification;
+		int _destoryProtectionCounter;
 
 	protected:
 		int _printedPower;

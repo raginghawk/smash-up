@@ -87,6 +87,22 @@ void Player::addVictoryPoint(int victoryPoints)
 	_victoryPoints += victoryPoints;
 }
 
+std::vector<MinionCard *> Player::minionsInHand()
+{
+	std::vector<Card *>::iterator itCards;
+	std::vector<MinionCard *>minionsInHand;
+
+	for (itCards = _hand.begin(); itCards != _hand.end(); itCards++)
+	{
+		if ((*itCards)->isMinion())
+		{
+			minionsInHand.push_back((MinionCard *)*itCards);
+		}
+	}
+	return minionsInHand;
+}
+
+
 MinionCard *Player::minionInDiscard(int maxPower)
 {
 	std::vector<MinionCard *>minionsInDiscard;

@@ -19,6 +19,7 @@ public:
 	int playerNumber();
 	MinionCard *minionInDiscard(int maxPower);
 	MinionCard *minionInDeck(int maxPower);
+	std::vector<MinionCard *> minionsInHand();
 	int handSize();
 	Event *beginingOfTurn();
 	Event *endOfTurn();
