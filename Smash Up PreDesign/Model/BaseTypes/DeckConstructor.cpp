@@ -78,6 +78,11 @@ std::vector<Card *> DeckConstructor::addShapeShifters(Player *owner)
 	std::vector<Card *> shapeDeck;
 
 	//Minions
+	for (int i = 0; i < 4; i++)
+	{
+		shapeDeck.push_back(new CopycatMinion(owner));
+	}
+
 	for (int i = 0; i < 3; i++)
 	{
 		shapeDeck.push_back(new MimicMinion(owner));
