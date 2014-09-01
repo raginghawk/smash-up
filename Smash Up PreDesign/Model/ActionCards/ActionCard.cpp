@@ -2,6 +2,7 @@
 #include <Board.h>
 #include <Base.h>
 #include <MinionCard.h>
+#include <Player.h>
 
 ActionCard::ActionCard(Player *owner)
 {
@@ -18,6 +19,21 @@ void ActionCard::destroy()
 
 }
 
+bool ActionCard::fPlay(Player *player)
+{
+	if (player->actionsRemaining() == 0)
+		return false;
+
+	if (_cardType == MINION_CARD && vBoard->minionsInPlay().size() == 0)
+		return false;
+
+	if (_cardType == BASE_CARD && vBoard->bases().size() == 0)
+		return false;
+
+	return true;
+}
+
+
 void ActionCard::play(Base *base)
 {
 
@@ -27,16 +43,14 @@ void ActionCard::play()
 {
 	std::vector<MinionCard *> minionsInPlay;
 	std::vector<Base *> bases;
+	MinionCard *minionCard;
 
 	switch (_cardType)
 	{
 	case MINION_CARD:
-		MinionCard *minionCard;
-		minionsInPlay = vBoard->minionsInPlay();
-		//TODO Select Minion
-		minionCard = NULL;
+		minionCard = _currentOwner->selectCard(vBoard->minionsInPlay());
 		minionCard->actionsOnMinion().push_back(this);
-		//TODO probably call update on minion or we could leave it to the minionCard to update its visibilty. My guess is power is updated all the time :/
+		play(minionCard,this);
 		break;
 	case BASE_CARD:
 		Base *base;
@@ -48,9 +62,9 @@ void ActionCard::play()
 	}
 }
 
-void ActionCard::play(MinionCard *minion)
+void ActionCard::play(MinionCard *minion, ActionCard *action)
 {
-
+	//TODO probably call update on minion or we could leave it to the minionCard to update its visibilty. My guess is power is updated all the time :/
 }
 
 

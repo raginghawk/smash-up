@@ -18,8 +18,8 @@ std::vector<Card *> DeckConstructor::addDeck(deckType deckToAdd, std::vector<Car
 	case SHAPESHIFTER_DECK:
 		newDeck = addShapeShifters(owner);
 	default:
+		assert(true); /*Should never have a deckType that isn't covered*/
 		break;
-		//TODO ASSERT?
 	}
 
 	if (deck.size() == 0)

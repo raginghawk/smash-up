@@ -23,10 +23,11 @@ class MinionCard : public Card
 		void modifyCurrentPower(int modification);
 		virtual void destroy();
 		virtual void destroy(MinionCard *card);
+		virtual bool fPlay(Player *player);
 		virtual void play(Base *base, MinionCard *card);
 		virtual void play(Base *base);
 		virtual void play();
-		virtual void play(MinionCard *minion);
+		virtual void play(MinionCard *minion, ActionCard *action);
 		virtual void move(Base *newBase, Base *oldBase);
 		virtual void discard();
 		virtual void useTalent(Player *owner, MinionCard *card);

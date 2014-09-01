@@ -1,6 +1,7 @@
 #include "MinionCard.h"
 #include <ActionCard.h>
 #include <Base.h>
+#include <Board.h>
 #include <Player.h>
 
 MinionCard::MinionCard(Player *owner)
@@ -80,6 +81,28 @@ void MinionCard::destroy(MinionCard *card)
 		_base->destroyMinion(card);
 }
 
+bool MinionCard::fPlay(Player *player)
+{
+	if (vBoard->bases().size() == 0)
+		return false;
+
+	std::vector<MinionPlayableStruct *> minionsRemaining = player->minionsRemaining();
+	std::vector<MinionPlayableStruct *>::iterator itMinions;
+
+	bool found = false;
+	for (itMinions = minionsRemaining.begin(); itMinions != minionsRemaining.end(); itMinions++)
+	{
+		if ((*itMinions)->maxPower() > printedPower())
+		{
+			found = true;
+			break;
+		}
+	}
+	if (!found)
+		return false;
+
+	return true;
+}
 
 void MinionCard::play(Base *base, MinionCard *card)
 {
@@ -96,7 +119,7 @@ void MinionCard::play()
 	assert(true); /*Minion Card's are never instant*/
 }
 
-void MinionCard::play(MinionCard *minion)
+void MinionCard::play(MinionCard *minion, ActionCard *action)
 {
 	assert(true); /* minion card's can't play on other minion cards*/
 }

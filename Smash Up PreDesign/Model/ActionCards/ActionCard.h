@@ -11,9 +11,10 @@ public:
 	virtual bool isMinion();
 #pragma endregion
 	virtual void destroy();
+	virtual bool fPlay(Player *player);
 	virtual void play(Base *base);
 	virtual void play();
-	virtual void play(MinionCard *minion);
+	virtual void play(MinionCard *minion, ActionCard *action);
 	virtual void move(Base *newBase, Base *oldBase);
 	virtual void discard();
 	virtual bool fUpdate(UpdateVisibilityFlags *flags);

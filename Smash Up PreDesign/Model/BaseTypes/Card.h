@@ -6,6 +6,7 @@
 
 class Player;
 class MinionCard;
+class ActionCard;
 class Base;
 
 enum CardType
@@ -27,7 +28,6 @@ public:
 	Base *base();
 	void setBase(Base *base);
 	CardType cardType();
-
 	void setCurrentOwner(Player *owner);
 
 #pragma endregion
@@ -35,9 +35,10 @@ public:
 	void initOwner(Player *owner);
 
 	virtual void destroy() = 0;
+	virtual bool fPlay(Player *player) = 0;
 	virtual void play(Base *base) = 0;
 	virtual void play() = 0;
-	virtual void play(MinionCard *minion) = 0;
+	virtual void play(MinionCard *minion, ActionCard *action) = 0;
 	virtual void move(Base *newBase, Base *oldBase) = 0;
 	virtual void discard() = 0;
 

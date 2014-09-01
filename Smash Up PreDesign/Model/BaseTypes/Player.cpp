@@ -202,15 +202,27 @@ void Player::addActionCount(int count)
 	_actionsRemaining += count;
 }
 
-void Player::addMinionCount(int count, Base *onBase)
+void Player::addMinionCount(int maxPower, Base *onBase)
 {
-	//TODO
+	_minionsRemaining.push_back(new MinionPlayableStruct(maxPower, onBase));
+}
+
+int Player::actionsRemaining()
+{
+	return _actionsRemaining;
+}
+
+std::vector<MinionPlayableStruct *> Player::minionsRemaining()
+{
+	return _minionsRemaining;
 }
 
 void Player::takeTurn()
 {
 	_actionsRemaining = 1;
-	addMinionCount(INT_MAX, NULL);
+	_minionsRemaining.clear();
+	_minionsRemaining.push_back(new MinionPlayableStruct(INT_MAX, NULL));
+
 	//TODO selectCard possiblly move this to private turn loop ?
 	int cardIndexToPlay = 0;
 	while (true)
