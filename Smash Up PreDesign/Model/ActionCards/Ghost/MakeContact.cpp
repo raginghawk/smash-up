@@ -10,6 +10,11 @@ MakeContact::MakeContact(Player *owner) : ActionCard(owner)
 	_cardType = MINION_CARD;
 }
 
+ActionCard * MakeContact::copy()
+{
+	return new MakeContact(_currentOwner);
+}
+
 bool MakeContact::fUpdate(UpdateVisibilityFlags *flags)
 {
 	return flags->fOwner;
@@ -25,6 +30,7 @@ void MakeContact::play(MinionCard *minionCard, ActionCard *action)
 	_currentOwner = action->currentOwner();
 	_selection = minionCard;
 	_selection->setCurrentOwner(_currentOwner);
+	ActionCard::play(minionCard, action);
 }
 
 bool MakeContact::fPlay(Player *player)

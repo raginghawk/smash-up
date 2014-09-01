@@ -4,6 +4,7 @@ class Base;
 class Player;
 class Events;
 class MinionCard;
+class ActionCard;
 
 class Board // Board is a singleton TODO: Add singleton check to initiator
 {
@@ -19,6 +20,7 @@ public:
 	std::vector<MinionCard *> minionsInPlay();
 	std::vector<MinionCard *> otherPlayersMinionsInPlay(Player *player);
 	std::vector<MinionCard *> playersMinionsInPlay(Player *player);
+	std::vector<ActionCard *> actionsOnMinions();
 	void startGame();
 
 private:

@@ -9,10 +9,16 @@ IncorporealAction::IncorporealAction(Player *owner) : ActionCard(owner)
 	_cardType = MINION_CARD;
 }
 
+ActionCard * IncorporealAction::copy()
+{
+	return new IncorporealAction(_currentOwner);
+}
+
 void IncorporealAction::play(MinionCard *minion, ActionCard *action)
 {
 	_selection = action->currentOwner()->selectCard(vBoard->playersMinionsInPlay(action->currentOwner()));
 	_selection->modifyAffectAbleCount(1);
+	ActionCard::play(minion, action);
 }
 
 void IncorporealAction::destroy()

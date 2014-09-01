@@ -41,6 +41,25 @@ std::vector<MinionCard *> Board::minionsInPlay()
 	return minionsInPlay;
 }
 
+std::vector<ActionCard *> Board::actionsOnMinions()
+{
+	std::vector<ActionCard *> actionsOnMinions;
+	std::vector<MinionCard *> minionsInPlay = this->minionsInPlay();
+	std::vector<MinionCard *>::iterator itMinions;
+
+	for (itMinions = minionsInPlay.begin(); itMinions != minionsInPlay.end(); itMinions++)
+	{
+		std::vector<ActionCard *> actionsOnMinion = (*itMinions)->actionsOnMinion();
+		if (actionsOnMinion.size() != 0)
+		{
+			actionsOnMinions.reserve(actionsOnMinions.size() + actionsOnMinion.size());
+			actionsOnMinions.insert(actionsOnMinions.end(), actionsOnMinion.begin(), actionsOnMinion.end());
+		}
+	}
+
+	return actionsOnMinions;
+}
+
 std::vector<MinionCard *> Board::otherPlayersMinionsInPlay(Player *player)
 {
 	std::vector<MinionCard *> minionsInPlay = this->minionsInPlay();

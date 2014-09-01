@@ -11,6 +11,7 @@ public:
 	virtual void update(MinionCard *minionCard);
 	virtual bool fPlay(Player *player);
 	virtual void destroy();
+	virtual ActionCard *copy();
 private:
 	MinionCard *_selection;
 };

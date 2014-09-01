@@ -64,7 +64,11 @@ void ActionCard::play()
 
 void ActionCard::play(MinionCard *minion, ActionCard *action)
 {
-	//TODO probably call update on minion or we could leave it to the minionCard to update its visibilty. My guess is power is updated all the time :/
+	if (action != this)
+	{
+		return; /* The cellular bonding case. Cellular Bonding will attach itself to the minion and forward all calls to the copied class*/
+	}
+	minion->actionsOnMinion().push_back(action);
 }
 
 
@@ -92,4 +96,10 @@ void ActionCard::update(Base *base)
 void ActionCard::update(MinionCard *minionCard)
 {
 	assert(true); /*Subclasses that can be updated should override this*/
+}
+
+ActionCard * ActionCard::copy()
+{
+	assert(true); /*Subclasses that can be copied should override this (aka cards of type Minion_Card*/
+	return NULL;
 }

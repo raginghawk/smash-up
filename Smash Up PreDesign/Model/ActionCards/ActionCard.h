@@ -19,4 +19,6 @@ public:
 	virtual bool fUpdate(UpdateVisibilityFlags *flags);
 	virtual void update(Base *base);
 	virtual void update(MinionCard *minionCard);
+
+	virtual ActionCard *copy();
 };
