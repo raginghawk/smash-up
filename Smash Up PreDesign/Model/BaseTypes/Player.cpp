@@ -43,8 +43,17 @@ void Player::initClassVariables()
 
 bool Player::discardCard(int count, bool optional)
 {
+	for (int i = 0; i < count; i++)
+	{
+		if (optional)
+		{
+			return false;
+		}
+
+		Card * selection = selectCard(_hand);
+		selection->discard();
+	}
 	return true;
-	//select a card
 }
 
 int Player::handSize()
@@ -247,6 +256,18 @@ void Player::takeTurn()
 }
 
 MinionCard * Player::selectCard(std::vector<MinionCard *>options)
+{
+	//TODO select card
+	return NULL;
+}
+
+ActionCard * Player::selectCard(std::vector<ActionCard *>options)
+{
+	//TODO select card
+	return NULL;
+}
+
+Card * Player::selectCard(std::vector<Card *>options)
 {
 	//TODO select card
 	return NULL;

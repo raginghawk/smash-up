@@ -7,6 +7,7 @@
 class Deck;
 class Card;
 class MinionCard;
+class ActionCard;
 class Base;
 class Event;
 
@@ -30,6 +31,9 @@ public:
 	std::vector<MinionPlayableStruct *> minionsRemaining();
 #pragma endregion
 	MinionCard *selectCard(std::vector<MinionCard *>options);
+	ActionCard *selectCard(std::vector<ActionCard *>options);
+	Card *selectCard(std::vector<Card *>options);
+
 	Base *selectBase();
 
 	bool discardCard(int count, bool optional);
