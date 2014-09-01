@@ -70,6 +70,13 @@ void MinionCard::modifyDestoryCount(int modification)
 	assert(modification == 1 || modification == -1); /*you should only increment and decrement by one*/
 }
 
+void MinionCard::modifyAffectAbleCount(int modification)
+{
+	_affectableCounter += modification;
+	assert(_affectableCounter >= 0); /* should never have less than zero because that means there ar enegitive cards protecting it*/
+	assert(modification == 1 || modification == -1);
+}
+
 void MinionCard::destroy()
 {
 	destroy(this);
@@ -122,6 +129,37 @@ void MinionCard::play()
 void MinionCard::play(MinionCard *minion, ActionCard *action)
 {
 	assert(true); /* minion card's can't play on other minion cards*/
+}
+
+bool MinionCard::fUpdate(UpdateVisibilityFlags *flags)
+{
+	std::vector<ActionCard *>::iterator itActions;
+	
+	for (itActions = _actions.begin(); itActions != _actions.end(); itActions++)
+	{
+		if ((*itActions)->fUpdate(flags))
+		{
+			return true;
+		}
+	}
+}
+
+void MinionCard::update(Base *base)
+{
+
+}
+
+void MinionCard::update(UpdateVisibilityFlags *flags)
+{
+	std::vector<ActionCard *>::iterator itActions;
+
+	for (itActions = _actions.begin(); itActions != _actions.end(); itActions++)
+	{
+		if ((*itActions)->fUpdate(flags))
+		{
+			(*itActions)->update(this);
+		}
+	}
 }
 
 void MinionCard::move(Base *newBase, Base *oldBase)

@@ -16,7 +16,7 @@ bool ActionCard::isMinion()
 
 void ActionCard::destroy()
 {
-
+	//TODO
 }
 
 bool ActionCard::fPlay(Player *player)
@@ -91,5 +91,5 @@ void ActionCard::update(Base *base)
 
 void ActionCard::update(MinionCard *minionCard)
 {
-
+	assert(true); /*Subclasses that can be updated should override this*/
 }

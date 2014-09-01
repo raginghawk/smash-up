@@ -5,6 +5,7 @@
 DoorToBeyond::DoorToBeyond(Player *owner) : ActionCard(owner)
 {
 	this->_name = "The Door to The Beyond";
+	_cardType = BASE_CARD;
 }
 
 bool DoorToBeyond::fUpdate(UpdateVisibilityFlags *flags)

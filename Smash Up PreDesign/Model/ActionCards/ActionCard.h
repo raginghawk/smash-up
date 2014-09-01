@@ -1,7 +1,6 @@
 #pragma once
 
 #include <Card.h>
-#include <UpdateVisibilityFlags.h>
 
 class ActionCard : public Card
 {

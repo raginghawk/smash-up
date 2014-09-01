@@ -3,6 +3,7 @@
 #include <string>
 
 #include <GameGlobals.h>
+#include <UpdateVisibilityFlags.h>
 
 class Player;
 class MinionCard;
@@ -39,6 +40,9 @@ public:
 	virtual void play(Base *base) = 0;
 	virtual void play() = 0;
 	virtual void play(MinionCard *minion, ActionCard *action) = 0;
+	virtual bool fUpdate(UpdateVisibilityFlags *flags) = 0;
+	virtual void update(Base *base) = 0;
+
 	virtual void move(Base *newBase, Base *oldBase) = 0;
 	virtual void discard() = 0;
 

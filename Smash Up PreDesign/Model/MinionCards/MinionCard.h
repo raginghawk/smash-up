@@ -21,6 +21,7 @@ class MinionCard : public Card
 		virtual void removeAllActions();
 		void modifyDestoryCount(int modification);
 		void modifyCurrentPower(int modification);
+		void modifyAffectAbleCount(int modification);
 		virtual void destroy();
 		virtual void destroy(MinionCard *card);
 		virtual bool fPlay(Player *player);
@@ -28,6 +29,9 @@ class MinionCard : public Card
 		virtual void play(Base *base);
 		virtual void play();
 		virtual void play(MinionCard *minion, ActionCard *action);
+		virtual bool fUpdate(UpdateVisibilityFlags *flags);
+		virtual void update(Base *base);
+		virtual void update(UpdateVisibilityFlags *minionCard);
 		virtual void move(Base *newBase, Base *oldBase);
 		virtual void discard();
 		virtual void useTalent(Player *owner, MinionCard *card);
@@ -35,6 +39,7 @@ class MinionCard : public Card
 	private:
 		int _powerModification;
 		int _destoryProtectionCounter;
+		int _affectableCounter;
 
 	protected:
 		int _printedPower;
