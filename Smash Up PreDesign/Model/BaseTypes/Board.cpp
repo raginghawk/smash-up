@@ -58,6 +58,25 @@ std::vector<MinionCard *> Board::otherPlayersMinionsInPlay(Player *player)
 	return otherPlayersMinions;
 }
 
+std::vector<MinionCard *> Board::playersMinionsInPlay(Player *player)
+{
+	std::vector<MinionCard *> minionsInPlay = this->minionsInPlay();
+	std::vector<MinionCard *> playersMinions;
+	std::vector<MinionCard *>::iterator itMinions;
+
+	for (itMinions = minionsInPlay.begin(); itMinions != minionsInPlay.end(); itMinions)
+	{
+		if ((*itMinions)->currentOwner() == player)
+		{
+			playersMinions.push_back(*itMinions);
+		}
+	}
+
+	return playersMinions;
+}
+
+
+
 void Board::startGame()
 {
 	std::vector<Player *>::iterator itPlayers;

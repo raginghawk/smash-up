@@ -17,8 +17,7 @@ void SpiritMinion::play(Base *base, MinionCard *card)
 		return;
 	while (true)
 	{
-		//TODO selection minion
-		MinionCard *selection = NULL;
+		MinionCard *selection = card->currentOwner()->selectCard(minionsInPlay);
 
 		if (card->currentOwner()->discardCard(selection->currentPower(selection), true))
 		{

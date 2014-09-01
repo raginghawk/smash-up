@@ -22,8 +22,10 @@ public:
 	int handSize();
 	Event *beginingOfTurn();
 	Event *endOfTurn();
-
 #pragma endregion
+	MinionCard *selectCard(std::vector<MinionCard *>options);
+	Base *selectBase();
+
 	bool discardCard(int count, bool optional);
 	void addMinionToPlayableDiscards(MinionCard *minion);
 	void addVictoryPoint(int victoryPoints);

@@ -18,8 +18,7 @@ void DeadRiseAction::play()
 		MinionCard *selection = _currentOwner->minionInDiscard(INT_MAX);
 		if (_currentOwner->discardCard(selection->printedPower() + 1, true))
 		{
-			//TODO: Choose base
-			Base *base = NULL;
+			Base *base = _currentOwner->selectBase();
 			selection->play(base);
 		}
 	}

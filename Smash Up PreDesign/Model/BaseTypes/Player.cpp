@@ -206,3 +206,15 @@ void Player::takeTurn()
 		}
 	}
 }
+
+MinionCard * Player::selectCard(std::vector<MinionCard *>options)
+{
+	//TODO select card
+	return NULL;
+}
+
+Base * Player::selectBase()
+{
+	//TODO select base
+	return NULL;
+}

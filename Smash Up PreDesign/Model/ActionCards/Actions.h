@@ -9,3 +9,7 @@
 #include <DeadRiseAction.h>
 #include <GhostlyAction.h>
 #include <MakeContact.h>
+
+// Shapeshifters
+
+#include <Transmogrify.h>
