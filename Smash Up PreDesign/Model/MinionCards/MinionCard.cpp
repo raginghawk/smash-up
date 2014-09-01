@@ -1,10 +1,12 @@
 #include "MinionCard.h"
 #include <ActionCard.h>
 #include <Base.h>
+#include <Player.h>
 
 MinionCard::MinionCard(Player *owner)
 {
 	this->initOwner(owner);
+	_powerModification = 0;
 	_cardType = BASE_CARD;
 }
 
@@ -23,9 +25,16 @@ int MinionCard::printedPower()
 	return _printedPower;
 }
 
+int MinionCard::powerModification()
+{
+	return _powerModification;
+}
+
 int MinionCard::currentPower(MinionCard *card)
 {
-	return card->printedPower(); //TODO modifications here?
+	int powerModification = card->powerModification();
+	powerModification += card->currentOwner()->minionPowerModification();
+	return card->printedPower() + powerModification;
 }
 
 bool MinionCard::isAffectable()
@@ -47,6 +56,10 @@ void MinionCard::removeAllActions()
 	}
 }
 
+void MinionCard::modifyCurrentPower(int modification)
+{
+	_powerModification += modification;
+}
 
 void MinionCard::destroy()
 {

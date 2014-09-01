@@ -22,6 +22,8 @@ public:
 	int handSize();
 	Event *beginingOfTurn();
 	Event *endOfTurn();
+	void modifyMinionPower(int modification);
+	int minionPowerModification();
 #pragma endregion
 	MinionCard *selectCard(std::vector<MinionCard *>options);
 	Base *selectBase();
@@ -45,6 +47,7 @@ private:
 	std::vector<MinionCard *> _playableDiscards;
 	Event *_endOfTurn;
 	Event *_beginingOfTurn;
+	int _minionPowerModification;
 	int _actionsRemaining;
 	int _victoryPoints;
 	int _playerNumber;

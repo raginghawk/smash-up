@@ -95,9 +95,12 @@ std::vector<Card *> DeckConstructor::addShapeShifters(Player *owner)
 	shapeDeck.push_back(new DoppelgangerMinion(owner));
 	
 	//Actions
+	shapeDeck.push_back(new SpliceAsNiceAction(owner));
+
 	for (int i = 0; i < 2; i++)
 	{
 		shapeDeck.push_back(new Transmogrify(owner));
+		shapeDeck.push_back(new GeneticShift(owner));
 	}
 
 	return shapeDeck;

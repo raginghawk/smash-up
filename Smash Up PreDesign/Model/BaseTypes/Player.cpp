@@ -38,6 +38,7 @@ void Player::initClassVariables()
 	_victoryPoints = 0;
 	_endOfTurn = new Event(END_OF_TURN);
 	_beginingOfTurn = new Event(BEGINING_OF_TURN);
+	_minionPowerModification = 0;
 }
 
 bool Player::discardCard(int count, bool optional)
@@ -59,6 +60,16 @@ int Player::playerNumber()
 Event *Player::endOfTurn()
 {
 	return _endOfTurn;
+}
+
+void Player::modifyMinionPower(int modification)
+{
+	_minionPowerModification += modification;
+}
+
+int Player::minionPowerModification()
+{
+	return _minionPowerModification;
 }
 
 Event *Player::beginingOfTurn()

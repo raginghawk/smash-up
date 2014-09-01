@@ -13,3 +13,5 @@
 // Shapeshifters
 
 #include <Transmogrify.h>
+#include <GeneticShiftAction.h>
+#include <SpliceAsNiceAction.h>

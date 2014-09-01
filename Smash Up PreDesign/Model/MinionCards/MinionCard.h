@@ -15,9 +15,12 @@ class MinionCard : public Card
 		virtual int currentPower(MinionCard *card);
 		virtual bool isAffectable();
 		bool hasTalent();
+		int powerModification();
 #pragma endregion
-		virtual void removeAllActions();
 
+		virtual void removeAllActions();
+	
+		void modifyCurrentPower(int modification);
 		virtual void destroy();
 		virtual void destroy(MinionCard *card);
 		virtual void play(Base *base, MinionCard *card);
@@ -27,6 +30,10 @@ class MinionCard : public Card
 		virtual void move(Base *newBase, Base *oldBase);
 		virtual void discard();
 		virtual void useTalent(Player *owner, MinionCard *card);
+
+	private:
+		int _powerModification;
+
 	protected:
 		int _printedPower;
 		std::vector<ActionCard *> _actions;
