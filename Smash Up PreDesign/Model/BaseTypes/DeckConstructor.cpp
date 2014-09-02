@@ -99,6 +99,7 @@ std::vector<Card *> DeckConstructor::addShapeShifters(Player *owner)
 	shapeDeck.push_back(new ReallyAction(owner));
 	shapeDeck.push_back(new MitosisAction(owner));
 	shapeDeck.push_back(new ShellGameAction(owner));
+	shapeDeck.push_back(new CellularBonding(owner));
 
 	for (int i = 0; i < 2; i++)
 	{

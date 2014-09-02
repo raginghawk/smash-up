@@ -96,6 +96,12 @@ void Player::addVictoryPoint(int victoryPoints)
 	_victoryPoints += victoryPoints;
 }
 
+int Player::currentVictoryPoints()
+{
+	return _victoryPoints;
+}
+
+
 std::vector<MinionCard *> Player::minionsInHand()
 {
 	std::vector<Card *>::iterator itCards;
@@ -253,6 +259,11 @@ void Player::takeTurn()
 			assert(false);
 		}
 	}
+}
+
+void Player::endTurn()
+{
+
 }
 
 MinionCard * Player::selectCard(std::vector<MinionCard *>options)

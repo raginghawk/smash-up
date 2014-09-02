@@ -19,14 +19,21 @@ public:
 	~Player();
 #pragma region Members
 	int playerNumber();
+	int handSize();
+
 	MinionCard *minionInDiscard(int maxPower);
 	MinionCard *minionInDeck(int maxPower);
 	std::vector<MinionCard *> minionsInHand();
-	int handSize();
+
+	void addVictoryPoint(int victoryPoints);
+	int currentVictoryPoints();
+
 	Event *beginingOfTurn();
 	Event *endOfTurn();
+
 	void modifyMinionPower(int modification);
 	int minionPowerModification();
+
 	int actionsRemaining();
 	std::vector<MinionPlayableStruct *> minionsRemaining();
 #pragma endregion
@@ -38,7 +45,6 @@ public:
 
 	bool discardCard(int count, bool optional);
 	void addMinionToPlayableDiscards(MinionCard *minion);
-	void addVictoryPoint(int victoryPoints);
 	bool removeFromDiscard(Card *);
 	void drawCard(int count);
 	void addCardToHand(Card *card);
@@ -46,8 +52,9 @@ public:
 	void shuffleMinionInDeck(MinionCard *minion);
 	void addActionCount(int count);
 	void addMinionCount(int maxPower, Base *onBase);
-	void takeTurn();
 
+	void takeTurn();
+	void endTurn();
 private:
 	std::vector<Card *> _deck;
 	std::vector<Card *> _hand;

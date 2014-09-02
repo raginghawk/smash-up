@@ -99,17 +99,71 @@ std::vector<MinionCard *> Board::playersMinionsInPlay(Player *player)
 void Board::startGame()
 {
 	std::vector<Player *>::iterator itPlayers;
+	Player *winner;
 	for (itPlayers = _players.begin(); itPlayers != _players.end(); itPlayers++)
 	{
 		(*itPlayers)->drawCard(5);
 	}
 
-
 	//TODO pick random player
 	int currentPlayer = 0;
 	while (true)
 	{
-		_players.at(currentPlayer)->takeTurn();
-		//TODO eval bases
+		_currentPlayer = _players.at(currentPlayer);
+		_currentPlayer->takeTurn();
+		
+		evaulateBases();
+
+		_currentPlayer->endTurn();
+
+		if ((winner = pWinnerIfGameOver()))
+			break;
+
+		currentPlayer++;
+		if (currentPlayer == _players.size())
+		{
+			currentPlayer = 0;
+		}
 	}
+	// TODO display winner
+	printf("Winner is %d", winner->playerNumber());
+}
+
+void Board::evaulateBases()
+{
+	std::vector<Base *>::iterator itBases;
+
+	for (itBases = _bases.begin(); itBases != _bases.end(); itBases++)
+	{
+		if ((*itBases)->isBreaking())
+		{
+			// TODO Draw a new base and discard the old one
+		}
+	}
+}
+
+
+Player * Board::pWinnerIfGameOver()
+{
+	std::vector<Player *>::iterator itPlayers;
+	int maxScore = 0;
+	Player *winner = NULL;
+
+	for (itPlayers = _players.begin(); itPlayers != _players.end(); itPlayers++)
+	{
+		if ((*itPlayers)->currentVictoryPoints() > 14)
+		{
+			if ((*itPlayers)->currentVictoryPoints() > maxScore)
+			{
+				maxScore = (*itPlayers)->currentVictoryPoints();
+				winner = *itPlayers;
+			}
+			else if ((*itPlayers)->currentVictoryPoints() == maxScore)
+			{
+				winner = NULL;
+			}
+		}
+	}
+
+	return winner;
 }

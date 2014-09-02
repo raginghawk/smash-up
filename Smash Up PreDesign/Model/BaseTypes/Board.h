@@ -31,4 +31,7 @@ private:
 	std::vector<Base *> _baseDeck;
 	std::vector<Player *> _players;
 	Player *_currentPlayer;
+
+	Player *pWinnerIfGameOver();
+	void evaulateBases();
 };
