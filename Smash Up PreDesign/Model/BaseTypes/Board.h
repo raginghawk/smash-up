@@ -34,4 +34,6 @@ private:
 
 	Player *pWinnerIfGameOver();
 	void evaulateBases();
+	void initBases();
+	void drawBase();
 };

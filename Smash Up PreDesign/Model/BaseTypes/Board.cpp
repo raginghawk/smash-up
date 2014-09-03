@@ -2,10 +2,38 @@
 #include "Base.h"
 #include <MinionCard.h>
 #include <Player.h>
+#include <algorithm>	/* random_shuffle*/
+#include <stdlib.h>     /* srand, rand */
+#include <time.h>       /* time */
 
 Board::Board(std::vector<Player *> players)
 {
 	_players = players;
+	initBases();
+}
+
+void Board::initBases()
+{
+	/* Temp Loop to add some bases. In the future will probably have it similar to addGhosts or something in DeckConstructor.cpp*/
+	for (int i = 0; i < 10; i++)
+	{
+		_baseDeck.push_back(new Base(_players));
+	}
+
+	std::srand(unsigned(time(0)));
+	std::random_shuffle(_baseDeck.begin(), _baseDeck.end());
+
+	for (unsigned int i = 0; i > (1 + _players.size()); i++)
+	{
+		drawBase();
+	}
+}
+
+void Board::drawBase()
+{
+	//TODO should there be a check about bases remaining :/
+	_bases.push_back(_baseDeck.back());
+	_baseDeck.pop_back();
 }
 
 std::vector<Base *> Board::bases()
@@ -137,7 +165,18 @@ void Board::evaulateBases()
 	{
 		if ((*itBases)->isBreaking())
 		{
-			// TODO Draw a new base and discard the old one
+			//TODO select which base breaks first (user choice :/) probably need to add it to a vector of bases that are breaking and have the user select. After each base breaks you have to reevaulate
+			// whether every base is breaking or not :/ that makes this temp code ... ugh
+			(*itBases)->scoreBase();
+			(*itBases)->discardBase();
+
+			std::vector<Base *>::iterator basePosition = std::find(_bases.begin(), _bases.end(), *itBases);
+			if (basePosition != _bases.end())
+				_bases.erase(basePosition);
+			else
+				assert(true); // base shouldn't already be off the board :/
+			
+			drawBase();
 		}
 	}
 }

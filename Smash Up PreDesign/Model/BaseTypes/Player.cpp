@@ -3,6 +3,7 @@
 #include <MinionCard.h>
 #include <Base.h>
 #include <Event.h>
+#include <Board.h>
 #include <algorithm>
 
 Player::Player(deckType firstDeck, deckType secondDeck)
@@ -16,12 +17,8 @@ Player::Player(deckType firstDeck, deckType secondDeck)
 		deckType deck = firstDeck;
 		if (i == 1)
 			deck = secondDeck;
-		switch (deck)
-		{
-		case GHOST_DECK:
-			_deck = constructor->addDeck(deck, _deck, this);
-			break;
-		}
+
+		_deck = constructor->addDeck(deck, _deck, this);
 	}
 
 	delete(constructor);
@@ -89,6 +86,12 @@ Event *Player::beginingOfTurn()
 void Player::addMinionToPlayableDiscards(MinionCard *minion)
 {
 	_playableDiscards.push_back(minion);
+}
+
+std::vector<Card *> Player::getPlayableCardsFromDiscards()
+{
+	std::vector<Card *> empty;
+	return empty; /* TODO this mess*/
 }
 
 void Player::addVictoryPoint(int victoryPoints)
@@ -232,38 +235,67 @@ std::vector<MinionPlayableStruct *> Player::minionsRemaining()
 	return _minionsRemaining;
 }
 
+void Player::playCard(Card * cardToPlay)
+{
+	switch (cardToPlay->cardType())
+	{
+	case BASE_CARD:
+		cardToPlay->play(selectBase());
+		break;
+	case INSTANT_CARD:
+		cardToPlay->play();
+		break;
+	case MINION_CARD: // MinionCard should probably be renamed ... it is a card played on a minion :/ ugh
+		assert(!cardToPlay->isMinion());
+		cardToPlay->play(selectCard(vBoard->minionsInPlay()), (ActionCard *)cardToPlay);
+		break;
+	default:
+		assert(false);
+	}
+}
+
+
 void Player::takeTurn()
 {
+	// These are set before begining of turn fires to prevent it from paving over additional minions/actions fireEvent could give. For now they are explicitly cleared and set to prevent carry over problems.
 	_actionsRemaining = 1;
 	_minionsRemaining.clear();
 	_minionsRemaining.push_back(new MinionPlayableStruct(INT_MAX, NULL));
 
-	//TODO selectCard possiblly move this to private turn loop ?
-	int cardIndexToPlay = 0;
+	_beginingOfTurn->fireEvent();
+
 	while (true)
 	{
-		Card *cardToPlay = _hand.at(cardIndexToPlay);
-		switch (cardToPlay->cardType())
+		if (_actionsRemaining == 0 && _minionsRemaining.size() == 0) /* TODO: Look at if this assumption is true :/ it may not be. Also Minion Playable Struct may need to include reference the minion for those damn Zombies (Ten Z)*/
+			break;
+
+		std::vector<Card *>::iterator itCards;
+		std::vector<Card *> playableCards = getPlayableCardsFromDiscards();
+
+		for (itCards = _hand.begin(); itCards != _hand.end(); itCards++)
 		{
-		case BASE_CARD:
-			//TODO select base
-			Base *base;
-			base = NULL;
-			cardToPlay->play(base);
-			break;
-		case INSTANT_CARD:
-		case MINION_CARD:
-			cardToPlay->play();
-			break;
-		default:
-			assert(false);
+			if ((*itCards)->fPlay(this))
+			{
+				playableCards.push_back(*itCards);
+			}
 		}
+
+		if (playableCards.size() == 0) /* TODO same as above. Check if assumption is valid... damn tenacious z's, also need someway to add Spectre and Zombies to playableCards*/
+			break;
+
+		 playCard(selectCard(playableCards));
 	}
 }
 
 void Player::endTurn()
 {
-
+	_endOfTurn->fireEvent();
+	drawCard(2);
+	
+	if (_hand.size() > 10)
+	{
+		discardCard((_hand.size() - 10), false);
+	}
 }
 
 MinionCard * Player::selectCard(std::vector<MinionCard *>options)

@@ -22,9 +22,11 @@ void Event::registerListener(EventListener *eventListener)
 
 void Event::unregisterListener(EventListener *eventListener)
 {
-	auto itListener = std::find(_eventListeners.begin(), _eventListeners.end(), eventListener);
+	std::vector<EventListener *>::iterator itListener = std::find(_eventListeners.begin(), _eventListeners.end(), eventListener);
 	if (itListener == _eventListeners.end())
-		assert(true); // Listener not found :/
-
-	_eventListeners.erase(itListener);
+	{
+		assert(false); // Couldn't find minion
+	}
+	else
+		_eventListeners.erase(itListener);
 }

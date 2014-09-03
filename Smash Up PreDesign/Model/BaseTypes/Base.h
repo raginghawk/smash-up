@@ -22,6 +22,8 @@ public:
 	void removeMinion(MinionCard *minion);
 
 	bool isBreaking();
+	void discardBase(); /* This happens when a base scores. Everything on it has discard called*/
+	void scoreBase();
 
 	int currentPowerOnBase();
 private:

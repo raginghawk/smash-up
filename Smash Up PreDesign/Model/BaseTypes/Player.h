@@ -40,18 +40,24 @@ public:
 	MinionCard *selectCard(std::vector<MinionCard *>options);
 	ActionCard *selectCard(std::vector<ActionCard *>options);
 	Card *selectCard(std::vector<Card *>options);
-
 	Base *selectBase();
 
 	bool discardCard(int count, bool optional);
-	void addMinionToPlayableDiscards(MinionCard *minion);
 	bool removeFromDiscard(Card *);
 	void drawCard(int count);
 	void addCardToHand(Card *card);
+
+
 	void shuffleDeck(bool withDiscards);
 	void shuffleMinionInDeck(MinionCard *minion);
+
 	void addActionCount(int count);
 	void addMinionCount(int maxPower, Base *onBase);
+
+	void addMinionToPlayableDiscards(MinionCard *minion);
+	std::vector<Card *> getPlayableCardsFromDiscards();
+
+	void playCard(Card *);
 
 	void takeTurn();
 	void endTurn();

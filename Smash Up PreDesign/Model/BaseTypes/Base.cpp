@@ -43,7 +43,7 @@ void Base::playMinion(MinionCard *minion)
 
 void Base::destroyMinion(MinionCard *minion)
 {
-	auto itMinions = std::find(_minionsOnBase.begin(), _minionsOnBase.end(), minion);
+	std::vector<MinionCard *>::iterator itMinions = std::find(_minionsOnBase.begin(), _minionsOnBase.end(), minion);
 	if (itMinions == _minionsOnBase.end())
 	{
 		return;
@@ -55,7 +55,7 @@ void Base::destroyMinion(MinionCard *minion)
 
 void Base::removeMinion(MinionCard *minion)
 {
-	auto itMinions = std::find(_minionsOnBase.begin(), _minionsOnBase.end(), minion);
+	std::vector<MinionCard *>::iterator itMinions = std::find(_minionsOnBase.begin(), _minionsOnBase.end(), minion);
 	if (itMinions == _minionsOnBase.end())
 	{
 		return;
@@ -70,6 +70,16 @@ void Base::removeMinion(MinionCard *minion)
 bool Base::isBreaking()
 {
 	return currentPowerOnBase() >= breakingPoint;
+}
+
+void Base::discardBase()
+{
+	//TODO call discard on all minions, minions will call discard on their actions. Then call discard on all actions played on the base
+}
+
+void Base::scoreBase()
+{
+
 }
 
 int Base::currentPowerOnBase()

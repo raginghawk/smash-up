@@ -94,12 +94,12 @@ bool MinionCard::fPlay(Player *player)
 		return false;
 
 	std::vector<MinionPlayableStruct *> minionsRemaining = player->minionsRemaining();
-	std::vector<MinionPlayableStruct *>::iterator itMinions;
+	std::vector<MinionPlayableStruct *>::iterator itMinionStruct;
 
 	bool found = false;
-	for (itMinions = minionsRemaining.begin(); itMinions != minionsRemaining.end(); itMinions++)
+	for (itMinionStruct = minionsRemaining.begin(); itMinionStruct != minionsRemaining.end(); itMinionStruct++)
 	{
-		if ((*itMinions)->maxPower() > printedPower())
+		if (printedPower() <= (*itMinionStruct)->maxPower())
 		{
 			found = true;
 			break;
@@ -142,6 +142,7 @@ bool MinionCard::fUpdate(UpdateVisibilityFlags *flags)
 			return true;
 		}
 	}
+	return false;
 }
 
 void MinionCard::update(Base *base)
@@ -164,7 +165,8 @@ void MinionCard::update(UpdateVisibilityFlags *flags)
 
 void MinionCard::move(Base *newBase, Base *oldBase)
 {
-	auto itMinions = std::find(_base->minionsOnBase().begin(), _base->minionsOnBase().end(), this);
+
+	std::vector<MinionCard *>::iterator itMinions = std::find(_base->minionsOnBase().begin(), _base->minionsOnBase().end(), this);
 	if (itMinions == _base->minionsOnBase().end())
 	{
 		assert(true); /*Couldn't find minion*/
