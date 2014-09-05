@@ -6,7 +6,7 @@
 
 AcrossTheDivide::AcrossTheDivide(Player *owner) : ActionCard(owner)
 {
-	_name = "Ghostly Action";
+	_name = "Across The Divide";
 	_cardType = INSTANT_CARD;
 }
 

@@ -23,7 +23,7 @@ void Board::initBases()
 	std::srand(unsigned(time(0)));
 	std::random_shuffle(_baseDeck.begin(), _baseDeck.end());
 
-	for (unsigned int i = 0; i > (1 + _players.size()); i++)
+	for (unsigned int i = 0; i < (1 + _players.size()); i++)
 	{
 		drawBase();
 	}

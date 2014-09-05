@@ -40,7 +40,7 @@ public:
 	MinionCard *selectCard(std::vector<MinionCard *>options);
 	ActionCard *selectCard(std::vector<ActionCard *>options);
 	Card *selectCard(std::vector<Card *>options);
-	Base *selectBase();
+	Base *selectBase(std::vector<Base *>options);
 
 	bool discardCard(int count, bool optional);
 	bool removeFromDiscard(Card *);

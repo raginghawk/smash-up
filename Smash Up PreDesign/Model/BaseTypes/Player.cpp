@@ -298,26 +298,31 @@ void Player::endTurn()
 	}
 }
 
+
 MinionCard * Player::selectCard(std::vector<MinionCard *>options)
 {
 	//TODO select card
-	return NULL;
+	MinionCard *selection = NULL;
+	return selection;
 }
 
 ActionCard * Player::selectCard(std::vector<ActionCard *>options)
 {
 	//TODO select card
-	return NULL;
+	ActionCard *selection = NULL;
+	return selection;
 }
 
 Card * Player::selectCard(std::vector<Card *>options)
 {
 	//TODO select card
-	return NULL;
+	Card *selection = NULL;
+	return selection;
 }
 
-Base * Player::selectBase()
+Base * Player::selectBase(std::vector<Base *>options)
 {
 	//TODO select base
-	return NULL;
+	Base *selection = NULL;
+	return selection;
 }
