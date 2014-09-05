@@ -37,11 +37,13 @@ public:
 	int actionsRemaining();
 	std::vector<MinionPlayableStruct *> minionsRemaining();
 #pragma endregion
+
 	MinionCard *selectCard(std::vector<MinionCard *>options);
 	ActionCard *selectCard(std::vector<ActionCard *>options);
 	Card *selectCard(std::vector<Card *>options);
 	Base *selectBase(std::vector<Base *>options);
 
+	std::vector<Base *> baseOptions(Card *card);
 	bool discardCard(int count, bool optional);
 	bool removeFromDiscard(Card *);
 	void drawCard(int count);

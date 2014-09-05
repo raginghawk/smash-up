@@ -19,7 +19,7 @@ void MitosisAction::play()
 	{
 		if (!strcmp(selection->name().c_str(), (*itMinions)->name().c_str()))
 		{
-			(*itMinions)->play(_currentOwner->selectBase());
+			(*itMinions)->play(_currentOwner->selectBase(_currentOwner->baseOptions(*itMinions)));
 			return;
 		}
 	}

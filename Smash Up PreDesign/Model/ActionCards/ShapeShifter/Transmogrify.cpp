@@ -16,7 +16,7 @@ void Transmogrify::play()
 	selection->destroy();
 	
 	MinionCard *minionToPlay = _currentOwner->minionInDeck(selectionPower);
-	Base *base = _currentOwner->selectBase();
+	Base *base = _currentOwner->selectBase(_currentOwner->baseOptions(minionToPlay));
 	minionToPlay->play(base);
 
 	_currentOwner->shuffleDeck(false);

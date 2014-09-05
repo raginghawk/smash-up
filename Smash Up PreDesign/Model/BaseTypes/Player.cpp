@@ -240,7 +240,7 @@ void Player::playCard(Card * cardToPlay)
 	switch (cardToPlay->cardType())
 	{
 	case BASE_CARD:
-		cardToPlay->play(selectBase());
+		cardToPlay->play(selectBase(baseOptions(cardToPlay)));
 		break;
 	case INSTANT_CARD:
 		cardToPlay->play();
@@ -296,6 +296,13 @@ void Player::endTurn()
 	{
 		discardCard((_hand.size() - 10), false);
 	}
+}
+
+std::vector<Base *> Player::baseOptions(Card *card)
+{
+	//TODO get options from the card. Probably need a fPlayable method in the base
+	std::vector<Base *> options;
+	return options;
 }
 
 
