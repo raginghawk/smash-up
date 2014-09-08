@@ -42,8 +42,14 @@ public:
 	ActionCard *selectCard(std::vector<ActionCard *>options);
 	Card *selectCard(std::vector<Card *>options);
 	Base *selectBase(std::vector<Base *>options);
+	MinionPlayableStruct * selectMinionStruct(std::vector<MinionPlayableStruct *>options);
 
 	std::vector<Base *> baseOptions(Card *card);
+	std::vector<MinionPlayableStruct *> minionStructOptions(Base *base, MinionCard *minion);
+	
+	void removeMinionStruct(MinionPlayableStruct *playableStruct);
+	void Player::removeCardFromHand(Card *card);
+
 	bool discardCard(int count, bool optional);
 	bool removeFromDiscard(Card *);
 	void drawCard(int count);

@@ -240,18 +240,30 @@ void Player::playCard(Card * cardToPlay)
 	switch (cardToPlay->cardType())
 	{
 	case BASE_CARD:
-		cardToPlay->play(selectBase(baseOptions(cardToPlay)));
+		if (cardToPlay->isMinion())
+		{
+			Base *base = selectBase(baseOptions(cardToPlay));
+			removeMinionStruct(selectMinionStruct(minionStructOptions(base, (MinionCard *)cardToPlay)));
+		}
+		else
+		{
+			cardToPlay->play(selectBase(baseOptions(cardToPlay)));
+			_actionsRemaining--;
+		}
 		break;
 	case INSTANT_CARD:
 		cardToPlay->play();
+		_actionsRemaining--;
 		break;
 	case MINION_CARD: // MinionCard should probably be renamed ... it is a card played on a minion :/ ugh
 		assert(!cardToPlay->isMinion());
 		cardToPlay->play(selectCard(vBoard->minionsInPlay()), (ActionCard *)cardToPlay);
+		_actionsRemaining--;
 		break;
 	default:
 		assert(false);
 	}
+	removeCardFromHand(cardToPlay);
 }
 
 
@@ -283,7 +295,13 @@ void Player::takeTurn()
 		if (playableCards.size() == 0) /* TODO same as above. Check if assumption is valid... damn tenacious z's, also need someway to add Spectre and Zombies to playableCards*/
 			break;
 
-		 playCard(selectCard(playableCards));
+		playableCards.push_back(NULL); // Adding the null card. This will be read as the end turn button
+
+		Card *selection = selectCard(playableCards);
+		if (selection)
+			playCard(selectCard(playableCards));
+		else
+			break; // Choosing to end your turn early is selecting the null card
 	}
 }
 
@@ -298,6 +316,28 @@ void Player::endTurn()
 	}
 }
 
+void Player::removeMinionStruct(MinionPlayableStruct *playableStruct)
+{
+	std::vector<MinionPlayableStruct *>::iterator itMinionStruct = std::find(_minionsRemaining.begin(), _minionsRemaining.end(), playableStruct);
+	if (itMinionStruct == _minionsRemaining.end())
+	{
+		assert(false); // couldn't find it
+		return;
+	}
+	_minionsRemaining.erase(itMinionStruct);
+}
+
+void Player::removeCardFromHand(Card *card)
+{
+	std::vector<Card *>::iterator itCards = std::find(_hand.begin(), _hand.end(), card);
+	if (itCards == _hand.end())
+	{
+		assert(false); // couldn't find card
+		return;
+	}
+	_hand.erase(itCards);
+}
+
 std::vector<Base *> Player::baseOptions(Card *card)
 {
 	//TODO get options from the card. Probably need a fPlayable method in the base
@@ -305,6 +345,12 @@ std::vector<Base *> Player::baseOptions(Card *card)
 	return options;
 }
 
+std::vector<MinionPlayableStruct *> Player::minionStructOptions(Base *base, MinionCard *minion)
+{
+	//TODO get options of minion stucts that can be selected based on the base and the card and the available MinionStructs that this player has
+	std::vector<MinionPlayableStruct *> options;
+	return _minionsRemaining;
+}
 
 MinionCard * Player::selectCard(std::vector<MinionCard *>options)
 {
@@ -331,5 +377,12 @@ Base * Player::selectBase(std::vector<Base *>options)
 {
 	//TODO select base
 	Base *selection = NULL;
+	return selection;
+}
+
+MinionPlayableStruct * Player::selectMinionStruct(std::vector<MinionPlayableStruct *>options)
+{
+	// TODO select struct
+	MinionPlayableStruct *selection = NULL;
 	return selection;
 }
