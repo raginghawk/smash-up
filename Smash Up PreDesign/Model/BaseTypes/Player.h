@@ -66,9 +66,12 @@ public:
 	std::vector<Card *> getPlayableCardsFromDiscards();
 
 	void playCard(Card *);
+	void playLoop();
 
 	void takeTurn();
 	void endTurn();
+	void playMinionOutOfTurn();
+
 private:
 	std::vector<Card *> _deck;
 	std::vector<Card *> _hand;
@@ -82,4 +85,5 @@ private:
 	int _victoryPoints;
 	int _playerNumber;
 	void initClassVariables();
+	void clearRemainingActionsandMinions();
 };

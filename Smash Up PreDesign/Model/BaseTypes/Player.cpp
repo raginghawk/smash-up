@@ -277,6 +277,11 @@ void Player::takeTurn()
 
 	_beginingOfTurn->fireEvent();
 
+	playLoop();
+}
+
+void Player::playLoop()
+{
 	while (true)
 	{
 		if (_actionsRemaining == 0 && _minionsRemaining.size() == 0) /* TODO: Look at if this assumption is true :/ it may not be. Also Minion Playable Struct may need to include reference the minion for those damn Zombies (Ten Z)*/
@@ -315,7 +320,22 @@ void Player::endTurn()
 	{
 		discardCard((_hand.size() - 10), false);
 	}
+
+	clearRemainingActionsandMinions();
 }
+
+void Player::playMinionOutOfTurn()
+{
+	playLoop();
+	clearRemainingActionsandMinions();
+}
+
+void Player::clearRemainingActionsandMinions()
+{
+	_minionsRemaining.clear();
+	_actionsRemaining = 0;
+}
+
 
 void Player::removeMinionStruct(MinionPlayableStruct *playableStruct)
 {
