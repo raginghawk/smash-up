@@ -25,4 +25,6 @@ bool BactaTheFuture::fPlay(Player *player)
 {
 	if (vBoard->minionsInPlay().size() == 0)
 		return false;
+
+	return ActionCard::fPlay(player);
 }

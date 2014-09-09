@@ -163,7 +163,7 @@ void MinionCard::update(UpdateVisibilityFlags *flags)
 	}
 }
 
-void MinionCard::move(Base *newBase, Base *oldBase)
+void MinionCard::move(Base *newBase)
 {
 
 	std::vector<MinionCard *>::iterator itMinions = std::find(_base->minionsOnBase().begin(), _base->minionsOnBase().end(), this);

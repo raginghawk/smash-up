@@ -43,7 +43,7 @@ public:
 	virtual bool fUpdate(UpdateVisibilityFlags *flags) = 0;
 	virtual void update(Base *base) = 0;
 
-	virtual void move(Base *newBase, Base *oldBase) = 0;
+	virtual void move(Base *newBase) = 0;
 	virtual void discard() = 0;
 
 protected:

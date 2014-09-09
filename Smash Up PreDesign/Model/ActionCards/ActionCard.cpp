@@ -72,9 +72,10 @@ void ActionCard::play(MinionCard *minion, ActionCard *action)
 }
 
 
-void ActionCard::move(Base *newBase, Base *oldBase)
+void ActionCard::move(Base *newBase)
 {
 	assert(_cardType == BASE_CARD);
+	//TODO move base cards around
 }
 
 void ActionCard::discard()

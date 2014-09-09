@@ -32,7 +32,7 @@ class MinionCard : public Card
 		virtual bool fUpdate(UpdateVisibilityFlags *flags);
 		virtual void update(Base *base);
 		virtual void update(UpdateVisibilityFlags *minionCard);
-		virtual void move(Base *newBase, Base *oldBase);
+		virtual void move(Base *newBase);
 		virtual void discard();
 		virtual void useTalent(Player *owner, MinionCard *card);
 

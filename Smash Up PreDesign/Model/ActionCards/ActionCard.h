@@ -14,7 +14,7 @@ public:
 	virtual void play(Base *base);
 	virtual void play();
 	virtual void play(MinionCard *minion, ActionCard *action);
-	virtual void move(Base *newBase, Base *oldBase);
+	virtual void move(Base *newBase);
 	virtual void discard();
 	virtual bool fUpdate(UpdateVisibilityFlags *flags);
 	virtual void update(Base *base);
