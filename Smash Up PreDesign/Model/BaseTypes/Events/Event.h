@@ -12,6 +12,7 @@ public:
 	void fireEvent();
 	void registerListener(EventListener *eventListener);
 	void unregisterListener(EventListener *eventListener);
+	EventData *eventData();
 private:
 	std::vector<EventListener *> _eventListeners;
 	EventData *_eventData;

@@ -11,6 +11,7 @@ class Base
 {
 public:
 	Base(std::vector<Player *>players);
+	~Base();
 #pragma region Members
 	std::vector<MinionCard *> &minionsOnBase();
 	std::vector<ActionCard *> &actionsOnBase();

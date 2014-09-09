@@ -11,6 +11,12 @@ Event::~Event()
 	delete(_eventData);
 }
 
+EventData *Event::eventData()
+{
+	return _eventData;
+}
+
+
 void Event::fireEvent()
 {
 	std::vector<EventListener *>::iterator itListeners;

@@ -20,3 +20,8 @@ Base * EventData::base()
 {
 	return _base;
 }
+
+void EventData::setBase(Base *base)
+{
+	_base = base;
+}

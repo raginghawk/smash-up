@@ -5,6 +5,7 @@
 #include <algorithm>	/* random_shuffle*/
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>       /* time */
+#include <Event.h>
 
 Board::Board(std::vector<Player *> players)
 {
@@ -12,8 +13,15 @@ Board::Board(std::vector<Player *> players)
 	initBases();
 }
 
+Board::~Board()
+{
+	delete(_baseWillScore);
+}
+
 void Board::initBases()
 {
+	_baseWillScore = new Event(new EventData(BASE_WILL_SCORE));
+
 	/* Temp Loop to add some bases. In the future will probably have it similar to addGhosts or something in DeckConstructor.cpp*/
 	for (int i = 0; i < 10; i++)
 	{
@@ -28,6 +36,12 @@ void Board::initBases()
 		drawBase();
 	}
 }
+
+Event *Board::baseWillScore()
+{
+	return _baseWillScore;
+}
+
 
 void Board::drawBase()
 {
@@ -167,6 +181,8 @@ void Board::evaulateBases()
 		{
 			//TODO select which base breaks first (user choice :/) probably need to add it to a vector of bases that are breaking and have the user select. After each base breaks you have to reevaulate
 			// whether every base is breaking or not :/ that makes this temp code ... ugh
+			_baseWillScore->eventData()->setBase(*itBases);
+			_baseWillScore->fireEvent();
 			(*itBases)->scoreBase();
 			(*itBases)->discardBase();
 

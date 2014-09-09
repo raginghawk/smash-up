@@ -122,6 +122,6 @@ std::vector<Card *> DeckConstructor::addPirates(Player *owner)
 	{
 		pirateDeck.push_back(new FirstMateMinion(owner));
 	}
-
+	pirateDeck.push_back(new PirateKingMinion(owner));
 	return pirateDeck;
 }

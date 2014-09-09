@@ -19,6 +19,7 @@ public:
 
 	EventType eventType();
 	Base *base();
+	void setBase(Base *base);
 private:
 	EventType _eventType;
 	Base *_base;

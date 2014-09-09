@@ -13,8 +13,14 @@ Base::Base(std::vector<Player *>players)
 	{
 		_powerModification.insert(std::make_pair(*itPlayers, 0));
 	}
+
+	_baseDidScore = new Event(new EventData(this, BASE_DID_SCORE));
 }
 
+Base::~Base()
+{
+	delete(_baseDidScore);
+}
 
 std::vector<MinionCard *> & Base::minionsOnBase()
 {
