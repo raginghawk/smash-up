@@ -17,9 +17,12 @@ std::vector<Card *> DeckConstructor::addDeck(deckType deckToAdd, std::vector<Car
 		break;
 	case SHAPESHIFTER_DECK:
 		newDeck = addShapeShifters(owner);
+		break;
+	case PIRATE_DECK:
+		newDeck = addPirates(owner);
+		break;
 	default:
 		assert(true); /*Should never have a deckType that isn't covered*/
-		break;
 	}
 
 	if (deck.size() == 0)
@@ -108,4 +111,17 @@ std::vector<Card *> DeckConstructor::addShapeShifters(Player *owner)
 	}
 
 	return shapeDeck;
+}
+
+std::vector<Card *> DeckConstructor::addPirates(Player *owner)
+{
+	std::vector<Card *> pirateDeck;
+
+	//Minions
+	for (int i = 0; i < 4; i++)
+	{
+		pirateDeck.push_back(new FirstMateMinion(owner));
+	}
+
+	return pirateDeck;
 }

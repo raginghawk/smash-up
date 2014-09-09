@@ -99,6 +99,39 @@
     <ClInclude Include="Model\BaseTypes\EventListener.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Model\MinionCards\ShapeShifter\CopycatMinion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\ActionCards\ShapeShifter\Transmogrify.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\ActionCards\ShapeShifter\GeneticShiftAction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\ActionCards\ShapeShifter\SpliceAsNiceAction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\ActionCards\ShapeShifter\ReallyAction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\ActionCards\ShapeShifter\MitosisAction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\ActionCards\ShapeShifter\ShellGameAction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\BaseTypes\MinionPlayableStruct.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\ActionCards\ShapeShifter\CellularBonding.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\ActionCards\ShapeShifter\BactaTheFuture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\MinionCards\Pirates\FirstMateMinion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Model\BaseTypes\Board.cpp">
@@ -174,6 +207,45 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Model\MinionCards\ShapeShifter\DoppelgangerMinion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\MinionCards\ShapeShifter\CopycatMinion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\BaseTypes\Event.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\BaseTypes\EventListener.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\ActionCards\ShapeShifter\Transmogrify.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\ActionCards\ShapeShifter\GeneticShiftAction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\ActionCards\ShapeShifter\SpliceAsNiceAction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\ActionCards\ShapeShifter\ReallyAction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\ActionCards\ShapeShifter\MitosisAction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\ActionCards\ShapeShifter\ShellGameAction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\BaseTypes\MinionPlayableStruct.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\ActionCards\ShapeShifter\CellularBonding.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\ActionCards\ShapeShifter\BactaTheFuture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\MinionCards\Pirates\FirstMateMinion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

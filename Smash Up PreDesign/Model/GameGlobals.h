@@ -8,5 +8,6 @@ extern Board *vBoard;
 enum deckType 
 {
 	GHOST_DECK,
-	SHAPESHIFTER_DECK
+	SHAPESHIFTER_DECK,
+	PIRATE_DECK
 };

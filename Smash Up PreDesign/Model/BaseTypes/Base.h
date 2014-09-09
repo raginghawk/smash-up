@@ -4,6 +4,7 @@
 class Player;
 class MinionCard;
 class ActionCard;
+class Event;
 
 
 class Base
@@ -14,6 +15,7 @@ public:
 	std::vector<MinionCard *> &minionsOnBase();
 	std::vector<ActionCard *> &actionsOnBase();
 	void modifyPower(int modification, Player *owner);
+	Event * baseDidScore();
 	int breakingPoint;
 #pragma endregion
 	void moveMinion(MinionCard *minion);
@@ -27,6 +29,7 @@ public:
 
 	int currentPowerOnBase();
 private:
+	Event * _baseDidScore;
 	std::vector<MinionCard *> _minionsOnBase;
 	std::vector<ActionCard *> _actionsOnBase;
 	std::map<Player *, int> _powerModification;

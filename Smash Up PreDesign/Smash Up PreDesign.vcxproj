@@ -39,7 +39,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)Model;$(ProjectDir)Model\BaseTypes;$(ProjectDir)Model\MinionCards;$(ProjectDir)Model\MinionCards\Ghost;$(ProjectDir)Model\MinionCards\ShapeShifter;$(ProjectDir)Model\ActionCards;$(ProjectDir)Model\ActionCards\Ghost;$(ProjectDir)Model\ActionCards\ShapeShifter</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)Model;$(ProjectDir)Model\BaseTypes;$(ProjectDir)Model\MinionCards;$(ProjectDir)Model\MinionCards\Ghost;$(ProjectDir)Model\MinionCards\ShapeShifter;$(ProjectDir)Model\MinionCards\Pirates;$(ProjectDir)Model\ActionCards;$(ProjectDir)Model\ActionCards\Ghost;$(ProjectDir)Model\ActionCards\ShapeShifter</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -75,10 +75,22 @@
     <ClCompile Include="Model\ActionCards\Ghost\MakeContact.cpp" />
     <ClCompile Include="Model\ActionCards\Ghost\SeanceAction.cpp" />
     <ClCompile Include="Model\ActionCards\Ghost\ShadyAction.cpp" />
+    <ClCompile Include="Model\ActionCards\ShapeShifter\GeneticShiftAction.cpp" />
+    <ClCompile Include="Model\ActionCards\ShapeShifter\ReallyAction.cpp" />
+    <ClCompile Include="Model\ActionCards\ShapeShifter\MitosisAction.cpp" />
+    <ClCompile Include="Model\ActionCards\ShapeShifter\ShellGameAction.cpp" />
+    <ClCompile Include="Model\ActionCards\ShapeShifter\BactaTheFuture.cpp" />
+    <ClCompile Include="Model\ActionCards\ShapeShifter\SpliceAsNiceAction.cpp" />
+    <ClCompile Include="Model\ActionCards\ShapeShifter\Transmogrify.cpp" />
     <ClCompile Include="Model\BaseTypes\Board.cpp" />
     <ClCompile Include="Model\BaseTypes\Base.cpp" />
     <ClCompile Include="Model\BaseTypes\Card.cpp" />
     <ClCompile Include="Model\BaseTypes\PowerModifier.cpp" />
+    <ClCompile Include="Model\BaseTypes\Event.cpp" />
+    <ClCompile Include="Model\BaseTypes\EventListener.cpp" />
+    <ClCompile Include="Model\BaseTypes\MinionPlayableStruct.cpp" />
+    <ClCompile Include="Model\ActionCards\ShapeShifter\CellularBonding.cpp" />
+    <ClCompile Include="Model\MinionCards\Pirates\FirstMateMinion.cpp" />
     <ClCompile Include="Model\MinionCards\ShapeShifter\DoppelgangerMinion.cpp" />
     <ClCompile Include="Model\MinionCards\ShapeShifter\GelfMinion.cpp" />
     <ClCompile Include="Model\MinionCards\Ghost\GhostMinion.cpp" />
@@ -91,6 +103,7 @@
     <ClCompile Include="Model\BaseTypes\Player.cpp" />
     <ClCompile Include="Model\BaseTypes\DeckConstructor.cpp" />
     <ClCompile Include="Model\MinionCards\ShapeShifter\MimicMinion.cpp" />
+    <ClCompile Include="Model\MinionCards\ShapeShifter\CopycatMinion.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Model\ActionCards\ActionCard.h" />
@@ -103,11 +116,21 @@
     <ClInclude Include="Model\ActionCards\Ghost\MakeContact.h" />
     <ClInclude Include="Model\ActionCards\Ghost\SeanceAction.h" />
     <ClInclude Include="Model\ActionCards\Ghost\ShadyAction.h" />
+    <ClInclude Include="Model\ActionCards\ShapeShifter\GeneticShiftAction.h" />
+    <ClInclude Include="Model\ActionCards\ShapeShifter\CellularBonding.h" />
+    <ClInclude Include="Model\ActionCards\ShapeShifter\BactaTheFuture.h" />
+    <ClInclude Include="Model\ActionCards\ShapeShifter\ShellGameAction.h" />
+    <ClInclude Include="Model\ActionCards\ShapeShifter\MitosisAction.h" />
+    <ClInclude Include="Model\ActionCards\ShapeShifter\ReallyAction.h" />
+    <ClInclude Include="Model\ActionCards\ShapeShifter\SpliceAsNiceAction.h" />
+    <ClInclude Include="Model\ActionCards\ShapeShifter\Transmogrify.h" />
     <ClInclude Include="Model\BaseTypes\Board.h" />
     <ClInclude Include="Model\BaseTypes\Base.h" />
     <ClInclude Include="Model\BaseTypes\Card.h" />
     <ClInclude Include="Model\BaseTypes\Event.h" />
     <ClInclude Include="Model\BaseTypes\EventListener.h" />
+    <ClInclude Include="Model\BaseTypes\MinionPlayableStruct.h" />
+    <ClInclude Include="Model\MinionCards\Pirates\FirstMateMinion.h" />
     <ClInclude Include="Model\MinionCards\ShapeShifter\DoppelgangerMinion.h" />
     <ClInclude Include="Model\MinionCards\ShapeShifter\GelfMinion.h" />
     <ClInclude Include="Model\BaseTypes\UpdateVisibilityFlags.h" />
@@ -120,6 +143,7 @@
     <ClInclude Include="Model\MinionCards\Ghost\SpiritMinion.h" />
     <ClInclude Include="Model\MinionCards\MinionCard.h" />
     <ClInclude Include="Model\MinionCards\Minions.h" />
+    <ClInclude Include="Model\MinionCards\ShapeShifter\CopycatMinion.h" />
     <ClInclude Include="Model\MinionCards\ShapeShifter\MimicMinion.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

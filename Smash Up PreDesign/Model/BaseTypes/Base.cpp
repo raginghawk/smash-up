@@ -1,5 +1,6 @@
 #include "Base.h"
 #include <Player.h>
+#include <Event.h>
 #include <MinionCard.h>
 
 Base::Base(std::vector<Player *>players)
@@ -24,6 +25,12 @@ std::vector<ActionCard *> & Base::actionsOnBase()
 {
 	return _actionsOnBase;
 }
+
+Event * Base::baseDidScore()
+{
+	return _baseDidScore;
+}
+
 
 void Base::modifyPower(int modification, Player *owner)
 {
@@ -79,7 +86,7 @@ void Base::discardBase()
 
 void Base::scoreBase()
 {
-
+	_baseDidScore->fireEvent();
 }
 
 int Base::currentPowerOnBase()
