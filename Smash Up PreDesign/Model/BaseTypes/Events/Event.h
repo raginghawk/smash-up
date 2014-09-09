@@ -6,11 +6,13 @@
 class Event
 {
 public:
-	Event(EventType type);
+	Event(EventData *data);
+	~Event();
+
 	void fireEvent();
 	void registerListener(EventListener *eventListener);
 	void unregisterListener(EventListener *eventListener);
 private:
 	std::vector<EventListener *> _eventListeners;
-	EventType _eventType;
+	EventData *_eventData;
 };

@@ -27,8 +27,10 @@ void GeneticShift::play()
 	}
 }
 
-void GeneticShift::call()
+void GeneticShift::call(EventData *eventData)
 {
+	assert(eventData->eventType() == END_OF_TURN);
+
 	if (_selection)
 	{
 		_selection->modifyCurrentPower(-3);

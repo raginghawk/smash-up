@@ -42,8 +42,10 @@ void CopycatMinion::useTalent(Player *owner, MinionCard *card)
 		_selectedMinion->useTalent(owner, this);
 }
 
-void CopycatMinion::call(EventType eventType)
+void CopycatMinion::call(EventData *eventData)
 {
+	assert(eventData->eventType() == END_OF_TURN);
+
 	_talent = false;
 	_selectedMinion = NULL;
 	_currentOwner->endOfTurn()->unregisterListener(this);

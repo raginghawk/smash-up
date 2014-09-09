@@ -1,6 +1,6 @@
 #include "EventListener.h"
 
-void EventListener::call(EventType eventType)
+void EventListener::call(EventData *eventData)
 {
 	assert(true); // should never call the root method
 }

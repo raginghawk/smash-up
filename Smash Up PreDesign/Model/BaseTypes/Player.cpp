@@ -33,8 +33,8 @@ Player::~Player()
 void Player::initClassVariables()
 {
 	_victoryPoints = 0;
-	_endOfTurn = new Event(END_OF_TURN);
-	_beginingOfTurn = new Event(BEGINING_OF_TURN);
+	_endOfTurn = new Event(new EventData(END_OF_TURN));
+	_beginingOfTurn = new Event(new EventData(BEGINING_OF_TURN));
 	_minionPowerModification = 0;
 }
 

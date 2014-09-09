@@ -12,7 +12,7 @@ public:
 	virtual void useTalent(Player *owner, MinionCard *card);
 
 	//Event Listener
-	virtual void call(EventType eventType);
+	virtual void call(EventData *eventType);
 private:
 	MinionCard *_selectedMinion;
 };

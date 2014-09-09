@@ -1,9 +1,14 @@
 #include "Event.h"
 
 
-Event::Event(EventType type)
+Event::Event(EventData *data)
 {
-	_eventType = type;
+	_eventData = data;
+}
+
+Event::~Event()
+{
+	delete(_eventData);
 }
 
 void Event::fireEvent()
@@ -11,7 +16,7 @@ void Event::fireEvent()
 	std::vector<EventListener *>::iterator itListeners;
 	for (itListeners = _eventListeners.begin(); itListeners != _eventListeners.end(); itListeners++)
 	{
-		(*itListeners)->call(_eventType);
+		(*itListeners)->call(_eventData);
 	}
 }
 

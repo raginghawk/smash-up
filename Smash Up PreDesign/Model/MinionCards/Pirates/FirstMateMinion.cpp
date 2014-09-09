@@ -28,8 +28,11 @@ void FirstMateMinion::move(Base *newBase)
 	MinionCard::move(newBase);
 }
 
-void FirstMateMinion::call()
+void FirstMateMinion::call(EventData *eventData)
 {
+	assert(eventData->eventType() == BASE_DID_SCORE);
+	assert(eventData->base() == _base);
+
 	Base *selectedBase = _currentOwner->selectBase(vBoard->bases());
 	if (_base != selectedBase)
 	{

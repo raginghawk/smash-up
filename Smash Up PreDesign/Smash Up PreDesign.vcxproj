@@ -39,7 +39,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)Model;$(ProjectDir)Model\BaseTypes;$(ProjectDir)Model\MinionCards;$(ProjectDir)Model\MinionCards\Ghost;$(ProjectDir)Model\MinionCards\ShapeShifter;$(ProjectDir)Model\MinionCards\Pirates;$(ProjectDir)Model\ActionCards;$(ProjectDir)Model\ActionCards\Ghost;$(ProjectDir)Model\ActionCards\ShapeShifter</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)Model;$(ProjectDir)Model\BaseTypes\Events;$(ProjectDir)Model\BaseTypes;$(ProjectDir)Model\MinionCards;$(ProjectDir)Model\MinionCards\Ghost;$(ProjectDir)Model\MinionCards\ShapeShifter;$(ProjectDir)Model\MinionCards\Pirates;$(ProjectDir)Model\ActionCards;$(ProjectDir)Model\ActionCards\Ghost;$(ProjectDir)Model\ActionCards\ShapeShifter</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -85,12 +85,14 @@
     <ClCompile Include="Model\BaseTypes\Board.cpp" />
     <ClCompile Include="Model\BaseTypes\Base.cpp" />
     <ClCompile Include="Model\BaseTypes\Card.cpp" />
+    <ClCompile Include="Model\BaseTypes\Events\EventData.cpp" />
     <ClCompile Include="Model\BaseTypes\PowerModifier.cpp" />
-    <ClCompile Include="Model\BaseTypes\Event.cpp" />
-    <ClCompile Include="Model\BaseTypes\EventListener.cpp" />
+    <ClCompile Include="Model\BaseTypes\Events\Event.cpp" />
+    <ClCompile Include="Model\BaseTypes\Events\EventListener.cpp" />
     <ClCompile Include="Model\BaseTypes\MinionPlayableStruct.cpp" />
     <ClCompile Include="Model\ActionCards\ShapeShifter\CellularBonding.cpp" />
     <ClCompile Include="Model\MinionCards\Pirates\FirstMateMinion.cpp" />
+    <ClCompile Include="Model\MinionCards\Pirates\PirateKingMinion.cpp" />
     <ClCompile Include="Model\MinionCards\ShapeShifter\DoppelgangerMinion.cpp" />
     <ClCompile Include="Model\MinionCards\ShapeShifter\GelfMinion.cpp" />
     <ClCompile Include="Model\MinionCards\Ghost\GhostMinion.cpp" />
@@ -127,10 +129,12 @@
     <ClInclude Include="Model\BaseTypes\Board.h" />
     <ClInclude Include="Model\BaseTypes\Base.h" />
     <ClInclude Include="Model\BaseTypes\Card.h" />
-    <ClInclude Include="Model\BaseTypes\Event.h" />
-    <ClInclude Include="Model\BaseTypes\EventListener.h" />
+    <ClInclude Include="Model\BaseTypes\Events\Event.h" />
+    <ClInclude Include="Model\BaseTypes\Events\EventListener.h" />
+    <ClInclude Include="Model\BaseTypes\Events\EventData.h" />
     <ClInclude Include="Model\BaseTypes\MinionPlayableStruct.h" />
     <ClInclude Include="Model\MinionCards\Pirates\FirstMateMinion.h" />
+    <ClInclude Include="Model\MinionCards\Pirates\PirateKingMinion.h" />
     <ClInclude Include="Model\MinionCards\ShapeShifter\DoppelgangerMinion.h" />
     <ClInclude Include="Model\MinionCards\ShapeShifter\GelfMinion.h" />
     <ClInclude Include="Model\BaseTypes\UpdateVisibilityFlags.h" />

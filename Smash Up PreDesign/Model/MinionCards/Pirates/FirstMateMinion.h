@@ -11,5 +11,5 @@ public:
 	virtual void discard();
 	virtual void move(Base *newBase);
 	//EventListener
-	virtual void call();
+	virtual void call(EventData *eventData);
 };

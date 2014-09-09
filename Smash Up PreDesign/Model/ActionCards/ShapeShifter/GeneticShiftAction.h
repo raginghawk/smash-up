@@ -10,7 +10,7 @@ public:
 	virtual void play();
 
 	//EventListener
-	virtual void call();
+	virtual void call(EventData *eventData);
 
 private:
 	MinionCard *_selection;
