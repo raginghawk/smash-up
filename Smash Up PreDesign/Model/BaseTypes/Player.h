@@ -63,7 +63,7 @@ public:
 	void addMinionCount(int maxPower, Base *onBase);
 
 	void addMinionToPlayableDiscards(MinionCard *minion);
-	std::vector<Card *> &getPlayableCardsFromDiscards();
+	std::vector<Card *> getPlayableCardsFromDiscards();
 
 	void playCard(Card *);
 
