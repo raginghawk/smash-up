@@ -244,6 +244,7 @@ void Player::playCard(Card * cardToPlay)
 		{
 			Base *base = selectBase(baseOptions(cardToPlay));
 			removeMinionStruct(selectMinionStruct(minionStructOptions(base, (MinionCard *)cardToPlay)));
+			cardToPlay->play(base);
 		}
 		else
 		{
@@ -299,7 +300,7 @@ void Player::takeTurn()
 
 		Card *selection = selectCard(playableCards);
 		if (selection)
-			playCard(selectCard(playableCards));
+			playCard(selection);
 		else
 			break; // Choosing to end your turn early is selecting the null card
 	}
