@@ -35,7 +35,7 @@ public:
 	int minionPowerModification();
 
 	int actionsRemaining();
-	std::vector<MinionPlayableStruct *> minionsRemaining();
+	std::vector<MinionPlayableStruct *> &minionsRemaining();
 #pragma endregion
 
 	MinionCard *selectCard(std::vector<MinionCard *>options);
@@ -63,7 +63,7 @@ public:
 	void addMinionCount(int maxPower, Base *onBase);
 
 	void addMinionToPlayableDiscards(MinionCard *minion);
-	std::vector<Card *> getPlayableCardsFromDiscards();
+	std::vector<Card *> &getPlayableCardsFromDiscards();
 
 	void playCard(Card *);
 

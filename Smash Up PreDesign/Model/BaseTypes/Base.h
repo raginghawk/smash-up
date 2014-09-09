@@ -11,8 +11,8 @@ class Base
 public:
 	Base(std::vector<Player *>players);
 #pragma region Members
-	std::vector<MinionCard *> minionsOnBase();
-	std::vector<ActionCard *> actionsOnBase();
+	std::vector<MinionCard *> &minionsOnBase();
+	std::vector<ActionCard *> &actionsOnBase();
 	void modifyPower(int modification, Player *owner);
 	int breakingPoint;
 #pragma endregion

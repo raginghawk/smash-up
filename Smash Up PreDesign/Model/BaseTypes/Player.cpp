@@ -88,7 +88,7 @@ void Player::addMinionToPlayableDiscards(MinionCard *minion)
 	_playableDiscards.push_back(minion);
 }
 
-std::vector<Card *> Player::getPlayableCardsFromDiscards()
+std::vector<Card *> &Player::getPlayableCardsFromDiscards()
 {
 	std::vector<Card *> empty;
 	return empty; /* TODO this mess*/
@@ -230,7 +230,7 @@ int Player::actionsRemaining()
 	return _actionsRemaining;
 }
 
-std::vector<MinionPlayableStruct *> Player::minionsRemaining()
+std::vector<MinionPlayableStruct *> &Player::minionsRemaining()
 {
 	return _minionsRemaining;
 }

@@ -15,12 +15,12 @@ Base::Base(std::vector<Player *>players)
 }
 
 
-std::vector<MinionCard *> Base::minionsOnBase()
+std::vector<MinionCard *> & Base::minionsOnBase()
 {
 	return _minionsOnBase;
 }
 
-std::vector<ActionCard *> Base::actionsOnBase()
+std::vector<ActionCard *> & Base::actionsOnBase()
 {
 	return _actionsOnBase;
 }
