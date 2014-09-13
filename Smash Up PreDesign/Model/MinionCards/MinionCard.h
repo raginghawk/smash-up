@@ -13,6 +13,7 @@ class MinionCard : public Card
 		std::vector<ActionCard *> actionsOnMinion();
 		int printedPower();
 		virtual int currentPower(MinionCard *card);
+		virtual int currentPower();
 		virtual bool isAffectable();
 		bool hasTalent();
 		int powerModification();

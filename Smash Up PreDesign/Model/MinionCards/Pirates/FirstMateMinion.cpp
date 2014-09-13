@@ -14,6 +14,7 @@ void FirstMateMinion::play(Base *base, MinionCard *card)
 {
 	MinionCard::play(base, card);
 	_base->baseDidScore()->registerListener(this);
+	//TODO: Fix bugged interaction with copy cat :/
 }
 
 void FirstMateMinion::discard()

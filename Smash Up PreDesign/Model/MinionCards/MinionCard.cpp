@@ -32,6 +32,11 @@ int MinionCard::powerModification()
 	return _powerModification;
 }
 
+int MinionCard::currentPower()
+{
+	return currentPower(this);
+}
+
 int MinionCard::currentPower(MinionCard *card)
 {
 	int powerModification = card->powerModification();

@@ -138,6 +138,9 @@
     <ClInclude Include="Model\BaseTypes\Events\EventData.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Model\MinionCards\Pirates\SaucyWenchMinion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Model\BaseTypes\Board.cpp">
@@ -258,6 +261,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Model\BaseTypes\Events\EventData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\MinionCards\Pirates\SaucyWenchMinion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

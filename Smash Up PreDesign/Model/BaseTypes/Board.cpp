@@ -60,7 +60,7 @@ Player * Board::currentPlayer()
 	return _currentPlayer;
 }
 
-std::vector<MinionCard *> Board::minionsOnBases(Base *base)
+std::vector<MinionCard *> Board::minionsOnBase(Base *base)
 {
 	return base->minionsOnBase();
 }
