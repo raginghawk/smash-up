@@ -41,10 +41,12 @@ bool MakeContact::fPlay(Player *player)
 	return false;
 }
 
-void MakeContact::destroy()
+bool MakeContact::destroy()
 {
-	ActionCard::destroy();
+	bool toReturn = ActionCard::destroy();
+
 	UpdateVisibilityFlags flags;
 	flags.fOwner = true;
 	_selection->update(&flags);
+	return toReturn;
 }

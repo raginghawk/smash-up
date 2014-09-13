@@ -82,15 +82,24 @@ void MinionCard::modifyAffectAbleCount(int modification)
 	assert(modification == 1 || modification == -1);
 }
 
-void MinionCard::destroy()
+bool MinionCard::destroy()
 {
-	destroy(this);
+	return destroy(this);
 }
 
-void MinionCard::destroy(MinionCard *card)
+bool MinionCard::destroy(MinionCard *card)
 {
-	if (!_destoryProtectionCounter)
+	if (fDestoryable())
+	{
 		_base->destroyMinion(card);
+		return true;
+	}
+	return false;
+}
+
+bool MinionCard::fDestoryable()
+{
+	return _destoryProtectionCounter == 0;
 }
 
 bool MinionCard::fPlay(Player *player)

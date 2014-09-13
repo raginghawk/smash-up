@@ -14,8 +14,9 @@ bool ActionCard::isMinion()
 	return false;
 }
 
-void ActionCard::destroy()
+bool ActionCard::destroy()
 {
+	return true;
 	//TODO
 }
 

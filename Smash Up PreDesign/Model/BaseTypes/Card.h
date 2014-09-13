@@ -35,7 +35,7 @@ public:
 
 	void initOwner(Player *owner);
 
-	virtual void destroy() = 0;
+	virtual bool destroy() = 0;
 	virtual bool fPlay(Player *player) = 0;
 	virtual void play(Base *base) = 0;
 	virtual void play() = 0;

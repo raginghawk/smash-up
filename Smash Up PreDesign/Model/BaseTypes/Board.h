@@ -14,6 +14,7 @@ public:
 	~Board();
 #pragma region Members
 	std::vector<Base *> bases();
+	std::vector<Base *> otherBases(Base *base);
 	Player *currentPlayer();
 	Event *baseWillScore();
 #pragma endregion

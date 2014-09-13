@@ -14,8 +14,8 @@ void ShellGameAction::play(MinionCard *minion)
 	minion->modifyDestoryCount(1);
 }
 
-void ShellGameAction::destroy()
+bool ShellGameAction::destroy()
 {
 	_minion->modifyDestoryCount(-1);
-	ActionCard::destroy();
+	return ActionCard::destroy();
 }

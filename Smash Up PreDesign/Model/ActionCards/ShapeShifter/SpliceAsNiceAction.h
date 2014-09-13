@@ -7,7 +7,7 @@ class SpliceAsNiceAction : public ActionCard
 public:
 	SpliceAsNiceAction(Player *owner);
 	virtual void play(MinionCard *minion);
-	virtual void destroy();
+	virtual bool destroy();
 private:
 	MinionCard *_minion;
 };

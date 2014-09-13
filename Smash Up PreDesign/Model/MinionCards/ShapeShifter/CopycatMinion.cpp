@@ -29,10 +29,12 @@ void CopycatMinion::play(Base *base)
 	_selectedMinion->play(base, this);
 }
 
-void CopycatMinion::destroy(MinionCard *card)
+bool CopycatMinion::destroy(MinionCard *card)
 {
-	_selectedMinion->destroy(this);
+	bool toReturn = _selectedMinion->destroy(this);
+	//TODO not if we don't actual destory it :/ also else where in ghosts and shapeshifters and possibly pirates
 	card->currentOwner()->endOfTurn()->unregisterListener((CopycatMinion *)card);
+	return toReturn;
 }
 
 

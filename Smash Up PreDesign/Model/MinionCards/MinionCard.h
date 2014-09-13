@@ -23,8 +23,9 @@ class MinionCard : public Card
 		void modifyDestoryCount(int modification);
 		void modifyCurrentPower(int modification);
 		void modifyAffectAbleCount(int modification);
-		virtual void destroy();
-		virtual void destroy(MinionCard *card);
+		virtual bool fDestoryable();
+		virtual bool destroy();
+		virtual bool destroy(MinionCard *card);
 		virtual bool fPlay(Player *player);
 		virtual void play(Base *base, MinionCard *card);
 		virtual void play(Base *base);

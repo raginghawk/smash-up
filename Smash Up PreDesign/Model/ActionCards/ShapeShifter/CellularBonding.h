@@ -9,7 +9,7 @@ public:
 	virtual void play(MinionCard *minion, ActionCard *action);
 	virtual bool fUpdate(UpdateVisibilityFlags *flags);
 	virtual void update(MinionCard *minion);
-	virtual void destroy();
+	virtual bool destroy();
 	virtual ActionCard *copy();
 private:
 	ActionCard *_copiedCard;

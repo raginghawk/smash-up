@@ -94,6 +94,7 @@
     <ClCompile Include="Model\MinionCards\Pirates\FirstMateMinion.cpp" />
     <ClCompile Include="Model\MinionCards\Pirates\PirateKingMinion.cpp" />
     <ClCompile Include="Model\MinionCards\Pirates\SaucyWenchMinion.cpp" />
+    <ClCompile Include="Model\MinionCards\Pirates\BuccaneerMinion.cpp" />
     <ClCompile Include="Model\MinionCards\ShapeShifter\DoppelgangerMinion.cpp" />
     <ClCompile Include="Model\MinionCards\ShapeShifter\GelfMinion.cpp" />
     <ClCompile Include="Model\MinionCards\Ghost\GhostMinion.cpp" />
@@ -135,6 +136,7 @@
     <ClInclude Include="Model\BaseTypes\Events\EventData.h" />
     <ClInclude Include="Model\BaseTypes\MinionPlayableStruct.h" />
     <ClInclude Include="Model\MinionCards\Pirates\FirstMateMinion.h" />
+    <ClInclude Include="Model\MinionCards\Pirates\BuccaneerMinion.h" />
     <ClInclude Include="Model\MinionCards\Pirates\SaucyWenchMinion.h" />
     <ClInclude Include="Model\MinionCards\Pirates\PirateKingMinion.h" />
     <ClInclude Include="Model\MinionCards\ShapeShifter\DoppelgangerMinion.h" />

@@ -14,8 +14,8 @@ void SpliceAsNiceAction::play(MinionCard *minion)
 	minion->modifyCurrentPower(2);
 }
 
-void SpliceAsNiceAction::destroy()
+bool SpliceAsNiceAction::destroy()
 {
 	_minion->modifyCurrentPower(-2);
-	ActionCard::destroy();
+	return ActionCard::destroy();
 }

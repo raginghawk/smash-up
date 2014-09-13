@@ -33,10 +33,10 @@ void CellularBonding::update(MinionCard *minion)
 	_copiedCard->update(minion);
 }
 
-void CellularBonding::destroy()
+bool CellularBonding::destroy()
 {
 	//TODO destroy will probably need a reference to the action it is destorying to know if it should really remove itselft the the minion
 	_copiedCard->destroy();
 	delete(_copiedCard);
-	ActionCard::destroy();
+	return ActionCard::destroy();
 }

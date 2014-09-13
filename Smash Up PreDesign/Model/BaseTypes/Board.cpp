@@ -55,6 +55,18 @@ std::vector<Base *> Board::bases()
 	return _bases;
 }
 
+std::vector<Base *> Board::otherBases(Base *base)
+{
+	std::vector<Base *> toReturn = _bases;
+	std::vector<Base *>::iterator itBases = std::find(toReturn.begin(), toReturn.end(), base);
+	if (itBases == _bases.end())
+		assert(false); // Couldn't find the base
+
+	toReturn.erase(itBases);
+	return toReturn;
+}
+
+
 Player * Board::currentPlayer()
 {
 	return _currentPlayer;

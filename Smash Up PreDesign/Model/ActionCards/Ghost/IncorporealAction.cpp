@@ -21,7 +21,8 @@ void IncorporealAction::play(MinionCard *minion, ActionCard *action)
 	ActionCard::play(minion, action);
 }
 
-void IncorporealAction::destroy()
+bool IncorporealAction::destroy()
 {
 	_selection->modifyAffectAbleCount(-1);
+	return ActionCard::destroy();
 }
