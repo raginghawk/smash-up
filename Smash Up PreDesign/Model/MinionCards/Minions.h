@@ -14,7 +14,7 @@
 
 //Pirates
 #include <FirstMateMinion.h>
-//#include <BuccaneerMinion.h>
+#include <BuccaneerMinion.h>
 #include <SaucyWenchMinion.h>
 #include <PirateKingMinion.h>
 
