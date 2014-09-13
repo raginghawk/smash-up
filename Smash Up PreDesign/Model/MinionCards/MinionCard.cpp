@@ -177,19 +177,27 @@ void MinionCard::update(UpdateVisibilityFlags *flags)
 	}
 }
 
+bool MinionCard::fMovable()
+{
+	return true;
+}
+
+
 void MinionCard::move(Base *newBase)
 {
-
-	std::vector<MinionCard *>::iterator itMinions = std::find(_base->minionsOnBase().begin(), _base->minionsOnBase().end(), this);
-	if (itMinions == _base->minionsOnBase().end())
+	if (fMovable())
 	{
-		assert(true); /*Couldn't find minion*/
-		return;
-	}
+		std::vector<MinionCard *>::iterator itMinions = std::find(_base->minionsOnBase().begin(), _base->minionsOnBase().end(), this);
+		if (itMinions == _base->minionsOnBase().end())
+		{
+			assert(true); /*Couldn't find minion*/
+			return;
+		}
 
-	_base->minionsOnBase().erase(itMinions);
-	newBase->moveMinion(this);
-	_base = newBase;
+		_base->minionsOnBase().erase(itMinions);
+		newBase->moveMinion(this);
+		_base = newBase;
+	}
 }
 
 void MinionCard::discard()

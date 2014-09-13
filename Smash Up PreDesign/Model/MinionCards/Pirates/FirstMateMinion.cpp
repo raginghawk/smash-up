@@ -34,9 +34,12 @@ void FirstMateMinion::call(EventData *eventData)
 	assert(eventData->eventType() == BASE_DID_SCORE);
 	assert(eventData->base() == _base);
 
-	Base *selectedBase = _currentOwner->selectBase(vBoard->bases());
-	if (_base != selectedBase)
-	{
+	std::vector<Base *> baseOptions = vBoard->otherBases(_base);
+	baseOptions.push_back(NULL); // This is the I choose to discard option
+
+	Base *selectedBase = _currentOwner->selectBase(baseOptions);
+	if (selectedBase)
 		move(selectedBase);
-	}
+	else
+		MinionCard::discard();
 }
