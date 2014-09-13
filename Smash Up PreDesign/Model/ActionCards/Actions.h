@@ -23,3 +23,5 @@
 // Pirates
 
 #include <DinghyAction.h>
+#include <BroadsideAction.h>
+#include <PowderKegAction.h>

@@ -45,20 +45,30 @@ std::vector<MinionCard *> Base::minionsFromPlayer(Player * player)
 	return toReturn;
 }
 
-std::vector<MinionCard *> Base::minionsFromPlayerWithPowerLessThan(Player *player, int limPower)
+std::vector<MinionCard *> Base::minionsWithPowerLessThan(int limPower, std::vector<MinionCard *> options)
 {
-	std::vector<MinionCard *> toReturn = minionsFromPlayer(player);
-	if (toReturn.size() == 0)
-		return toReturn;
+	if (options.size() == 0)
+		return options;
 
-	toReturn.erase(std::remove_if(toReturn.begin(),
-		toReturn.end(),
+	options.erase(std::remove_if(options.begin(),
+		options.end(),
 		[limPower](MinionCard *card) {return card->currentPower() < limPower; }),
-		toReturn.end()); // TODO Check with minionsFromPlayer
+		options.end()); // TODO Check with minionsFromPlayer
 
-	return toReturn;
+	return options;
 }
 
+std::vector<MinionCard *> Base::minionsFromPlayerWithPowerLessThan(Player *player, int limPower)
+{
+	std::vector<MinionCard *> options = minionsFromPlayer(player);
+	return minionsWithPowerLessThan(limPower, options);
+}
+
+std::vector<MinionCard *> Base::minionsWithPowerLessThan(int limPower)
+{
+	std::vector<MinionCard *> options = _minionsOnBase;
+	return minionsWithPowerLessThan(limPower, options);
+}
 
 Event * Base::baseDidScore()
 {

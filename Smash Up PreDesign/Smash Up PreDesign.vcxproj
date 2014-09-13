@@ -77,6 +77,7 @@
     <ClCompile Include="Model\ActionCards\Ghost\ShadyAction.cpp" />
     <ClCompile Include="Model\ActionCards\Pirates\DinghyAction.cpp" />
     <ClCompile Include="Model\ActionCards\Pirates\BroadsideAction.cpp" />
+    <ClCompile Include="Model\ActionCards\Pirates\PowderKegAction.cpp" />
     <ClCompile Include="Model\ActionCards\ShapeShifter\GeneticShiftAction.cpp" />
     <ClCompile Include="Model\ActionCards\ShapeShifter\ReallyAction.cpp" />
     <ClCompile Include="Model\ActionCards\ShapeShifter\MitosisAction.cpp" />
@@ -124,6 +125,7 @@
     <ClInclude Include="Model\ActionCards\Ghost\ShadyAction.h" />
     <ClInclude Include="Model\ActionCards\Pirates\DinghyAction.h" />
     <ClInclude Include="Model\ActionCards\Pirates\BroadsideAction.h" />
+    <ClInclude Include="Model\ActionCards\Pirates\PowderKegAction.h" />
     <ClInclude Include="Model\ActionCards\ShapeShifter\GeneticShiftAction.h" />
     <ClInclude Include="Model\ActionCards\ShapeShifter\CellularBonding.h" />
     <ClInclude Include="Model\ActionCards\ShapeShifter\BactaTheFuture.h" />

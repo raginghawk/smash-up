@@ -17,6 +17,7 @@ public:
 	std::vector<ActionCard *> &actionsOnBase();
 	std::vector<MinionCard *> minionsFromPlayer(Player *player);
 	std::vector<MinionCard *> minionsFromPlayerWithPowerLessThan(Player *player, int limPower);
+	std::vector<MinionCard *> minionsWithPowerLessThan(int limPower);
 	void modifyPower(int modification, Player *owner);
 	Event * baseDidScore();
 	int breakingPoint;
@@ -36,4 +37,6 @@ private:
 	std::vector<MinionCard *> _minionsOnBase;
 	std::vector<ActionCard *> _actionsOnBase;
 	std::map<Player *, int> _powerModification;
+
+	std::vector<MinionCard *> Base::minionsWithPowerLessThan(int limPower, std::vector<MinionCard *> options);
 };
