@@ -401,6 +401,14 @@ Base * Player::selectBase(std::vector<Base *>options)
 	return selection;
 }
 
+Player * Player::selectPlayer(std::vector<Player *>options)
+{
+	//TODO select player
+	Player *selection = NULL;
+	return selection;
+}
+
+
 MinionPlayableStruct * Player::selectMinionStruct(std::vector<MinionPlayableStruct *>options)
 {
 	// TODO select struct

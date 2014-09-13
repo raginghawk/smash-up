@@ -13,8 +13,10 @@ public:
 	Base(std::vector<Player *>players);
 	~Base();
 #pragma region Members
-	std::vector<MinionCard *> &minionsOnBase();
+	std::vector<MinionCard *> &minionsOnBase(); // TODO refactor to remove onBase... its a function of the base unneeded details
 	std::vector<ActionCard *> &actionsOnBase();
+	std::vector<MinionCard *> minionsFromPlayer(Player *player);
+	std::vector<MinionCard *> minionsFromPlayerWithPowerLessThan(Player *player, int limPower);
 	void modifyPower(int modification, Player *owner);
 	Event * baseDidScore();
 	int breakingPoint;

@@ -147,6 +147,9 @@
     <ClInclude Include="Model\ActionCards\Pirates\DinghyAction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Model\ActionCards\Pirates\BroadsideAction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Model\BaseTypes\Board.cpp">
@@ -276,6 +279,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Model\ActionCards\Pirates\DinghyAction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\ActionCards\Pirates\BroadsideAction.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

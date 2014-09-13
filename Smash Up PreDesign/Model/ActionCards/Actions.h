@@ -19,3 +19,7 @@
 #include <MitosisAction.h>
 #include <ShellGameAction.h>
 #include <CellularBonding.h>
+
+// Pirates
+
+#include <DinghyAction.h>

@@ -42,6 +42,7 @@ public:
 	ActionCard *selectCard(std::vector<ActionCard *>options);
 	Card *selectCard(std::vector<Card *>options);
 	Base *selectBase(std::vector<Base *>options);
+	Player *selectPlayer(std::vector<Player *>options);
 	MinionPlayableStruct * selectMinionStruct(std::vector<MinionPlayableStruct *>options);
 
 	std::vector<Base *> baseOptions(Card *card);

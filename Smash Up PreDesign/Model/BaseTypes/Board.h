@@ -15,7 +15,10 @@ public:
 #pragma region Members
 	std::vector<Base *> bases();
 	std::vector<Base *> otherBases(Base *base);
+	std::vector<Base *> basesWithMinionFromPlayer(Player *player);
+	std::vector<Player *> players();
 	Player *currentPlayer();
+	
 	Event *baseWillScore();
 #pragma endregion
 

@@ -2,6 +2,7 @@
 #include <Player.h>
 #include <Event.h>
 #include <MinionCard.h>
+#include <algorithm>
 
 Base::Base(std::vector<Player *>players)
 {
@@ -31,6 +32,33 @@ std::vector<ActionCard *> & Base::actionsOnBase()
 {
 	return _actionsOnBase;
 }
+
+std::vector<MinionCard *> Base::minionsFromPlayer(Player * player)
+{
+	std::vector<MinionCard *> toReturn = _minionsOnBase;
+	
+	toReturn.erase(std::remove_if(toReturn.begin(),
+		toReturn.end(), 
+		[player](MinionCard *card) { return card->currentOwner() == player; }),
+		toReturn.end()); //TODO check cause its complicated
+
+	return toReturn;
+}
+
+std::vector<MinionCard *> Base::minionsFromPlayerWithPowerLessThan(Player *player, int limPower)
+{
+	std::vector<MinionCard *> toReturn = minionsFromPlayer(player);
+	if (toReturn.size() == 0)
+		return toReturn;
+
+	toReturn.erase(std::remove_if(toReturn.begin(),
+		toReturn.end(),
+		[limPower](MinionCard *card) {return card->currentPower() < limPower; }),
+		toReturn.end()); // TODO Check with minionsFromPlayer
+
+	return toReturn;
+}
+
 
 Event * Base::baseDidScore()
 {

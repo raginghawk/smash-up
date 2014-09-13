@@ -37,6 +37,12 @@ void Board::initBases()
 	}
 }
 
+std::vector<Player *> Board::players()
+{
+	return _players;
+}
+
+
 Event *Board::baseWillScore()
 {
 	return _baseWillScore;
@@ -63,6 +69,19 @@ std::vector<Base *> Board::otherBases(Base *base)
 		assert(false); // Couldn't find the base
 
 	toReturn.erase(itBases);
+	return toReturn;
+}
+
+std::vector<Base *> Board::basesWithMinionFromPlayer(Player *player)
+{
+	std::vector<Base *> toReturn = _bases;
+	std::vector<Base *>::iterator itBases;
+	
+	for (itBases = _bases.begin(); itBases != _bases.end(); itBases++)
+	{
+		if ((*itBases)->minionsFromPlayer(player).size() == 0)
+			toReturn.erase(itBases);
+	}
 	return toReturn;
 }
 
