@@ -39,4 +39,6 @@ void GeneticShift::call(EventData *eventData)
 	{
 		_currentOwner->modifyMinionPower(-1);
 	}
+
+	_currentOwner->endOfTurn()->unregisterListener(this);
 }

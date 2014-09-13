@@ -25,3 +25,4 @@
 #include <DinghyAction.h>
 #include <BroadsideAction.h>
 #include <PowderKegAction.h>
+#include <SwashbucklingAction.h>
