@@ -165,6 +165,9 @@
     <ClInclude Include="Model\ActionCards\Pirates\SeaDogsAction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Model\ActionCards\Pirates\FullSailAction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Model\BaseTypes\Board.cpp">
@@ -312,6 +315,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Model\ActionCards\Pirates\SeaDogsAction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\ActionCards\Pirates\FullSailAction.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

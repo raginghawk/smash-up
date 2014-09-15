@@ -43,8 +43,12 @@ void Card::setBase(Base *base)
 	_base = base;
 }
 
-
 CardType Card::cardType()
 {
 	return _cardType;
+}
+
+void Card::drawn()
+{
+	// in most cases being drawn doesn't require anything so just have fun. Some subclasses break that rule
 }

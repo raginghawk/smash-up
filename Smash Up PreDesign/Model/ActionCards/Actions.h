@@ -29,3 +29,4 @@
 #include <CannonAction.h>
 #include <ShanghaiAction.h>
 #include <SeaDogsAction.h>
+#include <FullSailAction.h>
