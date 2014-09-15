@@ -5,7 +5,7 @@ class Player;
 class MinionCard;
 class ActionCard;
 class Event;
-
+enum Faction;
 
 class Base
 {
@@ -18,6 +18,7 @@ public:
 	std::vector<MinionCard *> minionsFromPlayer(Player *player);
 	std::vector<MinionCard *> minionsFromPlayerWithPowerLessThan(Player *player, int limPower);
 	std::vector<MinionCard *> minionsWithPowerLessThan(int limPower);
+	std::vector<MinionCard *> minionsOfFaction(Faction faction);
 	void modifyPower(int modification, Player *owner);
 	Event * baseDidScore();
 	int breakingPoint;

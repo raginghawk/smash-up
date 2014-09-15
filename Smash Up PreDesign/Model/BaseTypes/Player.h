@@ -10,6 +10,7 @@ class MinionCard;
 class ActionCard;
 class Base;
 class Event;
+enum Faction;
 
 class Player
 {
@@ -43,6 +44,7 @@ public:
 	Card *selectCard(std::vector<Card *>options);
 	Base *selectBase(std::vector<Base *>options);
 	Player *selectPlayer(std::vector<Player *>options);
+	Faction selectFaction();
 	MinionPlayableStruct * selectMinionStruct(std::vector<MinionPlayableStruct *>options);
 
 	std::vector<Base *> baseOptions(Card *card);

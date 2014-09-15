@@ -408,6 +408,13 @@ Player * Player::selectPlayer(std::vector<Player *>options)
 	return selection;
 }
 
+Faction Player::selectFaction()
+{
+	//TODO select Faction
+	Faction selection = GHOST; // guess its defaulting to ghosts.. should I add a nil?
+	return selection;
+}
+
 
 MinionPlayableStruct * Player::selectMinionStruct(std::vector<MinionPlayableStruct *>options)
 {

@@ -32,6 +32,7 @@ public:
 	virtual bool isMinion() = 0;
 	Player *owner();
 	Player *currentOwner();
+	Faction faction();
 	std::string name();
 	Base *base();
 	void setBase(Base *base);

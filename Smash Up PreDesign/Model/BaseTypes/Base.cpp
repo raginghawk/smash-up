@@ -70,6 +70,19 @@ std::vector<MinionCard *> Base::minionsWithPowerLessThan(int limPower)
 	return minionsWithPowerLessThan(limPower, options);
 }
 
+std::vector<MinionCard *> Base::minionsOfFaction(Faction faction)
+{
+	std::vector<MinionCard *> toReturn = _minionsOnBase;
+
+	toReturn.erase(std::remove_if(toReturn.begin(),
+		toReturn.end(),
+		[faction](MinionCard *card) { return card->faction() == faction; }),
+		toReturn.end()); //TODO check cause its complicated
+
+	return toReturn;
+}
+
+
 Event * Base::baseDidScore()
 {
 	return _baseDidScore;

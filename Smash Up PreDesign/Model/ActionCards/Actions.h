@@ -28,3 +28,4 @@
 #include <SwashbucklingAction.h>
 #include <CannonAction.h>
 #include <ShanghaiAction.h>
+#include <SeaDogsAction.h>

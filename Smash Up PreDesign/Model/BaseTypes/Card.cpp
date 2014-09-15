@@ -12,6 +12,12 @@ Player * Card::owner()
 	return _owner;
 }
 
+Faction Card::faction()
+{
+	return _faction;
+}
+
+
 Player * Card::currentOwner()
 {
 	return _currentOwner;
