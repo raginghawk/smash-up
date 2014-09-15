@@ -85,7 +85,6 @@ std::vector<Base *> Board::basesWithMinionFromPlayer(Player *player)
 	return toReturn;
 }
 
-
 Player * Board::currentPlayer()
 {
 	return _currentPlayer;
@@ -107,8 +106,33 @@ std::vector<MinionCard *> Board::minionsInPlay()
 
 	for (itBases = _bases.begin()+1; itBases != _bases.end(); itBases++)
 	{
-		minionsInPlay.reserve(minionsInPlay.size() + (*itBases)->minionsOnBase().size());
-		minionsInPlay.insert(minionsInPlay.end(), (*itBases)->minionsOnBase().begin(), (*itBases)->minionsOnBase().end());
+		if ((*itBases)->minionsOnBase().size() != 0)
+		{
+			minionsInPlay.reserve(minionsInPlay.size() + (*itBases)->minionsOnBase().size());
+			minionsInPlay.insert(minionsInPlay.end(), (*itBases)->minionsOnBase().begin(), (*itBases)->minionsOnBase().end());
+		}
+	}
+
+	return minionsInPlay;
+}
+
+std::vector<MinionCard *> Board::minionsWithPowerLessThan(int limPower)
+{
+	std::vector<MinionCard *> minionsInPlay;
+	if (_bases.begin() == _bases.end())
+		return minionsInPlay;
+
+	std::vector<Base *>::iterator itBases = _bases.begin();
+	minionsInPlay = (*itBases)->minionsWithPowerLessThan(limPower);
+
+	for (itBases = _bases.begin() + 1; itBases != _bases.end(); itBases++)
+	{
+		std::vector<MinionCard *> basesMinions = (*itBases)->minionsWithPowerLessThan(limPower);
+		if (basesMinions.size() == 0)
+		{
+			minionsInPlay.reserve(minionsInPlay.size() + basesMinions.size());
+			minionsInPlay.insert(minionsInPlay.end(), basesMinions.begin(), basesMinions.end());
+		}
 	}
 
 	return minionsInPlay;

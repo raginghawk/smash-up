@@ -26,6 +26,7 @@ public:
 	std::vector<MinionCard *> minionsInPlay();
 	std::vector<MinionCard *> otherPlayersMinionsInPlay(Player *player);
 	std::vector<MinionCard *> playersMinionsInPlay(Player *player);
+	std::vector<MinionCard *> minionsWithPowerLessThan(int limPower);
 	std::vector<ActionCard *> actionsOnMinions();
 	void startGame();
 
