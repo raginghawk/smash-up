@@ -6,6 +6,7 @@ SpiritMinion::SpiritMinion(Player *owner) : MinionCard(owner)
 {
 	_printedPower = 3;
 	_name = "Spirit";
+	_faction = GHOST;
 }
 
 void SpiritMinion::play(Base *base, MinionCard *card)

@@ -6,6 +6,7 @@ BuccaneerMinion::BuccaneerMinion(Player *owner) : MinionCard(owner)
 {
 	_printedPower = 4;
 	_name = "Buccaneer";
+	_faction = PIRATE;
 }
 
 bool BuccaneerMinion::destroy(MinionCard *card)

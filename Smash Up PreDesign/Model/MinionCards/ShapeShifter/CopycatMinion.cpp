@@ -7,6 +7,7 @@ CopycatMinion::CopycatMinion(Player *owner) : MinionCard(owner)
 {
 	_printedPower = 2;
 	_name = "Copycat";
+	_faction = SHAPE_SHIFTER;
 	_selectedMinion = NULL;
 }
 

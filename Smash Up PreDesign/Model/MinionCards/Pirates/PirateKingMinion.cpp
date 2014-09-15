@@ -8,6 +8,7 @@ PirateKingMinion::PirateKingMinion(Player *owner) : MinionCard(owner)
 {
 	_printedPower = 5;
 	_name = "Pirate King";
+	_faction = PIRATE;
 }
 
 void PirateKingMinion::play(Base *base, MinionCard *card)

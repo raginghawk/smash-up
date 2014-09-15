@@ -5,6 +5,7 @@ DoppelgangerMinion::DoppelgangerMinion(Player *owner) : MinionCard(owner)
 {
 	_printedPower = 5;
 	_name = "DoppelGanger";
+	_faction = SHAPE_SHIFTER;
 }
 
 bool DoppelgangerMinion::destroy(MinionCard *card)

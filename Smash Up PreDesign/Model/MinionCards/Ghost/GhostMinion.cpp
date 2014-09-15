@@ -5,6 +5,7 @@ GhostMinion::GhostMinion(Player *owner) : MinionCard(owner)
 {
 	_printedPower = 2;
 	_name = "Ghost";
+	_faction = GHOST;
 }
 
 void GhostMinion::play(Base *base, MinionCard *card)

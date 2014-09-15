@@ -6,6 +6,7 @@ SaucyWenchMinion::SaucyWenchMinion(Player *owner) : MinionCard(owner)
 {
 	_printedPower = 3;
 	_name = "Saucy Wench";
+	_faction = PIRATE;
 }
 
 void SaucyWenchMinion::play(Base *base, MinionCard *card)

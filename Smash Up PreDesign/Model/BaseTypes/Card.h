@@ -18,6 +18,13 @@ enum CardType
 	INSTANT_CARD
 };
 
+enum Faction
+{
+	GHOST,
+	SHAPE_SHIFTER,
+	PIRATE,
+};
+
 class Card
 {
 public:
@@ -52,4 +59,5 @@ protected:
 	std::string _name;
 	Base *_base;
 	CardType _cardType;
+	Faction _faction;
 };

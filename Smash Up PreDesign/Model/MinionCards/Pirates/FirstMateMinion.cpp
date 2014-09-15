@@ -8,6 +8,7 @@ FirstMateMinion::FirstMateMinion(Player *owner) : MinionCard(owner)
 {
 	_printedPower = 2;
 	_name = "First Mate";
+	_faction = PIRATE;
 }
 
 void FirstMateMinion::play(Base *base, MinionCard *card)

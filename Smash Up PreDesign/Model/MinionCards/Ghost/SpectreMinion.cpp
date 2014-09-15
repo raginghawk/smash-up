@@ -5,6 +5,7 @@ SpectreMinion::SpectreMinion(Player *owner) : MinionCard(owner)
 {
 	_printedPower = 5;
 	_name = "Spectre";
+	_faction = GHOST;
 }
 
 void SpectreMinion::discard()

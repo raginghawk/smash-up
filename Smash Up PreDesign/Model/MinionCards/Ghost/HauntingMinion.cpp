@@ -5,6 +5,7 @@ HauntingMinion::HauntingMinion(Player *owner) : MinionCard(owner)
 {
 	_printedPower = 3;
 	_name = "Haunting";
+	_faction = GHOST;
 }
 
 int HauntingMinion::currentPower(MinionCard *card)

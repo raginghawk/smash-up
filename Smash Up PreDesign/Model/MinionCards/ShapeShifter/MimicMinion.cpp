@@ -6,6 +6,7 @@ MimicMinion::MimicMinion(Player *owner) : MinionCard(owner)
 {
 	_printedPower = 0;
 	_name = "Mimic";
+	_faction = SHAPE_SHIFTER;
 }
 
 int MimicMinion::currentPower(MinionCard *card)
