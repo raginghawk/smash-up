@@ -147,6 +147,8 @@ std::vector<Card *> DeckConstructor::addPirates(Player *owner)
 
 	pirateDeck.push_back(new PowderKegAction(owner));
 	pirateDeck.push_back(new SwashbucklingAction(owner));
+	pirateDeck.push_back(new ShanghaiAction(owner));
+	pirateDeck.push_back(new CannonAction(owner));
 
 	return pirateDeck;
 }

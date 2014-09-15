@@ -26,3 +26,5 @@
 #include <BroadsideAction.h>
 #include <PowderKegAction.h>
 #include <SwashbucklingAction.h>
+#include <CannonAction.h>
+#include <ShanghaiAction.h>
