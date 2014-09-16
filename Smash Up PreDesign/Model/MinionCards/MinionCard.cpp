@@ -8,7 +8,7 @@ MinionCard::MinionCard(Player *owner)
 {
 	this->initOwner(owner);
 	_powerModification = 0;
-	_destoryProtectionCounter = 0;
+	_destroyProtectionCounter = 0;
 	_cardType = BASE_CARD;
 }
 
@@ -68,10 +68,10 @@ void MinionCard::modifyCurrentPower(int modification)
 	_powerModification += modification;
 }
 
-void MinionCard::modifyDestoryCount(int modification)
+void MinionCard::modifyDestroyCount(int modification)
 {
-	_destoryProtectionCounter += modification;
-	assert(_destoryProtectionCounter >= 0); /*should never have less than zero because that means there are negitive cards/affects protecting it*/
+	_destroyProtectionCounter += modification;
+	assert(_destroyProtectionCounter >= 0); /*should never have less than zero because that means there are negitive cards/affects protecting it*/
 	assert(modification == 1 || modification == -1); /*you should only increment and decrement by one*/
 }
 
@@ -89,7 +89,7 @@ bool MinionCard::destroy()
 
 bool MinionCard::destroy(MinionCard *card)
 {
-	if (fDestoryable())
+	if (fDestroyable(card))
 	{
 		_base->destroyMinion(card);
 		return true;
@@ -97,9 +97,14 @@ bool MinionCard::destroy(MinionCard *card)
 	return false;
 }
 
-bool MinionCard::fDestoryable()
+bool MinionCard::fDestroyable(MinionCard *card)
 {
-	return _destoryProtectionCounter == 0;
+	return _destroyProtectionCounter == 0;
+}
+
+bool MinionCard::fDestroyable()
+{
+	return fDestroyable(this);
 }
 
 bool MinionCard::fPlay(Player *player)

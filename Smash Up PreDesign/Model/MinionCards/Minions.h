@@ -20,6 +20,8 @@
 
 //Bears
 #include <GeneralIvanMinion.h>
+#include <BearCavalryMinion.h>
+#include <PolarCommandoMinion.h>
 
 ////Dinos
 //#include <RexMinion.h>

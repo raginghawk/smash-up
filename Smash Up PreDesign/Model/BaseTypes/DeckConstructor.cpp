@@ -48,15 +48,15 @@ std::vector<Card *> DeckConstructor::addGhosts(Player *owner)
 	std::vector<Card *> ghostDeck;
 
 	//Minions
-	for (int i = 0; i < 4; i++)
+	for (int c = 0; c < 4; c++)
 	{
 		ghostDeck.push_back(new GhostMinion(owner));
 	}
-	for (int i = 0; i < 3; i++)
+	for (int c = 0; c < 3; c++)
 	{
 		ghostDeck.push_back(new SpiritMinion(owner));
 	}
-	for (int i = 0; i < 2; i++)
+	for (int c = 0; c < 2; c++)
 	{
 		ghostDeck.push_back(new HauntingMinion(owner));
 	}
@@ -70,7 +70,7 @@ std::vector<Card *> DeckConstructor::addGhosts(Player *owner)
 	ghostDeck.push_back(new DoorToBeyond(owner));
 	ghostDeck.push_back(new MakeContact(owner));
 
-	for (int i = 0; i < 2; i++)
+	for (int c = 0; c < 2; c++)
 	{
 		ghostDeck.push_back(new IncorporealAction(owner));
 		ghostDeck.push_back(new GhostlyAction(owner));
@@ -84,17 +84,17 @@ std::vector<Card *> DeckConstructor::addShapeShifters(Player *owner)
 	std::vector<Card *> shapeDeck;
 
 	//Minions
-	for (int i = 0; i < 4; i++)
+	for (int c = 0; c < 4; c++)
 	{
 		shapeDeck.push_back(new CopycatMinion(owner));
 	}
 
-	for (int i = 0; i < 3; i++)
+	for (int c = 0; c < 3; c++)
 	{
 		shapeDeck.push_back(new MimicMinion(owner));
 	}
 
-	for (int i = 0; i < 2; i++)
+	for (int c = 0; c < 2; c++)
 	{
 		shapeDeck.push_back(new GelfMinion(owner));
 	}
@@ -107,7 +107,7 @@ std::vector<Card *> DeckConstructor::addShapeShifters(Player *owner)
 	shapeDeck.push_back(new ShellGameAction(owner));
 	shapeDeck.push_back(new CellularBonding(owner));
 
-	for (int i = 0; i < 2; i++)
+	for (int c = 0; c < 2; c++)
 	{
 		shapeDeck.push_back(new Transmogrify(owner));
 		shapeDeck.push_back(new GeneticShift(owner));
@@ -121,29 +121,29 @@ std::vector<Card *> DeckConstructor::addPirates(Player *owner)
 	std::vector<Card *> pirateDeck;
 
 	//Minions
-	for (int i = 0; i < 4; i++)
+	for (int c = 0; c < 4; c++)
 	{
 		pirateDeck.push_back(new FirstMateMinion(owner));
 	}
 	
-	for (int i = 0; i < 3; i++)
+	for (int c = 0; c < 3; c++)
 	{
 		pirateDeck.push_back(new SaucyWenchMinion(owner));
 	}
 
-	for (int i = 0; i < 2; i++)
+	for (int c = 0; c < 2; c++)
 	{
 		pirateDeck.push_back(new BuccaneerMinion(owner));
 	}
 	pirateDeck.push_back(new PirateKingMinion(owner));
 	
 	//Actions
-	for (int i = 0; i < 2; i++)
+	for (int c = 0; c < 2; c++)
 	{
 		pirateDeck.push_back(new DinghyAction(owner));
 	}
 	
-	for (int i = 0; i < 2; i++)
+	for (int c = 0; c < 2; c++)
 	{
 		pirateDeck.push_back(new BroadsideAction(owner));
 	}
@@ -163,6 +163,16 @@ std::vector<Card *> DeckConstructor::addBears(Player *owner)
 	std::vector<Card *> bearDeck;
 
 	//Minions
+	for (int c = 0; c < 3; c++)
+	{
+		bearDeck.push_back(new BearCavalryMinion(owner));
+	}
+	
+	for (int c = 0; c < 2; c++)
+	{
+		bearDeck.push_back(new PolarCommandoMinion(owner));
+	}
+
 	bearDeck.push_back(new GeneralIvanMinion(owner));
 
 	return bearDeck;

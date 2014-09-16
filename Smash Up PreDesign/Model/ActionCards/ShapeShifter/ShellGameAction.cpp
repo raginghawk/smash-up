@@ -11,11 +11,11 @@ ShellGameAction::ShellGameAction(Player *owner) : ActionCard(owner)
 void ShellGameAction::play(MinionCard *minion)
 {
 	_minion = minion;
-	minion->modifyDestoryCount(1);
+	minion->modifyDestroyCount(1);
 }
 
 bool ShellGameAction::destroy()
 {
-	_minion->modifyDestoryCount(-1);
+	_minion->modifyDestroyCount(-1);
 	return ActionCard::destroy();
 }

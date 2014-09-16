@@ -20,10 +20,11 @@ class MinionCard : public Card
 #pragma endregion
 
 		virtual void removeAllActions();
-		void modifyDestoryCount(int modification);
+		void modifyDestroyCount(int modification);
 		void modifyCurrentPower(int modification);
 		void modifyAffectAbleCount(int modification);
-		virtual bool fDestoryable();
+		virtual bool fDestroyable(MinionCard *card);
+		virtual bool fDestroyable();
 		virtual bool destroy();
 		virtual bool destroy(MinionCard *card);
 		virtual bool fPlay(Player *player);
@@ -42,7 +43,7 @@ class MinionCard : public Card
 
 	private:
 		int _powerModification;
-		int _destoryProtectionCounter;
+		int _destroyProtectionCounter;
 		int _affectableCounter;
 
 	protected:

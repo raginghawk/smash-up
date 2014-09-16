@@ -30,6 +30,12 @@ void CopycatMinion::play(Base *base)
 	_selectedMinion->play(base, this);
 }
 
+bool CopycatMinion::fDestoryable(MinionCard *card)
+{
+	return _selectedMinion->fDestroyable(this);
+}
+
+
 bool CopycatMinion::destroy(MinionCard *card)
 {
 	bool toReturn = _selectedMinion->destroy(this);

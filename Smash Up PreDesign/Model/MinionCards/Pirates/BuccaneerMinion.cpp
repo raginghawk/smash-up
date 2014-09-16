@@ -11,7 +11,7 @@ BuccaneerMinion::BuccaneerMinion(Player *owner) : MinionCard(owner)
 
 bool BuccaneerMinion::destroy(MinionCard *card)
 {
-	if (card->fDestoryable())
+	if (card->fDestroyable())
 	{
 		card->move(card->currentOwner()->selectBase(vBoard->otherBases(card->base())));
 	}

@@ -101,6 +101,7 @@
     <ClCompile Include="Model\ActionCards\ShapeShifter\CellularBonding.cpp" />
     <ClCompile Include="Model\MinionCards\Bears\GeneralIvanMinion.cpp" />
     <ClCompile Include="Model\MinionCards\Bears\BearCavalryMinion.cpp" />
+    <ClCompile Include="Model\MinionCards\Bears\PolarCommandoMinion.cpp" />
     <ClCompile Include="Model\MinionCards\Pirates\FirstMateMinion.cpp" />
     <ClCompile Include="Model\MinionCards\Pirates\PirateKingMinion.cpp" />
     <ClCompile Include="Model\MinionCards\Pirates\SaucyWenchMinion.cpp" />
@@ -155,6 +156,7 @@
     <ClInclude Include="Model\BaseTypes\MinionPlayableStruct.h" />
     <ClInclude Include="Model\MinionCards\Bears\GeneralIvanMinion.h" />
     <ClInclude Include="Model\MinionCards\Bears\BearCavalryMinion.h" />
+    <ClInclude Include="Model\MinionCards\Bears\PolarCommandoMinion.h" />
     <ClInclude Include="Model\MinionCards\Pirates\FirstMateMinion.h" />
     <ClInclude Include="Model\MinionCards\Pirates\BuccaneerMinion.h" />
     <ClInclude Include="Model\MinionCards\Pirates\SaucyWenchMinion.h" />
