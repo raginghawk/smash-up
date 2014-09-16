@@ -19,24 +19,23 @@ public:
 	Player(Faction firstDeck, Faction secondDeck);
 	~Player();
 #pragma region Members
-	int playerNumber();
 	int handSize();
 
+	int currentVictoryPoints();
+	void addVictoryPoint(int victoryPoints);
+
+	void modifyMinionPower(int modification);
+	int minionPowerModification();
+
 	int destroyableCount();
-	void incrementDestroyableCount(int amount);
+	void incrementDestroyableCount(int modification);
 
 	MinionCard *minionInDiscard(int maxPower);
 	MinionCard *minionInDeck(int maxPower);
 	std::vector<MinionCard *> minionsInHand();
 
-	void addVictoryPoint(int victoryPoints);
-	int currentVictoryPoints();
-
 	Event *beginingOfTurn();
 	Event *endOfTurn();
-
-	void modifyMinionPower(int modification);
-	int minionPowerModification();
 
 	int actionsRemaining();
 	std::vector<MinionPlayableStruct *> &minionsRemaining();
@@ -57,7 +56,7 @@ public:
 	void Player::removeCardFromHand(Card *card);
 
 	bool discardCard(int count, bool optional);
-	bool removeFromDiscard(Card *);
+	bool removeFromDiscard(Card *card);
 	void drawCard(int count);
 	void addCardToHand(Card *card);
 
@@ -84,13 +83,16 @@ private:
 	std::vector<Card *> _discards;
 	std::vector<MinionCard *> _playableDiscards;
 	std::vector<MinionPlayableStruct *> _minionsRemaining;
+
 	Event *_endOfTurn;
 	Event *_beginingOfTurn;
+	
 	int _minionPowerModification;
 	int _actionsRemaining;
 	int _victoryPoints;
 	int _playerNumber;
 	int _destroyableCount;
+	
 	void initClassVariables();
 	void clearRemainingActionsandMinions();
 };

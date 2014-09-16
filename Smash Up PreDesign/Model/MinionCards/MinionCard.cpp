@@ -17,6 +17,11 @@ bool MinionCard::isMinion()
 	return true;
 }
 
+bool MinionCard::hasTalent()
+{
+	return _talent;
+}
+
 std::vector<ActionCard *> MinionCard::actionsOnMinion()
 {
 	return _actions;
@@ -47,11 +52,6 @@ int MinionCard::currentPower(MinionCard *card)
 bool MinionCard::isAffectable()
 {
 	return true;
-}
-
-bool MinionCard::hasTalent()
-{
-	return _talent;
 }
 
 void MinionCard::removeAllActions()
@@ -130,24 +130,14 @@ bool MinionCard::fPlay(Player *player)
 	return true;
 }
 
-void MinionCard::play(Base *base, MinionCard *card)
-{
-	base->playMinion(card);
-}
-
 void MinionCard::play(Base *base)
 {
 	play(base, this);
 }
 
-void MinionCard::play()
+void MinionCard::play(Base *base, MinionCard *card)
 {
-	assert(true); /*Minion Card's are never instant*/
-}
-
-void MinionCard::play(MinionCard *minion, ActionCard *action)
-{
-	assert(true); /* minion card's can't play on other minion cards*/
+	base->playMinion(card);
 }
 
 bool MinionCard::fUpdate(UpdateVisibilityFlags *flags)

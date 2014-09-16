@@ -223,7 +223,7 @@ void Board::startGame()
 		}
 	}
 	// TODO display winner
-	printf("Winner is %d", winner->playerNumber());
+	printf("Winner is %d", &winner);
 }
 
 void Board::evaulateBases()

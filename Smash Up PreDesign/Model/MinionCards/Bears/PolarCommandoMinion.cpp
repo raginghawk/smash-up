@@ -18,6 +18,10 @@ bool PolarCommandoMinion::fDestoryable(MinionCard *card)
 
 int PolarCommandoMinion::currentPower(MinionCard *card)
 {
+	int currentPower = MinionCard::currentPower(card);
+
 	if (card->base()->minionsFromPlayer(card->currentOwner()).size() == 0)
-		return MinionCard::currentPower(card) + 2;
+		currentPower += 2;
+	
+	return currentPower;
 }

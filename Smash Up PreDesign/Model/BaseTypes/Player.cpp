@@ -1,6 +1,7 @@
 #include "Player.h"
 #include <DeckConstructor.h>
 #include <MinionCard.h>
+#include <ActionCard.h>
 #include <Base.h>
 #include <Event.h>
 #include <Board.h>
@@ -70,11 +71,6 @@ bool Player::discardCard(int count, bool optional)
 int Player::handSize()
 {
 	return _hand.size();
-}
-
-int Player::playerNumber()
-{
-	return _playerNumber;
 }
 
 Event *Player::endOfTurn()
@@ -258,21 +254,21 @@ void Player::playCard(Card * cardToPlay)
 		{
 			Base *base = selectBase(baseOptions(cardToPlay));
 			removeMinionStruct(selectMinionStruct(minionStructOptions(base, (MinionCard *)cardToPlay)));
-			cardToPlay->play(base);
+			((MinionCard *)cardToPlay)->play(base,(MinionCard *)cardToPlay);
 		}
 		else
 		{
-			cardToPlay->play(selectBase(baseOptions(cardToPlay)));
+			((ActionCard *)cardToPlay)->play(selectBase(baseOptions(cardToPlay)));
 			_actionsRemaining--;
 		}
 		break;
 	case INSTANT_CARD:
-		cardToPlay->play();
+		((ActionCard *)cardToPlay)->play();
 		_actionsRemaining--;
 		break;
 	case MINION_CARD: // MinionCard should probably be renamed ... it is a card played on a minion :/ ugh
 		assert(!cardToPlay->isMinion());
-		cardToPlay->play(selectCard(vBoard->minionsInPlay()), (ActionCard *)cardToPlay);
+		((ActionCard *)cardToPlay)->play(selectCard(vBoard->minionsInPlay()), (ActionCard *)cardToPlay);
 		_actionsRemaining--;
 		break;
 	default:
