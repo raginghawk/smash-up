@@ -16,6 +16,7 @@ public:
 	std::vector<MinionCard *> &minionsOnBase(); // TODO refactor to remove onBase... its a function of the base unneeded details
 	std::vector<ActionCard *> &actionsOnBase();
 	std::vector<MinionCard *> minionsFromPlayer(Player *player);
+	std::vector<MinionCard *> otherPlayersMinions(Player *player);
 	std::vector<MinionCard *> minionsFromPlayerWithPowerLessThan(Player *player, int limPower);
 	std::vector<MinionCard *> minionsWithPowerLessThan(int limPower);
 	std::vector<MinionCard *> minionsOfFaction(Faction faction);

@@ -45,6 +45,19 @@ std::vector<MinionCard *> Base::minionsFromPlayer(Player * player)
 	return toReturn;
 }
 
+std::vector<MinionCard *> Base::otherPlayersMinions(Player *player)
+{
+	std::vector<MinionCard *> toReturn = _minionsOnBase;
+
+	toReturn.erase(std::remove_if(toReturn.begin(),
+		toReturn.end(),
+		[player](MinionCard *card) { return card->currentOwner() != player; }),
+		toReturn.end()); //TODO check cause its complicated
+
+	return toReturn;
+}
+
+
 std::vector<MinionCard *> Base::minionsWithPowerLessThan(int limPower, std::vector<MinionCard *> options)
 {
 	if (options.size() == 0)

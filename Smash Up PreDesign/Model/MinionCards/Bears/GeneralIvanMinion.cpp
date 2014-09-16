@@ -1,6 +1,5 @@
 #include "GeneralIvanMinion.h"
 #include <Player.h>
-#include <Board.h>
 
 GeneralIvanMinion::GeneralIvanMinion(Player *owner) : MinionCard(owner)
 {

@@ -18,6 +18,9 @@
 #include <SaucyWenchMinion.h>
 #include <PirateKingMinion.h>
 
+//Bears
+#include <GeneralIvanMinion.h>
+
 ////Dinos
 //#include <RexMinion.h>
 //#include <StegoMinion.h>
