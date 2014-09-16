@@ -168,6 +168,9 @@
     <ClInclude Include="Model\ActionCards\Pirates\FullSailAction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Model\MinionCards\Bears\GeneralIvanMinion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Model\BaseTypes\Board.cpp">
@@ -318,6 +321,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Model\ActionCards\Pirates\FullSailAction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\MinionCards\Bears\GeneralIvanMinion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

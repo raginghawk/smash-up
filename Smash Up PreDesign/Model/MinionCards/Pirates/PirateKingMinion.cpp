@@ -17,7 +17,7 @@ void PirateKingMinion::play(Base *base, MinionCard *card)
 	vBoard->baseWillScore()->registerListener(this);
 }
 
-void PirateKingMinion::discard()
+void PirateKingMinion::discard(MinionCard *card)
 {
 	vBoard->baseWillScore()->unregisterListener(this);
 }

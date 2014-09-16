@@ -47,6 +47,7 @@ public:
 
 	virtual void move(Base *newBase) = 0;
 	virtual void discard() = 0;
+	virtual void discardFromHand();
 
 protected:
 	Player *_owner;

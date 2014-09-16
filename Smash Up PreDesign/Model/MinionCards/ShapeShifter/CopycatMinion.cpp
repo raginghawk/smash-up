@@ -38,6 +38,11 @@ bool CopycatMinion::destroy(MinionCard *card)
 	return toReturn;
 }
 
+void CopycatMinion::discard(MinionCard *card)
+{
+	_selectedMinion->discard(this);
+	//TODO check General Ivan. Will increment the destroy counter and never decrement... bad times
+}
 
 void CopycatMinion::useTalent(Player *owner, MinionCard *card)
 {

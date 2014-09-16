@@ -22,6 +22,9 @@ public:
 	int playerNumber();
 	int handSize();
 
+	int destroyableCount();
+	void incrementDestroyableCount(int amount);
+
 	MinionCard *minionInDiscard(int maxPower);
 	MinionCard *minionInDeck(int maxPower);
 	std::vector<MinionCard *> minionsInHand();
@@ -87,6 +90,7 @@ private:
 	int _actionsRemaining;
 	int _victoryPoints;
 	int _playerNumber;
+	int _destroyableCount;
 	void initClassVariables();
 	void clearRemainingActionsandMinions();
 };

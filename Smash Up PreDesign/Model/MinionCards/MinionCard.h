@@ -37,6 +37,7 @@ class MinionCard : public Card
 		virtual bool fMovable();
 		virtual void move(Base *newBase);
 		virtual void discard();
+		virtual void discard(MinionCard *minionCard);
 		virtual void useTalent(Player *owner, MinionCard *card);
 
 	private:

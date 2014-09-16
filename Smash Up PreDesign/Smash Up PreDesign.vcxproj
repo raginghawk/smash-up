@@ -39,7 +39,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)Model;$(ProjectDir)Model\BaseTypes\Events;$(ProjectDir)Model\BaseTypes;$(ProjectDir)Model\MinionCards;$(ProjectDir)Model\MinionCards\Ghost;$(ProjectDir)Model\MinionCards\ShapeShifter;$(ProjectDir)Model\MinionCards\Pirates;$(ProjectDir)Model\ActionCards;$(ProjectDir)Model\ActionCards\Ghost;$(ProjectDir)Model\ActionCards\ShapeShifter;$(ProjectDir)Model\ActionCards\Pirates</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)Model;$(ProjectDir)Model\BaseTypes\Events;$(ProjectDir)Model\BaseTypes;$(ProjectDir)Model\MinionCards;$(ProjectDir)Model\MinionCards\Ghost;$(ProjectDir)Model\MinionCards\Bears;$(ProjectDir)Model\MinionCards\ShapeShifter;$(ProjectDir)Model\MinionCards\Pirates;$(ProjectDir)Model\ActionCards;$(ProjectDir)Model\ActionCards\Ghost;$(ProjectDir)Model\ActionCards\ShapeShifter;$(ProjectDir)Model\ActionCards\Pirates;$(ProjectDir)Model\ActionCards\Bears;</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -99,6 +99,7 @@
     <ClCompile Include="Model\BaseTypes\Events\EventListener.cpp" />
     <ClCompile Include="Model\BaseTypes\MinionPlayableStruct.cpp" />
     <ClCompile Include="Model\ActionCards\ShapeShifter\CellularBonding.cpp" />
+    <ClCompile Include="Model\MinionCards\Bears\GeneralIvanMinion.cpp" />
     <ClCompile Include="Model\MinionCards\Pirates\FirstMateMinion.cpp" />
     <ClCompile Include="Model\MinionCards\Pirates\PirateKingMinion.cpp" />
     <ClCompile Include="Model\MinionCards\Pirates\SaucyWenchMinion.cpp" />
@@ -151,6 +152,7 @@
     <ClInclude Include="Model\BaseTypes\Events\EventListener.h" />
     <ClInclude Include="Model\BaseTypes\Events\EventData.h" />
     <ClInclude Include="Model\BaseTypes\MinionPlayableStruct.h" />
+    <ClInclude Include="Model\MinionCards\Bears\GeneralIvanMinion.h" />
     <ClInclude Include="Model\MinionCards\Pirates\FirstMateMinion.h" />
     <ClInclude Include="Model\MinionCards\Pirates\BuccaneerMinion.h" />
     <ClInclude Include="Model\MinionCards\Pirates\SaucyWenchMinion.h" />

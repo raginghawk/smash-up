@@ -8,7 +8,7 @@ class PirateKingMinion : public MinionCard, public EventListener
 public:
 	PirateKingMinion(Player *owner);
 	virtual void play(Base *base, MinionCard *card);
-	virtual void discard();
+	virtual void discard(MinionCard *card);
 	//EventListener
 	virtual void call(EventData *eventData);
 };

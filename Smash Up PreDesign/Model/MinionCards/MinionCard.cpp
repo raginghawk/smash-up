@@ -202,6 +202,11 @@ void MinionCard::move(Base *newBase)
 
 void MinionCard::discard()
 {
+	discard(this);
+}
+
+void MinionCard::discard(MinionCard *card)
+{
 	//TODO not sure
 }
 

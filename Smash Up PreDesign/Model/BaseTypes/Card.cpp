@@ -52,3 +52,8 @@ void Card::drawn()
 {
 	// in most cases being drawn doesn't require anything so just have fun. Some subclasses break that rule
 }
+
+void Card::discardFromHand()
+{
+	//TODO remove it from hand and add it to its owner's discard pile
+}

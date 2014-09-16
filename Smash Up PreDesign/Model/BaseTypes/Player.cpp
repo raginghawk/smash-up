@@ -36,7 +36,21 @@ void Player::initClassVariables()
 	_endOfTurn = new Event(new EventData(END_OF_TURN));
 	_beginingOfTurn = new Event(new EventData(BEGINING_OF_TURN));
 	_minionPowerModification = 0;
+	_destroyableCount = 0;
 }
+
+int Player::destroyableCount()
+{
+	return _destroyableCount;
+}
+
+void Player::incrementDestroyableCount(int amount)
+{
+	assert(amount == 1 || amount == -1); // Should only change by one
+	_destroyableCount += amount;
+	assert(_destroyableCount > -1); // Should never be less than 0
+}
+
 
 bool Player::discardCard(int count, bool optional)
 {
@@ -48,7 +62,7 @@ bool Player::discardCard(int count, bool optional)
 		}
 
 		Card * selection = selectCard(_hand);
-		selection->discard();
+		selection->discardFromHand();
 	}
 	return true;
 }
