@@ -6,7 +6,7 @@
 #include <Board.h>
 #include <algorithm>
 
-Player::Player(deckType firstDeck, deckType secondDeck)
+Player::Player(Faction firstDeck, Faction secondDeck)
 {
 	DeckConstructor *constructor = new DeckConstructor();
 
@@ -14,11 +14,11 @@ Player::Player(deckType firstDeck, deckType secondDeck)
 
 	for (int i = 0; i < 2; i++)
 	{
-		deckType deck = firstDeck;
+		Faction faction = firstDeck;
 		if (i == 1)
-			deck = secondDeck;
+			faction = secondDeck;
 
-		_deck = constructor->addDeck(deck, _deck, this);
+		_deck = constructor->addDeck(faction, _deck, this);
 	}
 
 	delete(constructor);

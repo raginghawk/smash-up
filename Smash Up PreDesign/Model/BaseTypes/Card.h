@@ -18,13 +18,6 @@ enum CardType
 	INSTANT_CARD
 };
 
-enum Faction
-{
-	GHOST,
-	SHAPE_SHIFTER,
-	PIRATE,
-};
-
 class Card
 {
 public:

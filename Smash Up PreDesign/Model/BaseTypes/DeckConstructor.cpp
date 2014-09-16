@@ -6,19 +6,19 @@
 #include <time.h>       /* time */
 
 
-std::vector<Card *> DeckConstructor::addDeck(deckType deckToAdd, std::vector<Card *>deck, Player *owner)
+std::vector<Card *> DeckConstructor::addDeck(Faction factionToAdd, std::vector<Card *>deck, Player *owner)
 {
 	std::vector<Card *> newDeck;
 
-	switch (deckToAdd)
+	switch (factionToAdd)
 	{
-	case GHOST_DECK:
+	case GHOST:
 		newDeck = addGhosts(owner);
 		break;
-	case SHAPESHIFTER_DECK:
+	case SHAPE_SHIFTER:
 		newDeck = addShapeShifters(owner);
 		break;
-	case PIRATE_DECK:
+	case PIRATE:
 		newDeck = addPirates(owner);
 		break;
 	default:

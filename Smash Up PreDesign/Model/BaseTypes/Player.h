@@ -16,7 +16,7 @@ class Player
 {
 public:
 
-	Player(deckType firstDeck, deckType secondDeck);
+	Player(Faction firstDeck, Faction secondDeck);
 	~Player();
 #pragma region Members
 	int playerNumber();

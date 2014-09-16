@@ -5,9 +5,10 @@ class Board;
 
 extern Board *vBoard;
 
-enum deckType 
+enum Faction
 {
-	GHOST_DECK,
-	SHAPESHIFTER_DECK,
-	PIRATE_DECK
+	GHOST,
+	SHAPE_SHIFTER,
+	PIRATE,
+	BEAR_CAVALRY
 };

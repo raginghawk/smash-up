@@ -9,8 +9,8 @@
 int main(void)
 {
 	std::vector<Player *> players;
-	players.push_back(new Player(GHOST_DECK, GHOST_DECK));
-	players.push_back(new Player(SHAPESHIFTER_DECK, SHAPESHIFTER_DECK));
+	players.push_back(new Player(GHOST, GHOST));
+	players.push_back(new Player(SHAPE_SHIFTER, SHAPE_SHIFTER));
 
 	vBoard = new Board(players);
 
