@@ -24,6 +24,9 @@ std::vector<Card *> DeckConstructor::addDeck(Faction factionToAdd, std::vector<C
 	case BEAR_CAVALRY:
 		newDeck = addBears(owner);
 		break;
+	case ZOMBIE:
+		newDeck = addZombies(owner);
+		break;
 	default:
 		assert(true); /*Should never have a deckType that isn't covered*/
 	}
@@ -176,4 +179,20 @@ std::vector<Card *> DeckConstructor::addBears(Player *owner)
 	bearDeck.push_back(new GeneralIvanMinion(owner));
 
 	return bearDeck;
+
+	//TODO FINISH BEARS
+}
+
+std::vector<Card *> DeckConstructor::addZombies(Player *owner)
+{
+	std::vector<Card *> zombieDeck;
+
+	//Minions
+	for (int c = 0; c < 4; c++)
+	{
+		zombieDeck.push_back(new WalkerMinion(owner));
+	}
+
+
+	return zombieDeck;
 }

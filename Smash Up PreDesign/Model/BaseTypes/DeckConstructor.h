@@ -13,4 +13,5 @@ private:
 	std::vector<Card *> addShapeShifters(Player *owner);
 	std::vector<Card *> addPirates(Player *owner);
 	std::vector<Card *> addBears(Player *owner);
+	std::vector<Card *> addZombies(Player *owner);
 };

@@ -374,6 +374,21 @@ void Player::removeCardFromHand(Card *card)
 	_hand.erase(itCards);
 }
 
+void Player::discardTopCard()
+{
+	_discards.push_back(_deck.back());
+	_deck.pop_back();
+}
+
+
+#pragma region UI (Not Started)
+
+void Player::lookAtTopCard()
+{
+	Card *card = _deck.back();
+	//TODO show the card
+}
+
 std::vector<Base *> Player::baseOptions(Card *card)
 {
 	//TODO get options from the card. Probably need a fPlayable method in the base
@@ -437,3 +452,5 @@ MinionPlayableStruct * Player::selectMinionStruct(std::vector<MinionPlayableStru
 	MinionPlayableStruct *selection = NULL;
 	return selection;
 }
+
+#pragma endregion

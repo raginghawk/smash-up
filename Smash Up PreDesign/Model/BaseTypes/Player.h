@@ -61,6 +61,9 @@ public:
 	void addCardToHand(Card *card);
 	void addCardToDiscardPile(Card *card);
 
+	void lookAtTopCard();
+	void discardTopCard();
+
 	void shuffleDeck(bool withDiscards);
 	void shuffleMinionInDeck(MinionCard *minion);
 

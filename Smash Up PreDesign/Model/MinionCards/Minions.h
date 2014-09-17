@@ -23,6 +23,9 @@
 #include <BearCavalryMinion.h>
 #include <PolarCommandoMinion.h>
 
+//Zombies
+#include <WalkerMinion.h>
+
 ////Dinos
 //#include <RexMinion.h>
 //#include <StegoMinion.h>

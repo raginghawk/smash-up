@@ -7,8 +7,9 @@ extern Board *vBoard;
 
 enum Faction
 {
+	PIRATE,
+	ZOMBIE,
 	GHOST,
 	SHAPE_SHIFTER,
-	PIRATE,
 	BEAR_CAVALRY
 };
