@@ -110,6 +110,7 @@ void Base::modifyPower(int modification, Player *owner)
 void Base::moveMinion(MinionCard *minion)
 {
 	_minionsOnBase.push_back(minion);
+	minion->setBase(this);
 }
 
 void Base::playMinion(MinionCard *minion)
@@ -120,14 +121,7 @@ void Base::playMinion(MinionCard *minion)
 
 void Base::destroyMinion(MinionCard *minion)
 {
-	std::vector<MinionCard *>::iterator itMinions = std::find(_minionsOnBase.begin(), _minionsOnBase.end(), minion);
-	if (itMinions == _minionsOnBase.end())
-	{
-		return;
-		assert(false); // Couldn't find minion
-	}
-		
-	this->removeMinion(*itMinions);
+	minion->discard();
 }
 
 void Base::removeMinion(MinionCard *minion)
@@ -140,7 +134,6 @@ void Base::removeMinion(MinionCard *minion)
 	}
 
 	_minionsOnBase.erase(itMinions);
-	minion->removeAllActions();
 }
 
 

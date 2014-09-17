@@ -59,7 +59,7 @@ public:
 	bool removeFromDiscard(Card *card);
 	void drawCard(int count);
 	void addCardToHand(Card *card);
-
+	void addCardToDiscardPile(Card *card);
 
 	void shuffleDeck(bool withDiscards);
 	void shuffleMinionInDeck(MinionCard *minion);

@@ -198,6 +198,11 @@ void Player::addCardToHand(Card *card)
 	_hand.push_back(card);
 }
 
+void Player::addCardToDiscardPile(Card *card)
+{
+	_discards.push_back(card);
+}
+
 
 void Player::shuffleDeck(bool withDiscards)
 {

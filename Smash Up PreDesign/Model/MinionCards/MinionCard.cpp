@@ -68,13 +68,6 @@ void MinionCard::modifyCurrentPower(int modification)
 	_powerModification += modification;
 }
 
-void MinionCard::modifyDestroyCount(int modification)
-{
-	_destroyProtectionCounter += modification;
-	assert(_destroyProtectionCounter >= 0); /*should never have less than zero because that means there are negitive cards/affects protecting it*/
-	assert(modification == 1 || modification == -1); /*you should only increment and decrement by one*/
-}
-
 void MinionCard::modifyAffectAbleCount(int modification)
 {
 	_affectableCounter += modification;
@@ -97,14 +90,21 @@ bool MinionCard::destroy(MinionCard *card)
 	return false;
 }
 
-bool MinionCard::fDestroyable(MinionCard *card)
+void MinionCard::modifyDestroyCount(int modification)
 {
-	return _destroyProtectionCounter == 0;
+	_destroyProtectionCounter += modification;
+	assert(_destroyProtectionCounter >= 0); /*should never have less than zero because that means there are negitive cards/affects protecting it*/
+	assert(modification == 1 || modification == -1); /*you should only increment and decrement by one*/
 }
 
 bool MinionCard::fDestroyable()
 {
 	return fDestroyable(this);
+}
+
+bool MinionCard::fDestroyable(MinionCard *card)
+{
+	return _destroyProtectionCounter == 0;
 }
 
 bool MinionCard::fPlay(Player *player)
@@ -156,7 +156,7 @@ bool MinionCard::fUpdate(UpdateVisibilityFlags *flags)
 
 void MinionCard::update(Base *base)
 {
-
+	//TODO
 }
 
 void MinionCard::update(UpdateVisibilityFlags *flags)
@@ -172,26 +172,19 @@ void MinionCard::update(UpdateVisibilityFlags *flags)
 	}
 }
 
-bool MinionCard::fMovable()
+bool MinionCard::fMovable(Base *newBase)
 {
+	//TODO check current base if it is movable
 	return true;
 }
 
 
 void MinionCard::move(Base *newBase)
 {
-	if (fMovable())
+	if (fMovable(newBase))
 	{
-		std::vector<MinionCard *>::iterator itMinions = std::find(_base->minionsOnBase().begin(), _base->minionsOnBase().end(), this);
-		if (itMinions == _base->minionsOnBase().end())
-		{
-			assert(true); /*Couldn't find minion*/
-			return;
-		}
-
-		_base->minionsOnBase().erase(itMinions);
+		_base->removeMinion(this);
 		newBase->moveMinion(this);
-		_base = newBase;
 	}
 }
 
@@ -202,11 +195,15 @@ void MinionCard::discard()
 
 void MinionCard::discard(MinionCard *card)
 {
-	//TODO not sure
+	_base->removeMinion(card);
+	_base = NULL;
+
+	card->removeAllActions();
+
+	card->owner()->addCardToDiscardPile(card);
 }
 
 void MinionCard::useTalent(Player *owner, MinionCard *card)
 {
-	// any Minion with a talent should override this method
 	assert(false);
 }

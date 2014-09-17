@@ -43,7 +43,7 @@ class MinionCard : public Card
 		virtual void update(Base *base);
 		virtual void update(UpdateVisibilityFlags *minionCard);
 		
-		virtual bool fMovable();
+		virtual bool fMovable(Base *newBase);
 		virtual void move(Base *newBase);
 		
 		virtual void discard();
