@@ -13,10 +13,14 @@ AcrossTheDivide::AcrossTheDivide(Player *owner) : ActionCard(owner)
 void AcrossTheDivide::play()
 {
 	ActionCard::play();
-	MinionCard *selection= _currentOwner->minionInDiscard(INT_MAX);
+	MinionCard *selection= _currentOwner->minionInDiscard(INT_MAX, true);
 
-	while (_currentOwner->removeFromDiscard(selection))
+	if (selection)
 	{
-		_currentOwner->addCardToHand(selection);
+		while (_currentOwner->removeFromDiscard(selection))
+		{
+			_currentOwner->addCardToHand(selection);
+			//TODO add a bail option
+		}
 	}
 }

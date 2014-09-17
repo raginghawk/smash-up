@@ -133,9 +133,14 @@ std::vector<MinionCard *> Player::minionsInHand()
 
 MinionCard *Player::minionInDiscard(int maxPower)
 {
+	return this->minionInDiscard(maxPower, false);
+}
+
+MinionCard *Player::minionInDiscard(int maxPower, bool optional)
+{
 	std::vector<MinionCard *>minionsInDiscard;
 	std::vector<Card *>::iterator itCards;
-	
+
 	for (itCards = _discards.begin(); itCards != _discards.end(); itCards++)
 	{
 		if ((*itCards)->isMinion() && ((MinionCard *)*itCards)->printedPower() <= maxPower)
@@ -144,9 +149,12 @@ MinionCard *Player::minionInDiscard(int maxPower)
 		}
 	}
 
-	//TODO: select on of the minions in minionsInDiscard
-	return NULL;
+	if (optional)
+		minionsInDiscard.push_back(NULL);
+
+	return selectCard(minionsInDiscard);
 }
+
 
 MinionCard *Player::minionInDeck(int maxPower)
 {

@@ -16,7 +16,7 @@ void ReallyAction::play()
 
 	selection->destroy();
 
-	MinionCard *toPlay = _currentOwner->minionInDiscard(maxPower);
+	MinionCard *toPlay = _currentOwner->minionInDiscard(maxPower, false);
 	if (toPlay)
 		toPlay->play(_currentOwner->selectBase(_currentOwner->baseOptions(toPlay)));
 }

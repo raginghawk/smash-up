@@ -119,6 +119,7 @@
     <ClCompile Include="Model\BaseTypes\DeckConstructor.cpp" />
     <ClCompile Include="Model\MinionCards\ShapeShifter\MimicMinion.cpp" />
     <ClCompile Include="Model\MinionCards\ShapeShifter\CopycatMinion.cpp" />
+    <ClCompile Include="Model\MinionCards\Zombies\GraveDiggerMinion.cpp" />
     <ClCompile Include="Model\MinionCards\Zombies\WalkerMinion.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -176,6 +177,7 @@
     <ClInclude Include="Model\MinionCards\Minions.h" />
     <ClInclude Include="Model\MinionCards\ShapeShifter\CopycatMinion.h" />
     <ClInclude Include="Model\MinionCards\ShapeShifter\MimicMinion.h" />
+    <ClInclude Include="Model\MinionCards\Zombies\GraveDiggerMinion.h" />
     <ClInclude Include="Model\MinionCards\Zombies\WalkerMinion.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -31,6 +31,7 @@ public:
 	void incrementDestroyableCount(int modification);
 
 	MinionCard *minionInDiscard(int maxPower);
+	MinionCard *minionInDiscard(int maxPower, bool optional);
 	MinionCard *minionInDeck(int maxPower);
 	std::vector<MinionCard *> minionsInHand();
 
