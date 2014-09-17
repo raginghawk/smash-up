@@ -20,7 +20,10 @@ public:
 	std::vector<MinionCard *> minionsFromPlayerWithPowerLessThan(Player *player, int limPower);
 	std::vector<MinionCard *> minionsWithPowerLessThan(int limPower);
 	std::vector<MinionCard *> minionsOfFaction(Faction faction);
-	void modifyPower(int modification, Player *owner);
+
+	void modifyPower(int modification, Player *player);
+	int powerModification(Player *player);
+
 	Event * baseDidScore();
 	int breakingPoint;
 #pragma endregion

@@ -46,12 +46,17 @@ int MinionCard::currentPower(MinionCard *card)
 {
 	int powerModification = card->powerModification();
 	powerModification += card->currentOwner()->minionPowerModification();
+	powerModification += card->base()->powerModification(card->currentOwner());
+
+	if (card->printedPower() + powerModification < 0)
+		return 0;
+
 	return card->printedPower() + powerModification;
 }
 
 bool MinionCard::isAffectable()
 {
-	return true;
+	return _affectableCounter == 0;
 }
 
 void MinionCard::removeAllActions()

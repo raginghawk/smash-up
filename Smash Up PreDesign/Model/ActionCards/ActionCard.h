@@ -1,5 +1,5 @@
 #pragma once
-
+//TODO add factions to everybody :/
 #include <Card.h>
 
 class ActionCard : public Card

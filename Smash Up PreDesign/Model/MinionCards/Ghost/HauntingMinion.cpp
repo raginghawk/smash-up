@@ -18,7 +18,7 @@ int HauntingMinion::currentPower(MinionCard *card)
 	return currentPower;
 }
 
-bool HauntingMinion::isAffectable() //TODO COPYCAT
+bool HauntingMinion::isAffectable()
 {
 	if (_currentOwner->handSize() < 3)
 	{

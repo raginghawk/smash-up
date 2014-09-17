@@ -8,4 +8,7 @@ public:
 	DoorToBeyond::DoorToBeyond(Player *owner);
 	virtual bool fUpdate(UpdateVisibilityFlags *flags);
 	virtual void update(Base *base);
+
+private:
+	bool _active;
 };

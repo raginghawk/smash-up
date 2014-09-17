@@ -102,9 +102,14 @@ Event * Base::baseDidScore()
 }
 
 
-void Base::modifyPower(int modification, Player *owner)
+void Base::modifyPower(int modification, Player *player)
 {
-	_powerModification[owner] += modification;
+	_powerModification[player] += modification;
+}
+
+int Base::powerModification(Player *player)
+{
+	return _powerModification[player];
 }
 
 void Base::moveMinion(MinionCard *minion)
