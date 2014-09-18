@@ -120,6 +120,7 @@
     <ClCompile Include="Model\MinionCards\ShapeShifter\MimicMinion.cpp" />
     <ClCompile Include="Model\MinionCards\ShapeShifter\CopycatMinion.cpp" />
     <ClCompile Include="Model\MinionCards\Zombies\GraveDiggerMinion.cpp" />
+    <ClCompile Include="Model\MinionCards\Zombies\ZombieLordMinion.cpp" />
     <ClCompile Include="Model\MinionCards\Zombies\TenaciousZMinion.cpp" />
     <ClCompile Include="Model\MinionCards\Zombies\WalkerMinion.cpp" />
   </ItemGroup>
@@ -179,6 +180,7 @@
     <ClInclude Include="Model\MinionCards\ShapeShifter\CopycatMinion.h" />
     <ClInclude Include="Model\MinionCards\ShapeShifter\MimicMinion.h" />
     <ClInclude Include="Model\MinionCards\Zombies\GraveDiggerMinion.h" />
+    <ClInclude Include="Model\MinionCards\Zombies\ZombieLordMinion.h" />
     <ClInclude Include="Model\MinionCards\Zombies\TenaciousZMinion.h" />
     <ClInclude Include="Model\MinionCards\Zombies\WalkerMinion.h" />
   </ItemGroup>

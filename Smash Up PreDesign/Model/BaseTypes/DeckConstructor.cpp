@@ -193,10 +193,16 @@ std::vector<Card *> DeckConstructor::addZombies(Player *owner)
 		zombieDeck.push_back(new WalkerMinion(owner));
 	}
 
+	for (int c = 0; c < 3; c++)
+	{
+		zombieDeck.push_back(new TenaciousZMinion(owner));
+	}
+
 	for (int c = 0; c < 2; c++)
 	{
 		zombieDeck.push_back(new GraveDiggerMinion(owner));
 	}
+	zombieDeck.push_back(new ZombieLordMinion(owner));
 
 	return zombieDeck;
 }

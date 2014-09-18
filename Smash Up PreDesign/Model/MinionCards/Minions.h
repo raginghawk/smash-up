@@ -26,6 +26,8 @@
 //Zombies
 #include <WalkerMinion.h>
 #include <GraveDiggerMinion.h>
+#include <TenaciousZMinion.h>
+#include <ZombieLordMinion.h>
 
 ////Dinos
 //#include <RexMinion.h>
