@@ -11,7 +11,6 @@
 #include <MakeContact.h>
 
 // Shapeshifters
-
 #include <Transmogrify.h>
 #include <GeneticShiftAction.h>
 #include <SpliceAsNiceAction.h>
@@ -21,7 +20,6 @@
 #include <CellularBonding.h>
 
 // Pirates
-
 #include <DinghyAction.h>
 #include <BroadsideAction.h>
 #include <PowderKegAction.h>
@@ -30,3 +28,6 @@
 #include <ShanghaiAction.h>
 #include <SeaDogsAction.h>
 #include <FullSailAction.h>
+
+// Zombies
+#include <TheyKeepComingAction.h>

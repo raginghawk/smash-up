@@ -141,22 +141,18 @@ std::vector<Card *> DeckConstructor::addPirates(Player *owner)
 	pirateDeck.push_back(new PirateKingMinion(owner));
 	
 	//Actions
-	for (int c = 0; c < 2; c++)
-	{
-		pirateDeck.push_back(new DinghyAction(owner));
-	}
-	
-	for (int c = 0; c < 2; c++)
-	{
-		pirateDeck.push_back(new BroadsideAction(owner));
-	}
-
 	pirateDeck.push_back(new PowderKegAction(owner));
 	pirateDeck.push_back(new SwashbucklingAction(owner));
 	pirateDeck.push_back(new ShanghaiAction(owner));
 	pirateDeck.push_back(new CannonAction(owner));
 	pirateDeck.push_back(new SeaDogsAction(owner));
 	pirateDeck.push_back(new FullSailAction(owner));
+
+	for (int c = 0; c < 2; c++)
+	{
+		pirateDeck.push_back(new DinghyAction(owner));
+		pirateDeck.push_back(new BroadsideAction(owner));
+	}
 
 	return pirateDeck;
 }
@@ -203,6 +199,13 @@ std::vector<Card *> DeckConstructor::addZombies(Player *owner)
 		zombieDeck.push_back(new GraveDiggerMinion(owner));
 	}
 	zombieDeck.push_back(new ZombieLordMinion(owner));
+
+	//Actions
+
+	for (int c = 0; c < 2; c++)
+	{
+		zombieDeck.push_back(new TheyKeepComingAction(owner));
+	}
 
 	return zombieDeck;
 }

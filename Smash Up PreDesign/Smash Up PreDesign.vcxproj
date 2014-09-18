@@ -90,6 +90,7 @@
     <ClCompile Include="Model\ActionCards\ShapeShifter\BactaTheFuture.cpp" />
     <ClCompile Include="Model\ActionCards\ShapeShifter\SpliceAsNiceAction.cpp" />
     <ClCompile Include="Model\ActionCards\ShapeShifter\Transmogrify.cpp" />
+    <ClCompile Include="Model\ActionCards\Zombies\TheyKeepComingAction.cpp" />
     <ClCompile Include="Model\BaseTypes\Board.cpp" />
     <ClCompile Include="Model\BaseTypes\Base.cpp" />
     <ClCompile Include="Model\BaseTypes\Card.cpp" />
@@ -151,6 +152,7 @@
     <ClInclude Include="Model\ActionCards\ShapeShifter\ReallyAction.h" />
     <ClInclude Include="Model\ActionCards\ShapeShifter\SpliceAsNiceAction.h" />
     <ClInclude Include="Model\ActionCards\ShapeShifter\Transmogrify.h" />
+    <ClInclude Include="Model\ActionCards\Zombies\TheyKeepComingAction.h" />
     <ClInclude Include="Model\BaseTypes\Board.h" />
     <ClInclude Include="Model\BaseTypes\Base.h" />
     <ClInclude Include="Model\BaseTypes\Card.h" />
