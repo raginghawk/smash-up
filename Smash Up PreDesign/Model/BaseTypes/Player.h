@@ -19,6 +19,9 @@ public:
 	Player(Faction firstDeck, Faction secondDeck);
 	~Player();
 #pragma region Members
+
+	bool playedTenaciousZ;
+
 	int handSize();
 
 	int currentVictoryPoints();
@@ -61,6 +64,8 @@ public:
 	void drawCard(int count);
 	void addCardToHand(Card *card);
 	void addCardToDiscardPile(Card *card);
+
+	bool isCardInHand(Card *card);
 
 	void lookAtTopCard();
 	void discardTopCard();

@@ -183,6 +183,9 @@
     <ClInclude Include="Model\MinionCards\Zombies\GraveDiggerMinion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Model\MinionCards\Zombies\TenaciousZMinion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Model\BaseTypes\Board.cpp">
@@ -348,6 +351,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Model\MinionCards\Zombies\GraveDiggerMinion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\MinionCards\Zombies\TenaciousZMinion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

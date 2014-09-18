@@ -38,6 +38,7 @@ void Player::initClassVariables()
 	_beginingOfTurn = new Event(new EventData(BEGINING_OF_TURN));
 	_minionPowerModification = 0;
 	_destroyableCount = 0;
+	playedTenaciousZ = false;
 }
 
 int Player::destroyableCount()
@@ -211,6 +212,17 @@ void Player::addCardToDiscardPile(Card *card)
 	_discards.push_back(card);
 }
 
+bool Player::isCardInHand(Card *card)
+{
+	std::vector<Card *>::iterator itCards;
+	for (itCards = _hand.begin(); itCards != _hand.end(); itCards++)
+	{
+		if (*itCards == card)
+			return true;
+	}
+	return false;
+}
+
 
 void Player::shuffleDeck(bool withDiscards)
 {
@@ -297,6 +309,7 @@ void Player::takeTurn()
 	_actionsRemaining = 1;
 	_minionsRemaining.clear();
 	_minionsRemaining.push_back(new MinionPlayableStruct(INT_MAX, NULL));
+	playedTenaciousZ = false;
 
 	_beginingOfTurn->fireEvent();
 
@@ -344,6 +357,7 @@ void Player::endTurn()
 		discardCard((_hand.size() - 10), false);
 	}
 
+	playedTenaciousZ = true;
 	clearRemainingActionsandMinions();
 }
 

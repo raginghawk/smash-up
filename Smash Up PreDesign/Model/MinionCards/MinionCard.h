@@ -36,6 +36,7 @@ class MinionCard : public Card
 		virtual bool destroy(MinionCard *card);
 		
 		virtual bool fPlay(Player *player);
+		virtual bool fPlay(Player *player, Base *base);
 		virtual void play(Base *base);
 		virtual void play(Base *base, MinionCard *card);
 		

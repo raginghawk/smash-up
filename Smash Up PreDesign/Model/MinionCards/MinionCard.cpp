@@ -135,6 +135,12 @@ bool MinionCard::fPlay(Player *player)
 	return true;
 }
 
+bool MinionCard::fPlay(Player *player, Base *base)
+{
+	//TODO Figure this and the other fPlay out :/
+	return true;
+}
+
 void MinionCard::play(Base *base)
 {
 	play(base, this);
