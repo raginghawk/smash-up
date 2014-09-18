@@ -43,6 +43,7 @@ public:
 
 	int actionsRemaining();
 	std::vector<MinionPlayableStruct *> &minionsRemaining();
+	std::vector<Card *> discards();
 #pragma endregion
 
 	MinionCard *selectCard(std::vector<MinionCard *>options);
@@ -60,7 +61,7 @@ public:
 	void Player::removeCardFromHand(Card *card);
 
 	bool discardCard(int count, bool optional);
-	bool removeFromDiscard(Card *card);
+	Card *removeFromDiscard(Card *card);
 	void drawCard(int count);
 	void addCardToHand(Card *card);
 	void addCardToDiscardPile(Card *card);

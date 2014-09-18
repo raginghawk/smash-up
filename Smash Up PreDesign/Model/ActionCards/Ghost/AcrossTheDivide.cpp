@@ -17,9 +17,10 @@ void AcrossTheDivide::play()
 
 	if (selection)
 	{
-		while (_currentOwner->removeFromDiscard(selection))
+		Card *minion = _currentOwner->removeFromDiscard(selection);
+		while (minion)
 		{
-			_currentOwner->addCardToHand(selection);
+			_currentOwner->addCardToHand(minion);
 			//TODO add a bail option
 		}
 	}

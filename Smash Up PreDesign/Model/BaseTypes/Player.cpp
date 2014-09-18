@@ -79,6 +79,12 @@ Event *Player::endOfTurn()
 	return _endOfTurn;
 }
 
+std::vector<Card *> Player::discards()
+{
+	return _discards;
+}
+
+
 void Player::modifyMinionPower(int modification)
 {
 	_minionPowerModification += modification;
@@ -156,7 +162,6 @@ MinionCard *Player::minionInDiscard(int maxPower, bool optional)
 	return selectCard(minionsInDiscard);
 }
 
-
 MinionCard *Player::minionInDeck(int maxPower)
 {
 	std::vector<MinionCard *>minionsInDeck;
@@ -174,7 +179,7 @@ MinionCard *Player::minionInDeck(int maxPower)
 	return NULL;
 }
 
-bool Player::removeFromDiscard(Card *card)
+Card *Player::removeFromDiscard(Card *card)
 {
 	std::vector<Card *>::iterator itCards;
 
@@ -184,10 +189,10 @@ bool Player::removeFromDiscard(Card *card)
 		if (card == *itCards || !(strcmp(card->name().c_str(), (*itCards)->name().c_str())))
 		{
 			_discards.erase(itCards);
-			return true;
+			return *itCards;
 		}
 	}
-	return false;
+	return NULL;
 }
 
 void Player::drawCard(int cCards)
