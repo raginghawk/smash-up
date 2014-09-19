@@ -47,6 +47,8 @@ public:
 	std::vector<Card *> deck();
 #pragma endregion
 
+	std::vector<MinionCard *> selectCards(std::vector<MinionCard *>options, int maxSize, bool optional);
+	std::vector<Card *> selectCards(std::vector<Card *>options, int maxSize, bool optional);
 	MinionCard *selectCard(std::vector<MinionCard *>options);
 	ActionCard *selectCard(std::vector<ActionCard *>options);
 	Card *selectCard(std::vector<Card *>options);
@@ -65,8 +67,10 @@ public:
 	Card *removeFromDiscard(std::string cardName);
 	Card *removeFromDeck(std::string cardName);
 	void drawCard(int count);
+	
 	void addCardToHand(Card *card);
 	void addCardToDiscardPile(Card *card);
+	void addCardToDeck(Card *card);
 
 	bool isCardInHand(Card *card);
 

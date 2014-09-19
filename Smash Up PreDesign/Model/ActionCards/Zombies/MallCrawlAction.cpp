@@ -15,7 +15,7 @@ void MallCrawlAction::play()
 
 	while (true)
 	{
-		//TODO add bail out
+		//TODO add bail out possibly multi select :)
 		Card *toAdd = _currentOwner->removeFromDeck(selection->name());
 		if (toAdd)
 		{
@@ -24,4 +24,6 @@ void MallCrawlAction::play()
 		else
 			break;
 	}
+
+	_currentOwner->shuffleDeck(false);
 }

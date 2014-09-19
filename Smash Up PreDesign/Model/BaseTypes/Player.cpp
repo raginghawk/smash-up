@@ -238,6 +238,11 @@ void Player::addCardToDiscardPile(Card *card)
 	_discards.push_back(card);
 }
 
+void Player::addCardToDeck(Card *card)
+{
+	_deck.push_back(card);
+}
+
 bool Player::isCardInHand(Card *card)
 {
 	std::vector<Card *>::iterator itCards;
@@ -450,6 +455,20 @@ std::vector<MinionPlayableStruct *> Player::minionStructOptions(Base *base, Mini
 	std::vector<MinionPlayableStruct *> options;
 	return _minionsRemaining;
 }
+
+std::vector<MinionCard *> Player::selectCards(std::vector<MinionCard *>options, int maxSize, bool optional)
+{
+	//TODO Multiselect
+	std::vector<MinionCard *> selection;
+	return selection;
+}
+
+std::vector<Card *> Player::selectCards(std::vector<Card *>options, int maxSize, bool optional)
+{
+	std::vector<Card *> selection;
+	return selection;
+}
+
 
 MinionCard * Player::selectCard(std::vector<MinionCard *>options)
 {

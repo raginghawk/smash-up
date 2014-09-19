@@ -15,7 +15,7 @@ void BulletsAction::play()
 
 	while (true)
 	{
-		//TODO add bail out
+		//TODO add bail out possibly use multi select :)
 		Card *toAdd = _currentOwner->removeFromDiscard(selection->name());
 		if (toAdd)
 		{

@@ -211,6 +211,7 @@ std::vector<Card *> DeckConstructor::addZombies(Player *owner)
 	zombieDeck.push_back(new OutbreakAction(owner));
 	zombieDeck.push_back(new BulletsAction(owner));
 	zombieDeck.push_back(new MallCrawlAction(owner));
+	zombieDeck.push_back(new LendHandAction(owner));
 
 	return zombieDeck;
 }

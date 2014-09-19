@@ -35,3 +35,4 @@
 #include <OutbreakAction.h>
 #include <BulletsAction.h>
 #include <MallCrawlAction.h>
+#include <LendHandAction.h>
