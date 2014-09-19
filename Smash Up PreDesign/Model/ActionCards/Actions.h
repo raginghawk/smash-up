@@ -33,3 +33,5 @@
 #include <TheyKeepComingAction.h>
 #include <GraveRobbingAction.h>
 #include <OutbreakAction.h>
+#include <BulletsAction.h>
+#include <MallCrawlAction.h>

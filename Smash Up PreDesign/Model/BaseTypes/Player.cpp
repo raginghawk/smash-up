@@ -84,6 +84,11 @@ std::vector<Card *> Player::discards()
 	return _discards;
 }
 
+std::vector<Card *> Player::deck()
+{
+	return _deck;
+}
+
 
 void Player::modifyMinionPower(int modification)
 {
@@ -189,6 +194,22 @@ Card *Player::removeFromDiscard(std::string cardName)
 		if (!(strcmp(cardName.c_str(), (*itCards)->name().c_str())))
 		{
 			_discards.erase(itCards);
+			return *itCards;
+		}
+	}
+	return NULL;
+}
+
+Card *Player::removeFromDeck(std::string cardName)
+{
+	std::vector<Card *>::iterator itCards;
+
+	for (itCards = _deck.begin(); itCards != _deck.end(); itCards++)
+	{
+		// If the card is equal or if they have the same name (name shouldn't matter and is needed for Across the Divide
+		if (!(strcmp(cardName.c_str(), (*itCards)->name().c_str())))
+		{
+			_deck.erase(itCards);
 			return *itCards;
 		}
 	}
