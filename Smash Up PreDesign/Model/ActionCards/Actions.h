@@ -32,3 +32,4 @@
 // Zombies
 #include <TheyKeepComingAction.h>
 #include <GraveRobbingAction.h>
+#include <OutbreakAction.h>

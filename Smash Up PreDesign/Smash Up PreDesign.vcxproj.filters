@@ -195,6 +195,9 @@
     <ClInclude Include="Model\ActionCards\Zombies\GraveRobbingAction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Model\ActionCards\Zombies\OutbreakAction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Model\BaseTypes\Board.cpp">
@@ -372,6 +375,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Model\ActionCards\Zombies\GraveRobbingAction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\ActionCards\Zombies\OutbreakAction.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
