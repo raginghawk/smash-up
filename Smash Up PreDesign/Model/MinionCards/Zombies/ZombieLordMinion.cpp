@@ -22,8 +22,8 @@ void ZombieLordMinion::play(Base *base, MinionCard *card)
 			MinionCard *selection = card->currentOwner()->minionInDiscard(2, true);
 			if (selection)
 			{
+				card->currentOwner()->removeFromDiscard(selection->name());
 				selection->play(*itBases);
-				card->currentOwner()->removeFromDiscard(selection);
 			}
 		}
 	}

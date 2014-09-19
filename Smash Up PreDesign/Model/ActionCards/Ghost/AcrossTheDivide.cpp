@@ -17,7 +17,7 @@ void AcrossTheDivide::play()
 
 	if (selection)
 	{
-		Card *minion = _currentOwner->removeFromDiscard(selection);
+		Card *minion = _currentOwner->removeFromDiscard(selection->name());
 		while (minion)
 		{
 			_currentOwner->addCardToHand(minion);

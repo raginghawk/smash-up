@@ -179,14 +179,14 @@ MinionCard *Player::minionInDeck(int maxPower)
 	return NULL;
 }
 
-Card *Player::removeFromDiscard(Card *card)
+Card *Player::removeFromDiscard(std::string cardName)
 {
 	std::vector<Card *>::iterator itCards;
 
 	for (itCards = _discards.begin(); itCards != _discards.end(); itCards++)
 	{
 		// If the card is equal or if they have the same name (name shouldn't matter and is needed for Across the Divide
-		if (card == *itCards || !(strcmp(card->name().c_str(), (*itCards)->name().c_str())))
+		if (!(strcmp(cardName.c_str(), (*itCards)->name().c_str())))
 		{
 			_discards.erase(itCards);
 			return *itCards;

@@ -14,9 +14,8 @@ void GraveDiggerMinion::play(Base *base, MinionCard *card)
 
 	if (selection)
 	{
-		bool removed = card->currentOwner()->removeFromDiscard(selection);
-		assert(removed);
-		card->currentOwner()->addCardToHand(selection);
+		Card *toAdd = card->currentOwner()->removeFromDiscard(selection->name());
+		card->currentOwner()->addCardToHand(toAdd);
 	}
 
 	MinionCard::play(base, card);

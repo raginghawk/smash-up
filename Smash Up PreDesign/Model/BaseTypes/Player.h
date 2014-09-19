@@ -61,7 +61,7 @@ public:
 	void Player::removeCardFromHand(Card *card);
 
 	bool discardCard(int count, bool optional);
-	Card *removeFromDiscard(Card *card);
+	Card *removeFromDiscard(std::string cardName);
 	void drawCard(int count);
 	void addCardToHand(Card *card);
 	void addCardToDiscardPile(Card *card);

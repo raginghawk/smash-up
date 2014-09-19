@@ -126,6 +126,7 @@
     <ClCompile Include="Model\MinionCards\Zombies\ZombieLordMinion.cpp" />
     <ClCompile Include="Model\MinionCards\Zombies\TenaciousZMinion.cpp" />
     <ClCompile Include="Model\MinionCards\Zombies\WalkerMinion.cpp" />
+    <ClCompile Include="Model\ActionCards\Zombies\BulletsAction.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Model\ActionCards\ActionCard.h" />
@@ -155,6 +156,7 @@
     <ClInclude Include="Model\ActionCards\ShapeShifter\SpliceAsNiceAction.h" />
     <ClInclude Include="Model\ActionCards\ShapeShifter\Transmogrify.h" />
     <ClInclude Include="Model\ActionCards\Zombies\GraveRobbingAction.h" />
+    <ClInclude Include="Model\ActionCards\Zombies\BulletsAction.h" />
     <ClInclude Include="Model\ActionCards\Zombies\OutbreakAction.h" />
     <ClInclude Include="Model\ActionCards\Zombies\TheyKeepComingAction.h" />
     <ClInclude Include="Model\BaseTypes\Board.h" />

@@ -13,7 +13,6 @@ void GraveRobbingAction::play()
 
 	Card *selection = _currentOwner->selectCard(_currentOwner->discards());
 
-	// toAdd is not always = to selection. Because removeFromDiscard removes the first instance (via name matching) and then returns a reference to the card it actually erases
-	Card *toAdd = _currentOwner->removeFromDiscard(selection); 
+	Card *toAdd = _currentOwner->removeFromDiscard(selection->name()); 
 	_currentOwner->addCardToHand(toAdd);
 }
