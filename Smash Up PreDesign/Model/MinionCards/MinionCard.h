@@ -39,11 +39,7 @@ class MinionCard : public Card
 		virtual bool fPlay(Player *player, Base *base);
 		virtual void play(Base *base);
 		virtual void play(Base *base, MinionCard *card);
-		
-		virtual bool fUpdate(UpdateVisibilityFlags *flags);
-		virtual void update(Base *base);
-		virtual void update(UpdateVisibilityFlags *minionCard);
-		
+				
 		virtual bool fMovable(Base *newBase);
 		virtual void move(Base *newBase);
 		

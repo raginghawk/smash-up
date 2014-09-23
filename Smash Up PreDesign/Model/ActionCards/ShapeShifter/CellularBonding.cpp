@@ -23,16 +23,6 @@ void CellularBonding::play(MinionCard *minion, ActionCard *action)
 	ActionCard::play(minion, action);
 }
 
-bool CellularBonding::fUpdate(UpdateVisibilityFlags *flags)
-{
-	return _copiedCard->fUpdate(flags);
-}
-
-void CellularBonding::update(MinionCard *minion)
-{
-	_copiedCard->update(minion);
-}
-
 bool CellularBonding::destroy()
 {
 	//TODO destroy will probably need a reference to the action it is destorying to know if it should really remove itselft the the minion

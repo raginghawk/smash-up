@@ -89,6 +89,10 @@ std::vector<Card *> Player::deck()
 	return _deck;
 }
 
+std::vector<Card *> Player::hand()
+{
+	return _hand;
+}
 
 void Player::modifyMinionPower(int modification)
 {
@@ -184,6 +188,23 @@ MinionCard *Player::minionInDeck(int maxPower)
 	return NULL;
 }
 
+std::vector<Card *> Player::cardsFromDiscardWithName(std::string cardName)
+{
+	std::vector<Card *> toReturn;
+	std::vector<Card *>::iterator itCards;
+
+	for (itCards = _discards.begin(); itCards != _discards.end(); itCards++)
+	{
+		if (!(strcmp(cardName.c_str(), (*itCards)->name().c_str())))
+		{
+			toReturn.push_back(*itCards);
+		}
+	}
+
+	return toReturn;
+}
+
+
 Card *Player::removeFromDiscard(std::string cardName)
 {
 	std::vector<Card *>::iterator itCards;
@@ -273,11 +294,7 @@ void Player::shuffleDeck(bool withDiscards)
 
 void Player::shuffleMinionInDeck(MinionCard *minion)
 {
-	if (minion->base())
-	{
-		minion->base()->removeMinion(minion);
-	}
-
+	_deck.push_back(minion);
 	this->shuffleDeck(false);
 }
 

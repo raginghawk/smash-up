@@ -151,38 +151,6 @@ void MinionCard::play(Base *base, MinionCard *card)
 	base->playMinion(card);
 }
 
-bool MinionCard::fUpdate(UpdateVisibilityFlags *flags)
-{
-	std::vector<ActionCard *>::iterator itActions;
-	
-	for (itActions = _actions.begin(); itActions != _actions.end(); itActions++)
-	{
-		if ((*itActions)->fUpdate(flags))
-		{
-			return true;
-		}
-	}
-	return false;
-}
-
-void MinionCard::update(Base *base)
-{
-	//TODO
-}
-
-void MinionCard::update(UpdateVisibilityFlags *flags)
-{
-	std::vector<ActionCard *>::iterator itActions;
-
-	for (itActions = _actions.begin(); itActions != _actions.end(); itActions++)
-	{
-		if ((*itActions)->fUpdate(flags))
-		{
-			(*itActions)->update(this);
-		}
-	}
-}
-
 bool MinionCard::fMovable(Base *newBase)
 {
 	//TODO check current base if it is movable
@@ -194,8 +162,8 @@ void MinionCard::move(Base *newBase)
 {
 	if (fMovable(newBase))
 	{
-		_base->removeMinion(this);
-		newBase->moveMinion(this);
+		_base->removeCard(this);
+		newBase->moveCard(this);
 	}
 }
 
@@ -206,10 +174,9 @@ void MinionCard::discard()
 
 void MinionCard::discard(MinionCard *card)
 {
-	_base->removeMinion(card);
-	_base = NULL;
-
 	card->removeAllActions();
+	_base->removeCard(card);
+	_base = NULL;
 
 	card->owner()->addCardToDiscardPile(card);
 }

@@ -13,13 +13,19 @@ void DeadRiseAction::play()
 {
 	ActionCard::play();
 
-	while (true)
+	std::vector<Card *> cardsToDiscard = _currentOwner->selectCards(_currentOwner->hand(), _currentOwner->handSize(), true);
+	std::vector<Card *>::iterator itCards;
+
+	for (itCards = cardsToDiscard.begin(); itCards != cardsToDiscard.end(); itCards++)
 	{
-		MinionCard *selection = _currentOwner->minionInDiscard(INT_MAX, false);
-		if (selection && _currentOwner->discardCard(selection->printedPower() + 1, true))
-		{
+		_currentOwner->removeCardFromHand(*itCards);
+		_currentOwner->addCardToDiscardPile(*itCards);
+	}
+	
+	MinionCard *selection = _currentOwner->minionInDiscard(cardsToDiscard.size()-1, false);
+	if (selection)
+	{
 			Base *base = _currentOwner->selectBase(_currentOwner->baseOptions(selection));
 			selection->play(base);
-		}
 	}
 }

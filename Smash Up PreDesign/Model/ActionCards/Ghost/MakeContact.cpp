@@ -15,18 +15,9 @@ ActionCard * MakeContact::copy()
 	return new MakeContact(_currentOwner);
 }
 
-bool MakeContact::fUpdate(UpdateVisibilityFlags *flags)
-{
-	return flags->fOwner;
-}
-
-void MakeContact::update(MinionCard *minionCard)
-{
-	minionCard->setCurrentOwner(_currentOwner);
-}
-
 void MakeContact::play(MinionCard *minionCard, ActionCard *action)
 {
+	//TODO look at this later
 	_currentOwner = action->currentOwner();
 	_selection = minionCard;
 	_selection->setCurrentOwner(_currentOwner);
@@ -43,10 +34,6 @@ bool MakeContact::fPlay(Player *player)
 
 bool MakeContact::destroy()
 {
-	bool toReturn = ActionCard::destroy();
-
-	UpdateVisibilityFlags flags;
-	flags.fOwner = true;
-	_selection->update(&flags);
-	return toReturn;
+	//TODO look at this
+	return ActionCard::destroy();
 }

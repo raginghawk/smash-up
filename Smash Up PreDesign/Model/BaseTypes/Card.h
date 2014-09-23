@@ -38,8 +38,6 @@ public:
 
 	virtual bool destroy() = 0;
 	virtual bool fPlay(Player *player) = 0;
-	virtual bool fUpdate(UpdateVisibilityFlags *flags) = 0;
-	virtual void update(Base *base) = 0;
 	virtual void drawn();
 
 	virtual void move(Base *newBase) = 0;

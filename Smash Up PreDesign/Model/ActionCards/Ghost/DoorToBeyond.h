@@ -6,8 +6,7 @@ class DoorToBeyond : public ActionCard
 {
 public:
 	DoorToBeyond::DoorToBeyond(Player *owner);
-	virtual bool fUpdate(UpdateVisibilityFlags *flags);
-	virtual void update(Base *base);
+	virtual int powerModification();
 
 private:
 	bool _active;

@@ -37,7 +37,7 @@ bool ActionCard::fPlay(Player *player)
 
 void ActionCard::play(Base *base)
 {
-
+	base->actionsOnBase().push_back(this);
 }
 
 void ActionCard::play()
@@ -54,11 +54,8 @@ void ActionCard::play()
 		play(minionCard,this);
 		break;
 	case BASE_CARD:
-		Base *base;
-		bases = vBoard->bases();
-		//TODO Select Base
-		base = NULL;
-		base->actionsOnBase().push_back(this);
+		Base *selection = _currentOwner->selectBase(bases = vBoard->bases());
+		this->play(selection);
 		break;
 	}
 }
@@ -76,28 +73,21 @@ void ActionCard::play(MinionCard *minion, ActionCard *action)
 void ActionCard::move(Base *newBase)
 {
 	assert(_cardType == BASE_CARD);
-	//TODO move base cards around
+	if (_cardType != BASE_CARD)
+		return;
+
+	this->base()->removeCard(this);
+	newBase->moveCard(this);
 }
 
 void ActionCard::discard()
 {
-
+//TODO
 }
 
-bool ActionCard::fUpdate(UpdateVisibilityFlags *flags)
+int ActionCard::powerModification()
 {
-	assert(_cardType != INSTANT_CARD);
-	return false;
-}
-
-void ActionCard::update(Base *base)
-{
-
-}
-
-void ActionCard::update(MinionCard *minionCard)
-{
-	assert(true); /*Subclasses that can be updated should override this*/
+	return 0;
 }
 
 ActionCard * ActionCard::copy()

@@ -1,5 +1,6 @@
 #include "GelfMinion.h"
 #include <Player.h>
+#include <Base.h>
 
 GelfMinion::GelfMinion(Player *owner) : MinionCard(owner)
 {
@@ -12,6 +13,9 @@ GelfMinion::GelfMinion(Player *owner) : MinionCard(owner)
 void GelfMinion::useTalent(Player *owner, MinionCard *card)
 {
 	MinionCard *selection = owner->minionInDeck(4);
+
+	card->removeAllActions();
+	_base->removeCard(card);
 	owner->shuffleMinionInDeck(card);
 
 	if (!selection)

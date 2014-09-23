@@ -27,10 +27,14 @@ public:
 	Event * baseDidScore();
 	int breakingPoint;
 #pragma endregion
-	void moveMinion(MinionCard *minion);
+	void moveCard(MinionCard *minion);
+	void moveCard(ActionCard *minion);
+	void removeCard(MinionCard *minion);
+	void removeCard(ActionCard *minion);
+
+
 	void playMinion(MinionCard *minion);
 	void destroyMinion(MinionCard *minion);
-	void removeMinion(MinionCard *minion);
 
 	bool isBreaking();
 	void discardBase(); /* This happens when a base scores. Everything on it has discard called*/

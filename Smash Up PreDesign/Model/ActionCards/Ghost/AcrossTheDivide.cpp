@@ -13,15 +13,14 @@ AcrossTheDivide::AcrossTheDivide(Player *owner) : ActionCard(owner)
 void AcrossTheDivide::play()
 {
 	ActionCard::play();
-	MinionCard *selection= _currentOwner->minionInDiscard(INT_MAX, true);
+	MinionCard *selection= _currentOwner->minionInDiscard(INT_MAX, false);
 
-	if (selection)
+	std::vector<Card *> multiSelction = _currentOwner->selectCards(_currentOwner->cardsFromDiscardWithName(selection->name()), INT_MAX, true);
+	std::vector<Card *>::iterator itCards;
+
+	for (itCards = multiSelction.begin(); itCards != multiSelction.end(); itCards++)
 	{
 		Card *minion = _currentOwner->removeFromDiscard(selection->name());
-		while (minion)
-		{
-			_currentOwner->addCardToHand(minion);
-			//TODO add a bail option
-		}
+		_currentOwner->addCardToHand(minion);
 	}
 }

@@ -7,7 +7,7 @@ class IncorporealAction : public ActionCard
 public:
 	IncorporealAction::IncorporealAction(Player *owner);
 	virtual void play(MinionCard *minion, ActionCard *action);
-	virtual bool destroy();
+	virtual void discard();
 	virtual ActionCard *copy();
 private:
 	MinionCard *_selection;

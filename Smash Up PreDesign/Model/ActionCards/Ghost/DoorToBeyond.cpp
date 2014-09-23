@@ -9,21 +9,10 @@ DoorToBeyond::DoorToBeyond(Player *owner) : ActionCard(owner)
 	_active = false;
 }
 
-bool DoorToBeyond::fUpdate(UpdateVisibilityFlags *flags)
+int DoorToBeyond::powerModification()
 {
-	return flags->fPower;
-}
-
-void DoorToBeyond::update(Base *base)
-{
-	if (_currentOwner->handSize() < 3 && !_active)
-	{
-		base->modifyPower(2, _currentOwner);
-		_active = true;
-	}
-	else if (_currentOwner->handSize() > 2 && _active)
-	{
-		base->modifyPower(-2, _currentOwner);
-		_active = false;
-	}
+	if (_currentOwner->handSize() < 3)
+		return 2 + ActionCard::powerModification();
+	else
+		return ActionCard::powerModification();
 }

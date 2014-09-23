@@ -2,6 +2,7 @@
 #include <Player.h>
 #include <Event.h>
 #include <MinionCard.h>
+#include <ActionCard.h>
 #include <algorithm>
 
 Base::Base(std::vector<Player *>players)
@@ -112,24 +113,19 @@ int Base::powerModification(Player *player)
 	return _powerModification[player];
 }
 
-void Base::moveMinion(MinionCard *minion)
+void Base::moveCard(MinionCard *minion)
 {
 	_minionsOnBase.push_back(minion);
 	minion->setBase(this);
 }
 
-void Base::playMinion(MinionCard *minion)
+void Base::moveCard(ActionCard *action)
 {
-	_minionsOnBase.push_back(minion);
-	minion->setBase(this);
+	_actionsOnBase.push_back(action);
+	action->setBase(this);
 }
 
-void Base::destroyMinion(MinionCard *minion)
-{
-	minion->discard();
-}
-
-void Base::removeMinion(MinionCard *minion)
+void Base::removeCard(MinionCard *minion)
 {
 	std::vector<MinionCard *>::iterator itMinions = std::find(_minionsOnBase.begin(), _minionsOnBase.end(), minion);
 	if (itMinions == _minionsOnBase.end())
@@ -141,6 +137,29 @@ void Base::removeMinion(MinionCard *minion)
 	_minionsOnBase.erase(itMinions);
 }
 
+void Base::removeCard(ActionCard *action)
+{
+	std::vector<ActionCard *>::iterator itActions = std::find(_actionsOnBase.begin(), _actionsOnBase.end(), action);
+	if (itActions == _actionsOnBase.end())
+	{
+		return;
+		assert(false); // Couldn't find minion
+	}
+
+	_actionsOnBase.erase(itActions);
+}
+
+
+void Base::playMinion(MinionCard *minion)
+{
+	_minionsOnBase.push_back(minion);
+	minion->setBase(this);
+}
+
+void Base::destroyMinion(MinionCard *minion)
+{
+	minion->discard();
+}
 
 bool Base::isBreaking()
 {

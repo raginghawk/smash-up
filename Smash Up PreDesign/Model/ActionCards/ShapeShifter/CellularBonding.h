@@ -7,9 +7,8 @@ class CellularBonding : public ActionCard
 public:
 	CellularBonding(Player *owner);
 	virtual void play(MinionCard *minion, ActionCard *action);
-	virtual bool fUpdate(UpdateVisibilityFlags *flags);
-	virtual void update(MinionCard *minion);
 	virtual bool destroy();
+	//TODO add powerModification()
 	virtual ActionCard *copy();
 private:
 	ActionCard *_copiedCard;
