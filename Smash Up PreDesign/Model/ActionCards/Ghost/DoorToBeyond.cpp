@@ -9,10 +9,10 @@ DoorToBeyond::DoorToBeyond(Player *owner) : ActionCard(owner)
 	_active = false;
 }
 
-int DoorToBeyond::powerModification()
+int DoorToBeyond::powerModification(Player *player)
 {
-	if (_currentOwner->handSize() < 3)
-		return 2 + ActionCard::powerModification();
+	if (_currentOwner == player && _currentOwner->handSize() < 3)
+		return 2 + ActionCard::powerModification(player);
 	else
-		return ActionCard::powerModification();
+		return ActionCard::powerModification(player);
 }

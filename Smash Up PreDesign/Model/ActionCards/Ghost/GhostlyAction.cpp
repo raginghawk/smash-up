@@ -12,5 +12,4 @@ void GhostlyAction::play()
 	ActionCard::play();
 	_owner->addActionCount(1);
 	_owner->addMinionCount(INT_MAX,NULL);
-
 }

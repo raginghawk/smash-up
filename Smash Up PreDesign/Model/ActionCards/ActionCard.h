@@ -17,7 +17,7 @@ public:
 	virtual void move(Base *newBase);
 	virtual void discard();
 	
-	virtual int powerModification();
+	virtual int powerModification(Player *player);
 
 
 	virtual ActionCard *copy();

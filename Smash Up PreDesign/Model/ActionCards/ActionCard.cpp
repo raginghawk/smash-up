@@ -38,6 +38,7 @@ bool ActionCard::fPlay(Player *player)
 void ActionCard::play(Base *base)
 {
 	base->actionsOnBase().push_back(this);
+	this->setBase(base);
 }
 
 void ActionCard::play()
@@ -85,7 +86,7 @@ void ActionCard::discard()
 //TODO
 }
 
-int ActionCard::powerModification()
+int ActionCard::powerModification(Player *player)
 {
 	return 0;
 }

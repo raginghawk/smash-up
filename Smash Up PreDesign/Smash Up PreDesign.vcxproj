@@ -94,6 +94,7 @@
     <ClCompile Include="Model\ActionCards\Zombies\OutbreakAction.cpp" />
     <ClCompile Include="Model\ActionCards\Zombies\MallCrawlAction.cpp" />
     <ClCompile Include="Model\ActionCards\Zombies\LendHandAction.cpp" />
+    <ClCompile Include="Model\ActionCards\Zombies\OverrunAction.cpp" />
     <ClCompile Include="Model\ActionCards\Zombies\TheyKeepComingAction.cpp" />
     <ClCompile Include="Model\BaseTypes\Board.cpp" />
     <ClCompile Include="Model\BaseTypes\Base.cpp" />
@@ -159,6 +160,7 @@
     <ClInclude Include="Model\ActionCards\ShapeShifter\Transmogrify.h" />
     <ClInclude Include="Model\ActionCards\Zombies\GraveRobbingAction.h" />
     <ClInclude Include="Model\ActionCards\Zombies\BulletsAction.h" />
+    <ClInclude Include="Model\ActionCards\Zombies\OverrunAction.h" />
     <ClInclude Include="Model\ActionCards\Zombies\LendHandAction.h" />
     <ClInclude Include="Model\ActionCards\Zombies\MallCrawlAction.h" />
     <ClInclude Include="Model\ActionCards\Zombies\OutbreakAction.h" />

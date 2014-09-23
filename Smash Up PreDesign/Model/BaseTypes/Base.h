@@ -26,6 +26,7 @@ public:
 
 	Event * baseDidScore();
 	int breakingPoint;
+	int countIfPlayableMinion;
 #pragma endregion
 	void moveCard(MinionCard *minion);
 	void moveCard(ActionCard *minion);
