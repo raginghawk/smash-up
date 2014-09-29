@@ -14,13 +14,13 @@ void OverrunAction::play(Base *base)
 {
 	ActionCard::play(base);
 
-	_base->countIfPlayableMinion++;
+	_base->setPlayableMinionForOtherPlayers(_currentOwner, false);
 	_currentOwner->beginingOfTurn()->registerListener(this);
 }
 
 void OverrunAction::discard()
 {
-	_base->countIfPlayableMinion--;
+	_base->setPlayableMinionForOtherPlayers(_currentOwner, true);
 	_currentOwner->beginingOfTurn()->unregisterListener(this);
 	ActionCard::discard();
 }

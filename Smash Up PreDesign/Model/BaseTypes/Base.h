@@ -26,16 +26,17 @@ public:
 
 	Event * baseDidScore();
 	int breakingPoint;
-	int countIfPlayableMinion;
 #pragma endregion
 	void moveCard(MinionCard *minion);
 	void moveCard(ActionCard *minion);
 	void removeCard(MinionCard *minion);
 	void removeCard(ActionCard *minion);
 
-
 	void playMinion(MinionCard *minion);
 	void destroyMinion(MinionCard *minion);
+
+	void setPlayableMinionForOtherPlayers(Player *player, bool playable);
+	void setPlaybleFromDiscardForPlayer(Player *player, bool playableFromDiscards);
 
 	bool isBreaking();
 	void discardBase(); /* This happens when a base scores. Everything on it has discard called*/
@@ -47,6 +48,8 @@ private:
 	std::vector<MinionCard *> _minionsOnBase;
 	std::vector<ActionCard *> _actionsOnBase;
 	std::map<Player *, int> _powerModification;
+	std::map<Player *, bool> _minionPlayable;
+	std::map<Player *, bool> _playableFromDiscards;
 
 	std::vector<MinionCard *> Base::minionsWithPowerLessThan(int limPower, std::vector<MinionCard *> options);
 };

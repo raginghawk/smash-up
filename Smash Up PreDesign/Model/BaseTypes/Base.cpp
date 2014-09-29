@@ -3,17 +3,20 @@
 #include <Event.h>
 #include <MinionCard.h>
 #include <ActionCard.h>
+#include <Board.h>
 #include <algorithm>
 
 Base::Base(std::vector<Player *>players)
 {
 	breakingPoint = 12; /*Hard Code for now will be set by subclasses*/
 	_powerModification.clear(); /*just to be safe when you pull a base from the grave*/
+	_minionPlayable.clear();
 	
 	std::vector<Player *>::iterator itPlayers;
 	for (itPlayers = players.begin(); itPlayers != players.end(); itPlayers++)
 	{
 		_powerModification.insert(std::make_pair(*itPlayers, 0));
+		_minionPlayable.insert(std::make_pair(*itPlayers, true));
 	}
 
 	_baseDidScore = new Event(new EventData(this, BASE_DID_SCORE));
@@ -190,4 +193,20 @@ int Base::currentPowerOnBase()
 	}
 
 	return runningPower;
+}
+
+void Base::setPlayableMinionForOtherPlayers(Player *player, bool playable)
+{
+	std::vector<Player *> players = vBoard->players();
+	std::vector<Player *>::iterator itPlayers;
+	for (itPlayers = players.begin(); itPlayers != players.end(); itPlayers++)
+	{
+		if (*itPlayers != player)
+			_minionPlayable[*itPlayers] = playable;
+	}
+}
+
+void Base::setPlaybleFromDiscardForPlayer(Player *player, bool playableFromDiscards)
+{
+	_playableFromDiscards[player] = playableFromDiscards;
 }
