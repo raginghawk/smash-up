@@ -32,6 +32,9 @@
 //Aliens
 #include <InvaderMinion.h>
 #include <CollectorMinion.h>
+#include <SupremeOverlordMinion.h>
+#include <ScoutMinion.h>
+
 ////Dinos
 //#include <RexMinion.h>
 //#include <StegoMinion.h>

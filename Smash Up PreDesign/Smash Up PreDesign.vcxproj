@@ -107,6 +107,8 @@
     <ClCompile Include="Model\BaseTypes\MinionPlayableStruct.cpp" />
     <ClCompile Include="Model\ActionCards\ShapeShifter\CellularBonding.cpp" />
     <ClCompile Include="Model\MinionCards\Aliens\InvaderMinion.cpp" />
+    <ClCompile Include="Model\MinionCards\Aliens\ScoutMinion.cpp" />
+    <ClCompile Include="Model\MinionCards\Aliens\SupremeOverlordMinion.cpp" />
     <ClCompile Include="Model\MinionCards\Bears\GeneralIvanMinion.cpp" />
     <ClCompile Include="Model\MinionCards\Bears\BearCavalryMinion.cpp" />
     <ClCompile Include="Model\MinionCards\Bears\PolarCommandoMinion.cpp" />
@@ -176,6 +178,8 @@
     <ClInclude Include="Model\BaseTypes\Events\EventListener.h" />
     <ClInclude Include="Model\BaseTypes\Events\EventData.h" />
     <ClInclude Include="Model\BaseTypes\MinionPlayableStruct.h" />
+    <ClInclude Include="Model\MinionCards\Aliens\ScoutMinion.h" />
+    <ClInclude Include="Model\MinionCards\Aliens\SupremeOverlordMinion.h" />
     <ClInclude Include="Model\MinionCards\Aliens\InvaderMinion.h" />
     <ClInclude Include="Model\MinionCards\Bears\GeneralIvanMinion.h" />
     <ClInclude Include="Model\MinionCards\Bears\BearCavalryMinion.h" />

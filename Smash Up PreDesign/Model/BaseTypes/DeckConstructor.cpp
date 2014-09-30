@@ -230,6 +230,12 @@ std::vector<Card *> DeckConstructor::addAliens(Player *owner)
 	{
 		alienDeck.push_back(new InvaderMinion(owner));
 	}
+	
+	for (int c = 0; c < 2; c++)
+	{
+		alienDeck.push_back(new ScoutMinion(owner));
+	}
+	alienDeck.push_back(new SupremeOverlordMinion(owner));
 
 	return alienDeck;
 }

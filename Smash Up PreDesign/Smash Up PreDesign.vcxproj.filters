@@ -219,6 +219,12 @@
     <ClInclude Include="Model\MinionCards\Aliens\CollectorMinion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Model\MinionCards\Aliens\SupremeOverlordMinion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\MinionCards\Aliens\ScoutMinion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Model\BaseTypes\Board.cpp">
@@ -420,6 +426,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Model\MinionCards\Aliens\CollectorMinion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\MinionCards\Aliens\SupremeOverlordMinion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\MinionCards\Aliens\ScoutMinion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

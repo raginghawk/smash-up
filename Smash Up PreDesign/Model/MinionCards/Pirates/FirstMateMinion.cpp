@@ -41,6 +41,4 @@ void FirstMateMinion::call(EventData *eventData)
 	Base *selectedBase = _currentOwner->selectBase(baseOptions);
 	if (selectedBase)
 		move(selectedBase);
-	else
-		MinionCard::discard();
 }
