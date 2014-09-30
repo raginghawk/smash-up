@@ -213,6 +213,12 @@
     <ClInclude Include="Model\ActionCards\Zombies\ComingToYouAction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Model\MinionCards\Aliens\InvaderMinion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\MinionCards\Aliens\CollectorMinion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Model\BaseTypes\Board.cpp">
@@ -408,6 +414,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Model\ActionCards\Zombies\ComingToYouAction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\MinionCards\Aliens\InvaderMinion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\MinionCards\Aliens\CollectorMinion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

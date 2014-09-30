@@ -215,3 +215,21 @@ std::vector<Card *> DeckConstructor::addZombies(Player *owner)
 
 	return zombieDeck;
 }
+
+std::vector<Card *> DeckConstructor::addAliens(Player *owner)
+{
+	std::vector<Card *> alienDeck;
+
+	//Minions
+	for (int c = 0; c < 4; c++)
+	{
+		alienDeck.push_back(new CollectorMinion(owner));
+	}
+
+	for (int c = 0; c < 3; c++)
+	{
+		alienDeck.push_back(new InvaderMinion(owner));
+	}
+
+	return alienDeck;
+}

@@ -12,6 +12,24 @@ MinionCard::MinionCard(Player *owner)
 	_cardType = BASE_CARD;
 }
 
+#pragma region static
+std::vector<MinionCard *> MinionCard::minionsWithPowerLessThan(int limPower, std::vector<MinionCard *> options)
+{
+	std::vector<MinionCard *>minions;
+	std::vector<MinionCard *>::iterator itCards;
+
+	for (itCards = options.begin(); itCards != options.end(); itCards++)
+	{
+		if ((*itCards)->printedPower() < limPower)
+		{
+			minions.push_back(*itCards);
+		}
+	}
+
+	return minions;
+}
+
+#pragma endregion
 bool MinionCard::isMinion()
 {
 	return true;
@@ -184,4 +202,11 @@ void MinionCard::discard(MinionCard *card)
 void MinionCard::useTalent(Player *owner, MinionCard *card)
 {
 	assert(false);
+}
+
+void MinionCard::returnToOwnersHand()
+{
+	this->removeAllActions();
+	_base->removeCard(this);
+	_owner->addCardToHand(this);
 }

@@ -29,6 +29,9 @@
 #include <TenaciousZMinion.h>
 #include <ZombieLordMinion.h>
 
+//Aliens
+#include <InvaderMinion.h>
+#include <CollectorMinion.h>
 ////Dinos
 //#include <RexMinion.h>
 //#include <StegoMinion.h>
