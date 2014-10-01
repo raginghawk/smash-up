@@ -70,6 +70,8 @@
     <ClCompile Include="Model\ActionCards\Aliens\BeamUpAction.cpp" />
     <ClCompile Include="Model\ActionCards\Aliens\AbductionAction.cpp" />
     <ClCompile Include="Model\ActionCards\Aliens\DisintegratorAction.cpp" />
+    <ClCompile Include="Model\ActionCards\Aliens\CropCirclesAction.cpp" />
+    <ClCompile Include="Model\ActionCards\Aliens\InvasionAction.cpp" />
     <ClCompile Include="Model\ActionCards\Ghost\AcrossTheDivide.cpp" />
     <ClCompile Include="Model\ActionCards\Ghost\DeadRiseAction.cpp" />
     <ClCompile Include="Model\ActionCards\Ghost\DoorToBeyond.cpp" />
@@ -145,6 +147,8 @@
     <ClInclude Include="Model\ActionCards\Aliens\BeamUpAction.h" />
     <ClInclude Include="Model\ActionCards\Aliens\AbductionAction.h" />
     <ClInclude Include="Model\ActionCards\Aliens\DisintegratorAction.h" />
+    <ClInclude Include="Model\ActionCards\Aliens\CropCirclesAction.h" />
+    <ClInclude Include="Model\ActionCards\Aliens\InvasionAction.h" />
     <ClInclude Include="Model\ActionCards\Ghost\AcrossTheDivide.h" />
     <ClInclude Include="Model\ActionCards\Ghost\DeadRiseAction.h" />
     <ClInclude Include="Model\ActionCards\Ghost\DoorToBeyond.h" />

@@ -246,6 +246,8 @@ std::vector<Card *> DeckConstructor::addAliens(Player *owner)
 		alienDeck.push_back(new DisintegratorAction(owner));
 	}
 	alienDeck.push_back(new AbductionAction(owner));
+	alienDeck.push_back(new CropCirclesAction(owner));
+	alienDeck.push_back(new InvasionAction(owner));
 
 	return alienDeck;
 }

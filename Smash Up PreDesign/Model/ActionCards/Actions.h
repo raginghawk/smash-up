@@ -43,3 +43,5 @@
 #include <BeamUpAction.h>
 #include <AbductionAction.h>
 #include <DisintegratorAction.h>
+#include <CropCirclesAction.h>
+#include <InvasionAction.h>

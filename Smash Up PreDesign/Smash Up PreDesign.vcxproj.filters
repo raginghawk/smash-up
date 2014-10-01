@@ -234,6 +234,12 @@
     <ClInclude Include="Model\ActionCards\Aliens\DisintegratorAction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Model\ActionCards\Aliens\CropCirclesAction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\ActionCards\Aliens\InvasionAction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Model\BaseTypes\Board.cpp">
@@ -450,6 +456,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Model\ActionCards\Aliens\DisintegratorAction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\ActionCards\Aliens\CropCirclesAction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\ActionCards\Aliens\InvasionAction.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
