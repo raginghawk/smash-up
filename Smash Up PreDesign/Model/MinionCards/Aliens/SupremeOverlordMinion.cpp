@@ -1,6 +1,5 @@
 #include "SupremeOverlordMinion.h"
 #include <Board.h>
-#include <MinionCard.h>
 #include <Player.h>
 
 SupremeOverlordMinion::SupremeOverlordMinion(Player *owner) : MinionCard(owner)

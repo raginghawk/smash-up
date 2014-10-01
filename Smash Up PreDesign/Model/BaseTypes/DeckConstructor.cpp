@@ -212,6 +212,8 @@ std::vector<Card *> DeckConstructor::addZombies(Player *owner)
 	zombieDeck.push_back(new BulletsAction(owner));
 	zombieDeck.push_back(new MallCrawlAction(owner));
 	zombieDeck.push_back(new LendHandAction(owner));
+	zombieDeck.push_back(new ComingToYouAction(owner));
+	zombieDeck.push_back(new OverrunAction(owner));
 
 	return zombieDeck;
 }
@@ -236,6 +238,14 @@ std::vector<Card *> DeckConstructor::addAliens(Player *owner)
 		alienDeck.push_back(new ScoutMinion(owner));
 	}
 	alienDeck.push_back(new SupremeOverlordMinion(owner));
+
+	//Actions
+	for (int c = 0; c < 2; c++)
+	{
+		alienDeck.push_back(new BeamUpAction(owner));
+		alienDeck.push_back(new DisintegratorAction(owner));
+	}
+	alienDeck.push_back(new AbductionAction(owner));
 
 	return alienDeck;
 }

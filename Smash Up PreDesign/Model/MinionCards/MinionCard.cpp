@@ -20,7 +20,7 @@ std::vector<MinionCard *> MinionCard::minionsWithPowerLessThan(int limPower, std
 
 	for (itCards = options.begin(); itCards != options.end(); itCards++)
 	{
-		if ((*itCards)->printedPower() < limPower)
+		if ((*itCards)->currentPower() < limPower)
 		{
 			minions.push_back(*itCards);
 		}
@@ -206,7 +206,16 @@ void MinionCard::useTalent(Player *owner, MinionCard *card)
 
 void MinionCard::returnToOwnersHand()
 {
+	//TODO fAffectable check?
 	this->removeAllActions();
 	_base->removeCard(this);
 	_owner->addCardToHand(this);
+}
+
+void MinionCard::returnToBottomOfDeck()
+{
+	//TODO fAffectable check?
+	this->removeAllActions();
+	_base->removeCard(this);
+	_owner->addCardToBottomOfDeck(this);
 }

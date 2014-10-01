@@ -49,6 +49,7 @@ class MinionCard : public Card
 		virtual void useTalent(Player *owner, MinionCard *card);
 
 		void returnToOwnersHand();
+		void returnToBottomOfDeck();
 
 		static std::vector<MinionCard *> minionsWithPowerLessThan(int limPower, std::vector<MinionCard *> options);
 #pragma endregion

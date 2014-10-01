@@ -264,6 +264,11 @@ void Player::addCardToDeck(Card *card)
 	_deck.push_back(card);
 }
 
+void Player::addCardToBottomOfDeck(Card *card)
+{
+	_deck.insert(_deck.begin(), card);
+}
+
 bool Player::isCardInHand(Card *card)
 {
 	std::vector<Card *>::iterator itCards;

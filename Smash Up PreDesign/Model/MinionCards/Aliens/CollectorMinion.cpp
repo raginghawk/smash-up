@@ -1,6 +1,5 @@
 #include "CollectorMinion.h"
 #include <Base.h>
-#include <MinionCard.h>
 #include <Player.h>
 
 CollectorMinion::CollectorMinion(Player *owner) : MinionCard(owner)

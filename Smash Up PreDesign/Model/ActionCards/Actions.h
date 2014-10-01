@@ -36,3 +36,10 @@
 #include <BulletsAction.h>
 #include <MallCrawlAction.h>
 #include <LendHandAction.h>
+#include <ComingToYouAction.h>
+#include <OverrunAction.h>
+
+//Aliens
+#include <BeamUpAction.h>
+#include <AbductionAction.h>
+#include <DisintegratorAction.h>

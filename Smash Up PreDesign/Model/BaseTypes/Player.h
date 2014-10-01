@@ -73,6 +73,7 @@ public:
 	void addCardToHand(Card *card);
 	void addCardToDiscardPile(Card *card);
 	void addCardToDeck(Card *card);
+	void addCardToBottomOfDeck(Card *card);
 
 	bool isCardInHand(Card *card);
 

@@ -225,6 +225,15 @@
     <ClInclude Include="Model\MinionCards\Aliens\ScoutMinion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Model\ActionCards\Aliens\BeamUpAction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\ActionCards\Aliens\AbductionAction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\ActionCards\Aliens\DisintegratorAction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Model\BaseTypes\Board.cpp">
@@ -432,6 +441,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Model\MinionCards\Aliens\ScoutMinion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\ActionCards\Aliens\BeamUpAction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\ActionCards\Aliens\AbductionAction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Model\ActionCards\Aliens\DisintegratorAction.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
